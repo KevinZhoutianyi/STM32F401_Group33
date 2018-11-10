@@ -1,10 +1,10 @@
---cpu=Cortex-M4.fp
+--cpu Cortex-M4.fp
 ".\obj\main_1.o"
-".\obj\motors_and_encoders_1.o"
-".\obj\system_stm32f4xx_1.o"
-".\obj\system_functions_1.o"
+".\obj\motors_and_encoders.o"
+".\obj\system_stm32f4xx.o"
+".\obj\system_functions.o"
 ".\obj\startup_stm32f401xe.o"
-".\obj\stm32f4xx_ll_utils_1.o"
+".\obj\stm32f4xx_ll_utils.o"
 ".\obj\stm32f4xx_ll_usart.o"
 ".\obj\stm32f4xx_ll_adc.o"
 ".\obj\stm32f4xx_ll_crc.o"
@@ -21,8 +21,8 @@
 ".\obj\stm32f4xx_ll_rtc.o"
 ".\obj\stm32f4xx_ll_spi.o"
 ".\obj\stm32f4xx_ll_tim.o"
-"Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
 --strict --scatter ".\OBJ\Project.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\LIST\Project.map" -o .\OBJ\Project.axf

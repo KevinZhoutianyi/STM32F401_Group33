@@ -2,11 +2,11 @@
 .\obj\stm32f4xx_ll_lptim.o: .\LLLIB\inc\stm32f4xx_ll_lptim.h
 .\obj\stm32f4xx_ll_lptim.o: .\SYS\stm32f4xx.h
 .\obj\stm32f4xx_ll_lptim.o: .\SYS\stm32f401xe.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
-.\obj\stm32f4xx_ll_lptim.o: Z:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\mpu_armv7.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
+.\obj\stm32f4xx_ll_lptim.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
 .\obj\stm32f4xx_ll_lptim.o: .\SYS\system_stm32f4xx.h
 .\obj\stm32f4xx_ll_lptim.o: .\LLLIB\inc\stm32f4xx_ll_bus.h

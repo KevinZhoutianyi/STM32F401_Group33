@@ -772,19 +772,11 @@ ARM Macro Assembler    Page 12
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\obj\startup_stm32f401xe.d -o.\obj\startup_stm32f401xe.o -I.\R
-TE\_NUCLEO_F401RE -IZ:\MDK\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IZ:\MDK
-\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\DSP\Include -IZ:\MDK\ARM\PACK\Keil\STM32F4xx_DF
-P\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL SETA 1" 
---predefine="__UVISION_VERSION SETA 526" --predefine="_RTE_ SETA 1" --predefine
-="STM32F401xE SETA 1" --list=.\list\startup_stm32f401xe.lst SYS\startup_stm32f4
-
-
-
-ARM Macro Assembler    Page 13 
-
-
-01xe.s
+erwork --depend=.\obj\startup_stm32f401xe.d -o.\obj\startup_stm32f401xe.o -IG:\
+STM32F401_LL_Group33\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -I
+C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include --predefine="__UVIS
+ION_VERSION SETA 520" --predefine="_RTE_ SETA 1" --predefine="STM32F401xx SETA 
+1" --list=.\list\startup_stm32f401xe.lst SYS\startup_stm32f401xe.s
 
 
 
@@ -1639,4 +1631,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-424 symbols in table
+423 symbols in table

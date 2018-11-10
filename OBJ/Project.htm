@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\OBJ\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\OBJ\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Nov 10 19:06:51 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sat Nov 10 19:27:43 2018
 <BR><P>
 <H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -85,7 +85,7 @@ Function Pointers
  <LI><a href="#[43]">SPI4_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[8]">SVC_Handler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[b]">SysTick_Handler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
- <LI><a href="#[44]">SystemInit</a> from system_stm32f4xx_1.o(i.SystemInit) referenced from startup_stm32f401xe.o(.text)
+ <LI><a href="#[44]">SystemInit</a> from system_stm32f4xx.o(i.SystemInit) referenced from startup_stm32f401xe.o(.text)
  <LI><a href="#[e]">TAMP_STAMP_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[20]">TIM1_BRK_TIM9_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
  <LI><a href="#[23]">TIM1_CC_IRQHandler</a> from startup_stm32f401xe.o(.text) referenced from startup_stm32f401xe.o(RESET)
@@ -517,11 +517,11 @@ Global Symbols
 
 <P><STRONG><a name="[b6]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[5b]"></a>Configure_Encoder_Left</STRONG> (Thumb, 280 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.Configure_Encoder_Left))
+<P><STRONG><a name="[5b]"></a>Configure_Encoder_Left</STRONG> (Thumb, 280 bytes, Stack size 8 bytes, motors_and_encoders.o(i.Configure_Encoder_Left))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Configure_Encoder_Left &rArr; LL_TIM_IC_SetPrescaler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetPrescaler
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetEncoderMode
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_IC_SetPrescaler
@@ -542,11 +542,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6e]"></a>Configure_Encoder_Right</STRONG> (Thumb, 270 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.Configure_Encoder_Right))
+<P><STRONG><a name="[6e]"></a>Configure_Encoder_Right</STRONG> (Thumb, 270 bytes, Stack size 8 bytes, motors_and_encoders.o(i.Configure_Encoder_Right))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Configure_Encoder_Right &rArr; LL_TIM_IC_SetPrescaler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetPrescaler
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetEncoderMode
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_IC_SetPrescaler
@@ -566,7 +566,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6f]"></a>Configure_Motor_Left</STRONG> (Thumb, 256 bytes, Stack size 16 bytes, motors_and_encoders_1.o(i.Configure_Motor_Left))
+<P><STRONG><a name="[6f]"></a>Configure_Motor_Left</STRONG> (Thumb, 256 bytes, Stack size 16 bytes, motors_and_encoders.o(i.Configure_Motor_Left))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Configure_Motor_Left &rArr; LL_TIM_OC_SetMode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetPrescaler
@@ -589,7 +589,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[78]"></a>Configure_Motor_Right</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.Configure_Motor_Right))
+<P><STRONG><a name="[78]"></a>Configure_Motor_Right</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, motors_and_encoders.o(i.Configure_Motor_Right))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Configure_Motor_Right &rArr; LL_TIM_OC_SetMode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_SetPrescaler
@@ -613,7 +613,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7a]"></a>Configure_User_Button</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, system_functions_1.o(i.Configure_User_Button))
+<P><STRONG><a name="[7a]"></a>Configure_User_Button</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, system_functions.o(i.Configure_User_Button))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Configure_User_Button &rArr; LL_GPIO_SetPinPull
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_SetPinPull
@@ -623,7 +623,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7e]"></a>Configure_User_LED</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, system_functions_1.o(i.Configure_User_LED))
+<P><STRONG><a name="[7e]"></a>Configure_User_LED</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, system_functions.o(i.Configure_User_LED))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Configure_User_LED &rArr; LL_GPIO_SetPinSpeed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_SetPinSpeed
@@ -637,7 +637,7 @@ Global Symbols
 <P><STRONG><a name="[2f]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main_1.o(i.EXTI15_10_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
-<P><STRONG><a name="[80]"></a>Set_DutyCycle_Motor_Left</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left))
+<P><STRONG><a name="[80]"></a>Set_DutyCycle_Motor_Left</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, motors_and_encoders.o(i.Set_DutyCycle_Motor_Left))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Set_DutyCycle_Motor_Left &rArr; __aeabi_d2f
 </UL>
 <BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_OC_SetCompareCH4
@@ -649,7 +649,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[84]"></a>Set_DutyCycle_Motor_Right</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right))
+<P><STRONG><a name="[84]"></a>Set_DutyCycle_Motor_Right</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, motors_and_encoders.o(i.Set_DutyCycle_Motor_Right))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Set_DutyCycle_Motor_Right &rArr; __aeabi_d2f
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_TIM_OC_SetCompareCH2
@@ -661,13 +661,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[86]"></a>SystemClock_Config</STRONG> (Thumb, 318 bytes, Stack size 16 bytes, system_functions_1.o(i.SystemClock_Config))
+<P><STRONG><a name="[86]"></a>SystemClock_Config</STRONG> (Thumb, 318 bytes, Stack size 16 bytes, system_functions.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SystemClock_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[44]"></a>SystemInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, system_stm32f4xx_1.o(i.SystemInit))
+<P><STRONG><a name="[44]"></a>SystemInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, system_stm32f4xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
 <P><STRONG><a name="[24]"></a>TIM2_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main_1.o(i.TIM2_IRQHandler))
@@ -763,7 +763,7 @@ Local Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_IRQHandler
 </UL>
 
-<P><STRONG><a name="[5c]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock))
+<P><STRONG><a name="[5c]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_AHB1_GRP1_EnableClock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -772,7 +772,7 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[64]"></a>LL_APB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock))
+<P><STRONG><a name="[64]"></a>LL_APB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_APB1_GRP1_EnableClock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -780,7 +780,7 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[61]"></a>LL_GPIO_SetAFPin_0_7</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7))
+<P><STRONG><a name="[61]"></a>LL_GPIO_SetAFPin_0_7</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetAFPin_0_7
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -788,14 +788,14 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[60]"></a>LL_GPIO_SetAFPin_8_15</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_8_15))
+<P><STRONG><a name="[60]"></a>LL_GPIO_SetAFPin_8_15</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, motors_and_encoders.o(i.LL_GPIO_SetAFPin_8_15))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetAFPin_8_15
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[5d]"></a>LL_GPIO_SetPinMode</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders_1.o(i.LL_GPIO_SetPinMode))
+<P><STRONG><a name="[5d]"></a>LL_GPIO_SetPinMode</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders.o(i.LL_GPIO_SetPinMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -804,7 +804,7 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[5e]"></a>LL_GPIO_SetPinPull</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders_1.o(i.LL_GPIO_SetPinPull))
+<P><STRONG><a name="[5e]"></a>LL_GPIO_SetPinPull</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders.o(i.LL_GPIO_SetPinPull))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinPull
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -813,7 +813,7 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[5f]"></a>LL_GPIO_SetPinSpeed</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed))
+<P><STRONG><a name="[5f]"></a>LL_GPIO_SetPinSpeed</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, motors_and_encoders.o(i.LL_GPIO_SetPinSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinSpeed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
@@ -822,150 +822,150 @@ Local Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[6c]"></a>LL_TIM_CC_EnableChannel</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel))
+<P><STRONG><a name="[6c]"></a>LL_TIM_CC_EnableChannel</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_CC_EnableChannel))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[70]"></a>LL_TIM_EnableARRPreload</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_EnableARRPreload))
+<P><STRONG><a name="[70]"></a>LL_TIM_EnableARRPreload</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_EnableARRPreload))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[6d]"></a>LL_TIM_EnableCounter</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_EnableCounter))
+<P><STRONG><a name="[6d]"></a>LL_TIM_EnableCounter</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_EnableCounter))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[6b]"></a>LL_TIM_EnableIT_CC1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_EnableIT_CC1))
+<P><STRONG><a name="[6b]"></a>LL_TIM_EnableIT_CC1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_EnableIT_CC1))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[77]"></a>LL_TIM_GenerateEvent_UPDATE</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_GenerateEvent_UPDATE))
+<P><STRONG><a name="[77]"></a>LL_TIM_GenerateEvent_UPDATE</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_GenerateEvent_UPDATE))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[74]"></a>LL_TIM_GetAutoReload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_GetAutoReload))
+<P><STRONG><a name="[74]"></a>LL_TIM_GetAutoReload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_GetAutoReload))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_DutyCycle_Motor_Right
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_DutyCycle_Motor_Left
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[71]"></a>LL_TIM_GetPrescaler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_GetPrescaler))
+<P><STRONG><a name="[71]"></a>LL_TIM_GetPrescaler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_GetPrescaler))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[66]"></a>LL_TIM_IC_SetActiveInput</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput))
+<P><STRONG><a name="[66]"></a>LL_TIM_IC_SetActiveInput</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LL_TIM_IC_SetActiveInput
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[67]"></a>LL_TIM_IC_SetFilter</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter))
+<P><STRONG><a name="[67]"></a>LL_TIM_IC_SetFilter</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders.o(i.LL_TIM_IC_SetFilter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LL_TIM_IC_SetFilter
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[69]"></a>LL_TIM_IC_SetPolarity</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity))
+<P><STRONG><a name="[69]"></a>LL_TIM_IC_SetPolarity</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, motors_and_encoders.o(i.LL_TIM_IC_SetPolarity))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LL_TIM_IC_SetPolarity
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[68]"></a>LL_TIM_IC_SetPrescaler</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler))
+<P><STRONG><a name="[68]"></a>LL_TIM_IC_SetPrescaler</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LL_TIM_IC_SetPrescaler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[76]"></a>LL_TIM_OC_EnablePreload</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload))
+<P><STRONG><a name="[76]"></a>LL_TIM_OC_EnablePreload</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, motors_and_encoders.o(i.LL_TIM_OC_EnablePreload))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LL_TIM_OC_EnablePreload
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[79]"></a>LL_TIM_OC_SetCompareCH2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH2))
+<P><STRONG><a name="[79]"></a>LL_TIM_OC_SetCompareCH2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH2))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_DutyCycle_Motor_Right
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 </UL>
 
-<P><STRONG><a name="[75]"></a>LL_TIM_OC_SetCompareCH4</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH4))
+<P><STRONG><a name="[75]"></a>LL_TIM_OC_SetCompareCH4</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH4))
 <BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_DutyCycle_Motor_Left
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[73]"></a>LL_TIM_OC_SetMode</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders_1.o(i.LL_TIM_OC_SetMode))
+<P><STRONG><a name="[73]"></a>LL_TIM_OC_SetMode</STRONG> (Thumb, 98 bytes, Stack size 20 bytes, motors_and_encoders.o(i.LL_TIM_OC_SetMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LL_TIM_OC_SetMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[72]"></a>LL_TIM_SetAutoReload</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_SetAutoReload))
+<P><STRONG><a name="[72]"></a>LL_TIM_SetAutoReload</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_SetAutoReload))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 </UL>
 
-<P><STRONG><a name="[6a]"></a>LL_TIM_SetEncoderMode</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_SetEncoderMode))
+<P><STRONG><a name="[6a]"></a>LL_TIM_SetEncoderMode</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_SetEncoderMode))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[65]"></a>LL_TIM_SetPrescaler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.LL_TIM_SetPrescaler))
+<P><STRONG><a name="[65]"></a>LL_TIM_SetPrescaler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, motors_and_encoders.o(i.LL_TIM_SetPrescaler))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Right
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Motor_Left
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[63]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, motors_and_encoders_1.o(i.__NVIC_EnableIRQ))
+<P><STRONG><a name="[63]"></a>NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, motors_and_encoders.o(i.NVIC_EnableIRQ))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[62]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, motors_and_encoders_1.o(i.__NVIC_SetPriority))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
+<P><STRONG><a name="[62]"></a>NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, motors_and_encoders.o(i.NVIC_SetPriority))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Right
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_Encoder_Left
 </UL>
 
-<P><STRONG><a name="[7b]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, system_functions_1.o(i.LL_AHB1_GRP1_EnableClock))
+<P><STRONG><a name="[7b]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, system_functions.o(i.LL_AHB1_GRP1_EnableClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_AHB1_GRP1_EnableClock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_LED
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_Button
 </UL>
 
-<P><STRONG><a name="[7c]"></a>LL_GPIO_SetPinMode</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions_1.o(i.LL_GPIO_SetPinMode))
+<P><STRONG><a name="[7c]"></a>LL_GPIO_SetPinMode</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions.o(i.LL_GPIO_SetPinMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_LED
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_Button
 </UL>
 
-<P><STRONG><a name="[7d]"></a>LL_GPIO_SetPinPull</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions_1.o(i.LL_GPIO_SetPinPull))
+<P><STRONG><a name="[7d]"></a>LL_GPIO_SetPinPull</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions.o(i.LL_GPIO_SetPinPull))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinPull
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_LED
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_Button
 </UL>
 
-<P><STRONG><a name="[7f]"></a>LL_GPIO_SetPinSpeed</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions_1.o(i.LL_GPIO_SetPinSpeed))
+<P><STRONG><a name="[7f]"></a>LL_GPIO_SetPinSpeed</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, system_functions.o(i.LL_GPIO_SetPinSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_GPIO_SetPinSpeed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_User_LED

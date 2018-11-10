@@ -1,129 +1,129 @@
-Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
 
 ==============================================================================
 
 Section Cross References
 
-    main_1.o(i.Reset_Encoders) refers to main_1.o(i.__NVIC_DisableIRQ) for __NVIC_DisableIRQ
+    main_1.o(i.Reset_Encoders) refers to main_1.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
     main_1.o(i.Reset_Encoders) refers to main_1.o(i.LL_TIM_SetCounter) for LL_TIM_SetCounter
-    main_1.o(i.Reset_Encoders) refers to main_1.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    main_1.o(i.Reset_Encoders) refers to main_1.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
     main_1.o(i.TIM2_IRQHandler) refers to main_1.o(i.LL_TIM_IsActiveFlag_CC1) for LL_TIM_IsActiveFlag_CC1
     main_1.o(i.TIM5_IRQHandler) refers to main_1.o(i.LL_TIM_IsActiveFlag_CC1) for LL_TIM_IsActiveFlag_CC1
-    main_1.o(i.main) refers to system_functions_1.o(i.SystemClock_Config) for SystemClock_Config
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Configure_Encoder_Right) for Configure_Encoder_Right
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Configure_Motor_Right) for Configure_Motor_Right
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) for Set_DutyCycle_Motor_Right
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Configure_Encoder_Left) for Configure_Encoder_Left
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Configure_Motor_Left) for Configure_Motor_Left
-    main_1.o(i.main) refers to motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) for Set_DutyCycle_Motor_Left
-    main_1.o(i.main) refers to system_functions_1.o(i.Configure_User_LED) for Configure_User_LED
-    main_1.o(i.main) refers to system_functions_1.o(i.Configure_User_Button) for Configure_User_Button
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_8_15) for LL_GPIO_SetAFPin_8_15
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput) for LL_TIM_IC_SetActiveInput
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter) for LL_TIM_IC_SetFilter
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler) for LL_TIM_IC_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_SetEncoderMode) for LL_TIM_SetEncoderMode
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_EnableIT_CC1) for LL_TIM_EnableIT_CC1
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to motors_and_encoders_1.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
-    motors_and_encoders_1.o(i.Configure_Encoder_Left) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput) for LL_TIM_IC_SetActiveInput
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter) for LL_TIM_IC_SetFilter
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler) for LL_TIM_IC_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_SetEncoderMode) for LL_TIM_SetEncoderMode
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_EnableIT_CC1) for LL_TIM_EnableIT_CC1
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to motors_and_encoders_1.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
-    motors_and_encoders_1.o(i.Configure_Encoder_Right) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_8_15) for LL_GPIO_SetAFPin_8_15
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_EnableARRPreload) for LL_TIM_EnableARRPreload
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_GetPrescaler) for LL_TIM_GetPrescaler
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_SetAutoReload) for LL_TIM_SetAutoReload
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH4) for LL_TIM_OC_SetCompareCH4
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_GenerateEvent_UPDATE) for LL_TIM_GenerateEvent_UPDATE
-    motors_and_encoders_1.o(i.Configure_Motor_Left) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_EnableARRPreload) for LL_TIM_EnableARRPreload
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_GetPrescaler) for LL_TIM_GetPrescaler
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_SetAutoReload) for LL_TIM_SetAutoReload
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_GenerateEvent_UPDATE) for LL_TIM_GenerateEvent_UPDATE
-    motors_and_encoders_1.o(i.Configure_Motor_Right) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput) refers to motors_and_encoders_1.o(.constdata) for OFFSET_TAB_CCMRx
-    motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter) refers to motors_and_encoders_1.o(.constdata) for OFFSET_TAB_CCMRx
-    motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity) refers to motors_and_encoders_1.o(.constdata) for SHIFT_TAB_CCxP
-    motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler) refers to motors_and_encoders_1.o(.constdata) for OFFSET_TAB_CCMRx
-    motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload) refers to motors_and_encoders_1.o(.constdata) for OFFSET_TAB_CCMRx
-    motors_and_encoders_1.o(i.LL_TIM_OC_SetMode) refers to motors_and_encoders_1.o(.constdata) for OFFSET_TAB_CCMRx
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) refers to f2d.o(x$fpl$f2d) for __aeabi_f2d
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) refers to d2f.o(x$fpl$d2f) for __aeabi_d2f
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH4) for LL_TIM_OC_SetCompareCH4
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) refers to f2d.o(x$fpl$f2d) for __aeabi_f2d
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) refers to d2f.o(x$fpl$d2f) for __aeabi_d2f
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
-    motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right) refers to motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
-    system_stm32f4xx_1.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    system_stm32f4xx_1.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx_1.o(.constdata) for AHBPrescTable
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_GPIO_SetPinOutputType) for LL_GPIO_SetPinOutputType
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    system_functions_1.o(i.Configure_USB_UART) refers to system_functions_1.o(i.LL_USART_SetBaudRate) for LL_USART_SetBaudRate
-    system_functions_1.o(i.Configure_USB_UART) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    system_functions_1.o(i.Configure_User_Button) refers to system_functions_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    system_functions_1.o(i.Configure_User_Button) refers to system_functions_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    system_functions_1.o(i.Configure_User_Button) refers to system_functions_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    system_functions_1.o(i.Configure_User_LED) refers to system_functions_1.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
-    system_functions_1.o(i.Configure_User_LED) refers to system_functions_1.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    system_functions_1.o(i.Configure_User_LED) refers to system_functions_1.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
-    system_functions_1.o(i.Configure_User_LED) refers to system_functions_1.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
-    system_functions_1.o(i.SystemClock_Config) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
+    main_1.o(i.main) refers to system_functions.o(i.SystemClock_Config) for SystemClock_Config
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Configure_Encoder_Right) for Configure_Encoder_Right
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Configure_Motor_Right) for Configure_Motor_Right
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) for Set_DutyCycle_Motor_Right
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Configure_Encoder_Left) for Configure_Encoder_Left
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Configure_Motor_Left) for Configure_Motor_Left
+    main_1.o(i.main) refers to motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) for Set_DutyCycle_Motor_Left
+    main_1.o(i.main) refers to system_functions.o(i.Configure_User_LED) for Configure_User_LED
+    main_1.o(i.main) refers to system_functions.o(i.Configure_User_Button) for Configure_User_Button
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetAFPin_8_15) for LL_GPIO_SetAFPin_8_15
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput) for LL_TIM_IC_SetActiveInput
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_IC_SetFilter) for LL_TIM_IC_SetFilter
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler) for LL_TIM_IC_SetPrescaler
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_SetEncoderMode) for LL_TIM_SetEncoderMode
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_EnableIT_CC1) for LL_TIM_EnableIT_CC1
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to motors_and_encoders.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    motors_and_encoders.o(i.Configure_Encoder_Left) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput) for LL_TIM_IC_SetActiveInput
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_IC_SetFilter) for LL_TIM_IC_SetFilter
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler) for LL_TIM_IC_SetPrescaler
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_SetEncoderMode) for LL_TIM_SetEncoderMode
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_EnableIT_CC1) for LL_TIM_EnableIT_CC1
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to motors_and_encoders.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    motors_and_encoders.o(i.Configure_Encoder_Right) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_GPIO_SetAFPin_8_15) for LL_GPIO_SetAFPin_8_15
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_EnableARRPreload) for LL_TIM_EnableARRPreload
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_GetPrescaler) for LL_TIM_GetPrescaler
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_SetAutoReload) for LL_TIM_SetAutoReload
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH4) for LL_TIM_OC_SetCompareCH4
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_GenerateEvent_UPDATE) for LL_TIM_GenerateEvent_UPDATE
+    motors_and_encoders.o(i.Configure_Motor_Left) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_SetPrescaler) for LL_TIM_SetPrescaler
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_EnableARRPreload) for LL_TIM_EnableARRPreload
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_GetPrescaler) for LL_TIM_GetPrescaler
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_SetAutoReload) for LL_TIM_SetAutoReload
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_GenerateEvent_UPDATE) for LL_TIM_GenerateEvent_UPDATE
+    motors_and_encoders.o(i.Configure_Motor_Right) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput) refers to motors_and_encoders.o(.constdata) for OFFSET_TAB_CCMRx
+    motors_and_encoders.o(i.LL_TIM_IC_SetFilter) refers to motors_and_encoders.o(.constdata) for OFFSET_TAB_CCMRx
+    motors_and_encoders.o(i.LL_TIM_IC_SetPolarity) refers to motors_and_encoders.o(.constdata) for SHIFT_TAB_CCxP
+    motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler) refers to motors_and_encoders.o(.constdata) for OFFSET_TAB_CCMRx
+    motors_and_encoders.o(i.LL_TIM_OC_EnablePreload) refers to motors_and_encoders.o(.constdata) for OFFSET_TAB_CCMRx
+    motors_and_encoders.o(i.LL_TIM_OC_SetMode) refers to motors_and_encoders.o(.constdata) for OFFSET_TAB_CCMRx
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) refers to f2d.o(x$fpl$f2d) for __aeabi_f2d
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) refers to d2f.o(x$fpl$d2f) for __aeabi_d2f
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Left) refers to motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH4) for LL_TIM_OC_SetCompareCH4
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) refers to f2d.o(x$fpl$f2d) for __aeabi_f2d
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) refers to d2f.o(x$fpl$d2f) for __aeabi_d2f
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_GetAutoReload) for LL_TIM_GetAutoReload
+    motors_and_encoders.o(i.Set_DutyCycle_Motor_Right) refers to motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
+    system_stm32f4xx.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    system_stm32f4xx.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.constdata) for AHBPrescTable
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_GPIO_SetAFPin_0_7) for LL_GPIO_SetAFPin_0_7
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_GPIO_SetPinOutputType) for LL_GPIO_SetPinOutputType
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    system_functions.o(i.Configure_USB_UART) refers to system_functions.o(i.LL_USART_SetBaudRate) for LL_USART_SetBaudRate
+    system_functions.o(i.Configure_USB_UART) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    system_functions.o(i.Configure_User_Button) refers to system_functions.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    system_functions.o(i.Configure_User_Button) refers to system_functions.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    system_functions.o(i.Configure_User_Button) refers to system_functions.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    system_functions.o(i.Configure_User_LED) refers to system_functions.o(i.LL_AHB1_GRP1_EnableClock) for LL_AHB1_GRP1_EnableClock
+    system_functions.o(i.Configure_User_LED) refers to system_functions.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    system_functions.o(i.Configure_User_LED) refers to system_functions.o(i.LL_GPIO_SetPinPull) for LL_GPIO_SetPinPull
+    system_functions.o(i.Configure_User_LED) refers to system_functions.o(i.LL_GPIO_SetPinSpeed) for LL_GPIO_SetPinSpeed
+    system_functions.o(i.SystemClock_Config) refers to system_stm32f4xx.o(.data) for SystemCoreClock
     startup_stm32f401xe.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_stm32f401xe.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_stm32f401xe.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -133,27 +133,27 @@ Section Cross References
     startup_stm32f401xe.o(RESET) refers to main_1.o(i.EXTI15_10_IRQHandler) for EXTI15_10_IRQHandler
     startup_stm32f401xe.o(RESET) refers to main_1.o(i.TIM5_IRQHandler) for TIM5_IRQHandler
     startup_stm32f401xe.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
-    startup_stm32f401xe.o(.text) refers to system_stm32f4xx_1.o(i.SystemInit) for SystemInit
+    startup_stm32f401xe.o(.text) refers to system_stm32f4xx.o(i.SystemInit) for SystemInit
     startup_stm32f401xe.o(.text) refers to __main.o(!!!main) for __main
     startup_stm32f401xe.o(.text) refers to startup_stm32f401xe.o(HEAP) for Heap_Mem
     startup_stm32f401xe.o(.text) refers to startup_stm32f401xe.o(STACK) for Stack_Mem
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils_1.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils_1.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_HSE_IsReady) for LL_RCC_HSE_IsReady
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils_1.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils_1.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_HSI_IsReady) for LL_RCC_HSI_IsReady
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
-    stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
-    stm32f4xx_ll_utils_1.o(i.LL_SetSystemCoreClock) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils_1.o(i.UTILS_SetFlashLatency) for UTILS_SetFlashLatency
-    stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
-    stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils_1.o(i.LL_SetSystemCoreClock) for LL_SetSystemCoreClock
-    stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f4xx_1.o(.constdata) for AHBPrescTable
-    stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f4xx_1.o(.data) for SystemCoreClock
-    stm32f4xx_ll_utils_1.o(i.UTILS_PLL_IsBusy) refers to stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils.o(i.LL_RCC_HSE_IsReady) for LL_RCC_HSE_IsReady
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils.o(i.LL_RCC_HSI_IsReady) for LL_RCC_HSI_IsReady
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
+    stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
+    stm32f4xx_ll_utils.o(i.LL_SetSystemCoreClock) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils.o(i.UTILS_SetFlashLatency) for UTILS_SetFlashLatency
+    stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f4xx_ll_utils.o(i.LL_SetSystemCoreClock) for LL_SetSystemCoreClock
+    stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f4xx.o(.constdata) for AHBPrescTable
+    stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    stm32f4xx_ll_utils.o(i.UTILS_PLL_IsBusy) refers to stm32f4xx_ll_utils.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
     stm32f4xx_ll_usart.o(i.LL_USART_ClockInit) refers to stm32f4xx_ll_usart.o(i.LL_USART_IsEnabled) for LL_USART_IsEnabled
     stm32f4xx_ll_usart.o(i.LL_USART_DeInit) refers to stm32f4xx_ll_usart.o(i.LL_APB2_GRP1_ForceReset) for LL_APB2_GRP1_ForceReset
     stm32f4xx_ll_usart.o(i.LL_USART_DeInit) refers to stm32f4xx_ll_usart.o(i.LL_APB2_GRP1_ReleaseReset) for LL_APB2_GRP1_ReleaseReset
@@ -193,9 +193,9 @@ Section Cross References
     stm32f4xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) refers to stm32f4xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) for RCC_GetPCLK2ClockFreq
     stm32f4xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq) refers to stm32f4xx_ll_rcc.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
     stm32f4xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq) refers to stm32f4xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_48M) for RCC_PLL_GetFreqDomain_48M
-    stm32f4xx_ll_rcc.o(i.RCC_GetHCLKClockFreq) refers to system_stm32f4xx_1.o(.constdata) for AHBPrescTable
-    stm32f4xx_ll_rcc.o(i.RCC_GetPCLK1ClockFreq) refers to system_stm32f4xx_1.o(.constdata) for APBPrescTable
-    stm32f4xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) refers to system_stm32f4xx_1.o(.constdata) for APBPrescTable
+    stm32f4xx_ll_rcc.o(i.RCC_GetHCLKClockFreq) refers to system_stm32f4xx.o(.constdata) for AHBPrescTable
+    stm32f4xx_ll_rcc.o(i.RCC_GetPCLK1ClockFreq) refers to system_stm32f4xx.o(.constdata) for APBPrescTable
+    stm32f4xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) refers to system_stm32f4xx.o(.constdata) for APBPrescTable
     stm32f4xx_ll_rcc.o(i.RCC_GetSystemClockFreq) refers to stm32f4xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_SYS) for RCC_PLL_GetFreqDomain_SYS
     stm32f4xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_48M) refers to stm32f4xx_ll_rcc.o(i.LL_RCC_PLL_GetN) for LL_RCC_PLL_GetN
     stm32f4xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_SYS) refers to stm32f4xx_ll_rcc.o(i.LL_RCC_PLL_GetN) for LL_RCC_PLL_GetN
@@ -381,45 +381,45 @@ Removing Unused input sections from the image.
     Removing main_1.o(.revsh_text), (4 bytes).
     Removing main_1.o(.rrx_text), (6 bytes).
     Removing main_1.o(i.LL_TIM_SetCounter), (4 bytes).
+    Removing main_1.o(i.NVIC_DisableIRQ), (24 bytes).
+    Removing main_1.o(i.NVIC_EnableIRQ), (22 bytes).
     Removing main_1.o(i.Reset_Encoders), (52 bytes).
     Removing main_1.o(i.SysTick_Callback), (2 bytes).
-    Removing main_1.o(i.__NVIC_DisableIRQ), (60 bytes).
-    Removing main_1.o(i.__NVIC_EnableIRQ), (26 bytes).
     Removing main_1.o(.constdata), (43 bytes).
-    Removing motors_and_encoders_1.o(.rev16_text), (4 bytes).
-    Removing motors_and_encoders_1.o(.revsh_text), (4 bytes).
-    Removing motors_and_encoders_1.o(.rrx_text), (6 bytes).
-    Removing motors_and_encoders_1.o(i.Get_Encoder_Left), (10 bytes).
-    Removing motors_and_encoders_1.o(i.Get_Encoder_Right), (12 bytes).
-    Removing system_stm32f4xx_1.o(.rev16_text), (4 bytes).
-    Removing system_stm32f4xx_1.o(.revsh_text), (4 bytes).
-    Removing system_stm32f4xx_1.o(.rrx_text), (6 bytes).
-    Removing system_stm32f4xx_1.o(i.SystemCoreClockUpdate), (192 bytes).
-    Removing system_stm32f4xx_1.o(.constdata), (24 bytes).
-    Removing system_functions_1.o(.rev16_text), (4 bytes).
-    Removing system_functions_1.o(.revsh_text), (4 bytes).
-    Removing system_functions_1.o(.rrx_text), (6 bytes).
-    Removing system_functions_1.o(i.Configure_USB_UART), (256 bytes).
-    Removing system_functions_1.o(i.LL_GPIO_SetAFPin_0_7), (40 bytes).
-    Removing system_functions_1.o(i.LL_GPIO_SetPinOutputType), (16 bytes).
-    Removing system_functions_1.o(i.LL_USART_SetBaudRate), (322 bytes).
-    Removing system_functions_1.o(.constdata), (43 bytes).
-    Removing stm32f4xx_ll_utils_1.o(.rev16_text), (4 bytes).
-    Removing stm32f4xx_ll_utils_1.o(.revsh_text), (4 bytes).
-    Removing stm32f4xx_ll_utils_1.o(.rrx_text), (6 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_Init1msTick), (28 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSE), (152 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_PLL_ConfigSystemClock_HSI), (104 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_RCC_HSE_IsReady), (16 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_RCC_HSI_IsReady), (16 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_ConfigDomain_SYS), (48 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_RCC_PLL_IsReady), (16 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_SetSystemCoreClock), (12 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.LL_mDelay), (40 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.UTILS_EnablePLLAndSwitchSystem), (212 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.UTILS_GetPLLOutputFrequency), (40 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.UTILS_PLL_IsBusy), (36 bytes).
-    Removing stm32f4xx_ll_utils_1.o(i.UTILS_SetFlashLatency), (148 bytes).
+    Removing motors_and_encoders.o(.rev16_text), (4 bytes).
+    Removing motors_and_encoders.o(.revsh_text), (4 bytes).
+    Removing motors_and_encoders.o(.rrx_text), (6 bytes).
+    Removing motors_and_encoders.o(i.Get_Encoder_Left), (10 bytes).
+    Removing motors_and_encoders.o(i.Get_Encoder_Right), (12 bytes).
+    Removing system_stm32f4xx.o(.rev16_text), (4 bytes).
+    Removing system_stm32f4xx.o(.revsh_text), (4 bytes).
+    Removing system_stm32f4xx.o(.rrx_text), (6 bytes).
+    Removing system_stm32f4xx.o(i.SystemCoreClockUpdate), (192 bytes).
+    Removing system_stm32f4xx.o(.constdata), (24 bytes).
+    Removing system_functions.o(.rev16_text), (4 bytes).
+    Removing system_functions.o(.revsh_text), (4 bytes).
+    Removing system_functions.o(.rrx_text), (6 bytes).
+    Removing system_functions.o(i.Configure_USB_UART), (256 bytes).
+    Removing system_functions.o(i.LL_GPIO_SetAFPin_0_7), (40 bytes).
+    Removing system_functions.o(i.LL_GPIO_SetPinOutputType), (16 bytes).
+    Removing system_functions.o(i.LL_USART_SetBaudRate), (322 bytes).
+    Removing system_functions.o(.constdata), (43 bytes).
+    Removing stm32f4xx_ll_utils.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_ll_utils.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_ll_utils.o(.rrx_text), (6 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_Init1msTick), (28 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE), (152 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI), (104 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_RCC_HSE_IsReady), (16 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_RCC_HSI_IsReady), (16 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS), (48 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_RCC_PLL_IsReady), (16 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_SetSystemCoreClock), (12 bytes).
+    Removing stm32f4xx_ll_utils.o(i.LL_mDelay), (40 bytes).
+    Removing stm32f4xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem), (212 bytes).
+    Removing stm32f4xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency), (40 bytes).
+    Removing stm32f4xx_ll_utils.o(i.UTILS_PLL_IsBusy), (36 bytes).
+    Removing stm32f4xx_ll_utils.o(i.UTILS_SetFlashLatency), (148 bytes).
     Removing stm32f4xx_ll_usart.o(.rev16_text), (4 bytes).
     Removing stm32f4xx_ll_usart.o(.revsh_text), (4 bytes).
     Removing stm32f4xx_ll_usart.o(.rrx_text), (6 bytes).
@@ -600,7 +600,7 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_ll_tim.o(i.OC4Config), (96 bytes).
     Removing stm32f4xx_ll_tim.o(.constdata), (35 bytes).
 
-222 unused section(s) (total 11041 bytes) removed from the image.
+222 unused section(s) (total 11001 bytes) removed from the image.
 
 ==============================================================================
 
@@ -682,7 +682,7 @@ Image Symbol Table
     LLLIB\\src\\stm32f4xx_ll_spi.c           0x00000000   Number         0  stm32f4xx_ll_spi.o ABSOLUTE
     LLLIB\\src\\stm32f4xx_ll_tim.c           0x00000000   Number         0  stm32f4xx_ll_tim.o ABSOLUTE
     LLLIB\\src\\stm32f4xx_ll_usart.c         0x00000000   Number         0  stm32f4xx_ll_usart.o ABSOLUTE
-    LLLIB\\src\\stm32f4xx_ll_utils.c         0x00000000   Number         0  stm32f4xx_ll_utils_1.o ABSOLUTE
+    LLLIB\\src\\stm32f4xx_ll_utils.c         0x00000000   Number         0  stm32f4xx_ll_utils.o ABSOLUTE
     LLLIB\src\stm32f4xx_ll_adc.c             0x00000000   Number         0  stm32f4xx_ll_adc.o ABSOLUTE
     LLLIB\src\stm32f4xx_ll_crc.c             0x00000000   Number         0  stm32f4xx_ll_crc.o ABSOLUTE
     LLLIB\src\stm32f4xx_ll_dac.c             0x00000000   Number         0  stm32f4xx_ll_dac.o ABSOLUTE
@@ -699,14 +699,14 @@ Image Symbol Table
     LLLIB\src\stm32f4xx_ll_spi.c             0x00000000   Number         0  stm32f4xx_ll_spi.o ABSOLUTE
     LLLIB\src\stm32f4xx_ll_tim.c             0x00000000   Number         0  stm32f4xx_ll_tim.o ABSOLUTE
     LLLIB\src\stm32f4xx_ll_usart.c           0x00000000   Number         0  stm32f4xx_ll_usart.o ABSOLUTE
-    LLLIB\src\stm32f4xx_ll_utils.c           0x00000000   Number         0  stm32f4xx_ll_utils_1.o ABSOLUTE
-    MYLIB\\src\\Motors_And_Encoders.c        0x00000000   Number         0  motors_and_encoders_1.o ABSOLUTE
-    MYLIB\src\Motors_And_Encoders.c          0x00000000   Number         0  motors_and_encoders_1.o ABSOLUTE
-    SYS\System_Functions.c                   0x00000000   Number         0  system_functions_1.o ABSOLUTE
-    SYS\\System_Functions.c                  0x00000000   Number         0  system_functions_1.o ABSOLUTE
-    SYS\\system_stm32f4xx.c                  0x00000000   Number         0  system_stm32f4xx_1.o ABSOLUTE
+    LLLIB\src\stm32f4xx_ll_utils.c           0x00000000   Number         0  stm32f4xx_ll_utils.o ABSOLUTE
+    MYLIB\\src\\Motors_And_Encoders.c        0x00000000   Number         0  motors_and_encoders.o ABSOLUTE
+    MYLIB\src\Motors_And_Encoders.c          0x00000000   Number         0  motors_and_encoders.o ABSOLUTE
+    SYS\System_Functions.c                   0x00000000   Number         0  system_functions.o ABSOLUTE
+    SYS\\System_Functions.c                  0x00000000   Number         0  system_functions.o ABSOLUTE
+    SYS\\system_stm32f4xx.c                  0x00000000   Number         0  system_stm32f4xx.o ABSOLUTE
     SYS\startup_stm32f401xe.s                0x00000000   Number         0  startup_stm32f401xe.o ABSOLUTE
-    SYS\system_stm32f4xx.c                   0x00000000   Number         0  system_stm32f4xx_1.o ABSOLUTE
+    SYS\system_stm32f4xx.c                   0x00000000   Number         0  system_stm32f4xx.o ABSOLUTE
     USER\\main.c                             0x00000000   Number         0  main_1.o ABSOLUTE
     USER\main.c                              0x00000000   Number         0  main_1.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
@@ -765,108 +765,108 @@ Image Symbol Table
     .text                                    0x080002e0   Section        0  sys_exit.o(.text)
     .text                                    0x080002ec   Section        2  use_no_semi.o(.text)
     .text                                    0x080002ee   Section        0  indicate_semi.o(.text)
-    i.Configure_Encoder_Left                 0x080002f0   Section        0  motors_and_encoders_1.o(i.Configure_Encoder_Left)
-    i.Configure_Encoder_Right                0x08000418   Section        0  motors_and_encoders_1.o(i.Configure_Encoder_Right)
-    i.Configure_Motor_Left                   0x08000538   Section        0  motors_and_encoders_1.o(i.Configure_Motor_Left)
-    i.Configure_Motor_Right                  0x0800064c   Section        0  motors_and_encoders_1.o(i.Configure_Motor_Right)
-    i.Configure_User_Button                  0x08000730   Section        0  system_functions_1.o(i.Configure_User_Button)
-    i.Configure_User_LED                     0x080007e4   Section        0  system_functions_1.o(i.Configure_User_LED)
-    i.EXTI15_10_IRQHandler                   0x0800081c   Section        0  main_1.o(i.EXTI15_10_IRQHandler)
-    i.LL_AHB1_GRP1_EnableClock               0x0800082c   Section        0  motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock)
-    LL_AHB1_GRP1_EnableClock                 0x0800082d   Thumb Code    24  motors_and_encoders_1.o(i.LL_AHB1_GRP1_EnableClock)
-    i.LL_AHB1_GRP1_EnableClock               0x08000848   Section        0  system_functions_1.o(i.LL_AHB1_GRP1_EnableClock)
-    LL_AHB1_GRP1_EnableClock                 0x08000849   Thumb Code    24  system_functions_1.o(i.LL_AHB1_GRP1_EnableClock)
-    i.LL_APB1_GRP1_EnableClock               0x08000864   Section        0  motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock)
-    LL_APB1_GRP1_EnableClock                 0x08000865   Thumb Code    24  motors_and_encoders_1.o(i.LL_APB1_GRP1_EnableClock)
-    i.LL_GPIO_SetAFPin_0_7                   0x08000880   Section        0  motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7)
-    LL_GPIO_SetAFPin_0_7                     0x08000881   Thumb Code    40  motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_0_7)
-    i.LL_GPIO_SetAFPin_8_15                  0x080008a8   Section        0  motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_8_15)
-    LL_GPIO_SetAFPin_8_15                    0x080008a9   Thumb Code    44  motors_and_encoders_1.o(i.LL_GPIO_SetAFPin_8_15)
-    i.LL_GPIO_SetPinMode                     0x080008d4   Section        0  motors_and_encoders_1.o(i.LL_GPIO_SetPinMode)
-    LL_GPIO_SetPinMode                       0x080008d5   Thumb Code    40  motors_and_encoders_1.o(i.LL_GPIO_SetPinMode)
-    i.LL_GPIO_SetPinMode                     0x080008fc   Section        0  system_functions_1.o(i.LL_GPIO_SetPinMode)
-    LL_GPIO_SetPinMode                       0x080008fd   Thumb Code    40  system_functions_1.o(i.LL_GPIO_SetPinMode)
-    i.LL_GPIO_SetPinPull                     0x08000924   Section        0  motors_and_encoders_1.o(i.LL_GPIO_SetPinPull)
-    LL_GPIO_SetPinPull                       0x08000925   Thumb Code    40  motors_and_encoders_1.o(i.LL_GPIO_SetPinPull)
-    i.LL_GPIO_SetPinPull                     0x0800094c   Section        0  system_functions_1.o(i.LL_GPIO_SetPinPull)
-    LL_GPIO_SetPinPull                       0x0800094d   Thumb Code    40  system_functions_1.o(i.LL_GPIO_SetPinPull)
-    i.LL_GPIO_SetPinSpeed                    0x08000974   Section        0  motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed)
-    LL_GPIO_SetPinSpeed                      0x08000975   Thumb Code    40  motors_and_encoders_1.o(i.LL_GPIO_SetPinSpeed)
-    i.LL_GPIO_SetPinSpeed                    0x0800099c   Section        0  system_functions_1.o(i.LL_GPIO_SetPinSpeed)
-    LL_GPIO_SetPinSpeed                      0x0800099d   Thumb Code    40  system_functions_1.o(i.LL_GPIO_SetPinSpeed)
-    i.LL_TIM_CC_EnableChannel                0x080009c4   Section        0  motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel)
-    LL_TIM_CC_EnableChannel                  0x080009c5   Thumb Code     8  motors_and_encoders_1.o(i.LL_TIM_CC_EnableChannel)
-    i.LL_TIM_EnableARRPreload                0x080009cc   Section        0  motors_and_encoders_1.o(i.LL_TIM_EnableARRPreload)
-    LL_TIM_EnableARRPreload                  0x080009cd   Thumb Code    10  motors_and_encoders_1.o(i.LL_TIM_EnableARRPreload)
-    i.LL_TIM_EnableCounter                   0x080009d6   Section        0  motors_and_encoders_1.o(i.LL_TIM_EnableCounter)
-    LL_TIM_EnableCounter                     0x080009d7   Thumb Code    10  motors_and_encoders_1.o(i.LL_TIM_EnableCounter)
-    i.LL_TIM_EnableIT_CC1                    0x080009e0   Section        0  motors_and_encoders_1.o(i.LL_TIM_EnableIT_CC1)
-    LL_TIM_EnableIT_CC1                      0x080009e1   Thumb Code    10  motors_and_encoders_1.o(i.LL_TIM_EnableIT_CC1)
-    i.LL_TIM_GenerateEvent_UPDATE            0x080009ea   Section        0  motors_and_encoders_1.o(i.LL_TIM_GenerateEvent_UPDATE)
-    LL_TIM_GenerateEvent_UPDATE              0x080009eb   Thumb Code    10  motors_and_encoders_1.o(i.LL_TIM_GenerateEvent_UPDATE)
-    i.LL_TIM_GetAutoReload                   0x080009f4   Section        0  motors_and_encoders_1.o(i.LL_TIM_GetAutoReload)
-    LL_TIM_GetAutoReload                     0x080009f5   Thumb Code     6  motors_and_encoders_1.o(i.LL_TIM_GetAutoReload)
-    i.LL_TIM_GetPrescaler                    0x080009fa   Section        0  motors_and_encoders_1.o(i.LL_TIM_GetPrescaler)
-    LL_TIM_GetPrescaler                      0x080009fb   Thumb Code     6  motors_and_encoders_1.o(i.LL_TIM_GetPrescaler)
-    i.LL_TIM_IC_SetActiveInput               0x08000a00   Section        0  motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput)
-    LL_TIM_IC_SetActiveInput                 0x08000a01   Thumb Code    98  motors_and_encoders_1.o(i.LL_TIM_IC_SetActiveInput)
-    i.LL_TIM_IC_SetFilter                    0x08000a6c   Section        0  motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter)
-    LL_TIM_IC_SetFilter                      0x08000a6d   Thumb Code    98  motors_and_encoders_1.o(i.LL_TIM_IC_SetFilter)
-    i.LL_TIM_IC_SetPolarity                  0x08000ad8   Section        0  motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity)
-    LL_TIM_IC_SetPolarity                    0x08000ad9   Thumb Code    84  motors_and_encoders_1.o(i.LL_TIM_IC_SetPolarity)
-    i.LL_TIM_IC_SetPrescaler                 0x08000b30   Section        0  motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler)
-    LL_TIM_IC_SetPrescaler                   0x08000b31   Thumb Code    98  motors_and_encoders_1.o(i.LL_TIM_IC_SetPrescaler)
-    i.LL_TIM_IsActiveFlag_CC1                0x08000b9c   Section        0  main_1.o(i.LL_TIM_IsActiveFlag_CC1)
-    LL_TIM_IsActiveFlag_CC1                  0x08000b9d   Thumb Code    10  main_1.o(i.LL_TIM_IsActiveFlag_CC1)
-    i.LL_TIM_OC_EnablePreload                0x08000ba8   Section        0  motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload)
-    LL_TIM_OC_EnablePreload                  0x08000ba9   Thumb Code    86  motors_and_encoders_1.o(i.LL_TIM_OC_EnablePreload)
-    i.LL_TIM_OC_SetCompareCH2                0x08000c08   Section        0  motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH2)
-    LL_TIM_OC_SetCompareCH2                  0x08000c09   Thumb Code     4  motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH2)
-    i.LL_TIM_OC_SetCompareCH4                0x08000c0c   Section        0  motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH4)
-    LL_TIM_OC_SetCompareCH4                  0x08000c0d   Thumb Code     4  motors_and_encoders_1.o(i.LL_TIM_OC_SetCompareCH4)
-    i.LL_TIM_OC_SetMode                      0x08000c10   Section        0  motors_and_encoders_1.o(i.LL_TIM_OC_SetMode)
-    LL_TIM_OC_SetMode                        0x08000c11   Thumb Code    98  motors_and_encoders_1.o(i.LL_TIM_OC_SetMode)
-    i.LL_TIM_SetAutoReload                   0x08000c7c   Section        0  motors_and_encoders_1.o(i.LL_TIM_SetAutoReload)
-    LL_TIM_SetAutoReload                     0x08000c7d   Thumb Code     4  motors_and_encoders_1.o(i.LL_TIM_SetAutoReload)
-    i.LL_TIM_SetEncoderMode                  0x08000c80   Section        0  motors_and_encoders_1.o(i.LL_TIM_SetEncoderMode)
-    LL_TIM_SetEncoderMode                    0x08000c81   Thumb Code    12  motors_and_encoders_1.o(i.LL_TIM_SetEncoderMode)
-    i.LL_TIM_SetPrescaler                    0x08000c8c   Section        0  motors_and_encoders_1.o(i.LL_TIM_SetPrescaler)
-    LL_TIM_SetPrescaler                      0x08000c8d   Thumb Code     4  motors_and_encoders_1.o(i.LL_TIM_SetPrescaler)
-    i.Set_DutyCycle_Motor_Left               0x08000c90   Section        0  motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left)
-    i.Set_DutyCycle_Motor_Right              0x08000d10   Section        0  motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right)
-    i.SystemClock_Config                     0x08000d90   Section        0  system_functions_1.o(i.SystemClock_Config)
-    i.SystemInit                             0x08000ef0   Section        0  system_stm32f4xx_1.o(i.SystemInit)
-    i.TIM2_IRQHandler                        0x08000f54   Section        0  main_1.o(i.TIM2_IRQHandler)
-    i.TIM5_IRQHandler                        0x08000f70   Section        0  main_1.o(i.TIM5_IRQHandler)
-    i.__NVIC_EnableIRQ                       0x08000f90   Section        0  motors_and_encoders_1.o(i.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x08000f91   Thumb Code    26  motors_and_encoders_1.o(i.__NVIC_EnableIRQ)
-    i.__NVIC_SetPriority                     0x08000fac   Section        0  motors_and_encoders_1.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08000fad   Thumb Code    32  motors_and_encoders_1.o(i.__NVIC_SetPriority)
-    i.__hardfp_fabs                          0x08000fd4   Section        0  fabs.o(i.__hardfp_fabs)
-    i.main                                   0x08000fe8   Section        0  main_1.o(i.main)
-    x$fpl$d2f                                0x08001030   Section       98  d2f.o(x$fpl$d2f)
-    $v0                                      0x08001030   Number         0  d2f.o(x$fpl$d2f)
-    x$fpl$dnaninf                            0x08001092   Section      156  dnaninf.o(x$fpl$dnaninf)
-    $v0                                      0x08001092   Number         0  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x0800112e   Section       12  dretinf.o(x$fpl$dretinf)
-    $v0                                      0x0800112e   Number         0  dretinf.o(x$fpl$dretinf)
-    x$fpl$f2d                                0x0800113c   Section       86  f2d.o(x$fpl$f2d)
-    $v0                                      0x0800113c   Number         0  f2d.o(x$fpl$f2d)
-    x$fpl$fnaninf                            0x08001192   Section      140  fnaninf.o(x$fpl$fnaninf)
-    $v0                                      0x08001192   Number         0  fnaninf.o(x$fpl$fnaninf)
-    x$fpl$fpinit                             0x0800121e   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x0800121e   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fretinf                            0x08001228   Section       10  fretinf.o(x$fpl$fretinf)
-    $v0                                      0x08001228   Number         0  fretinf.o(x$fpl$fretinf)
-    .constdata                               0x08001232   Section       43  motors_and_encoders_1.o(.constdata)
-    x$fpl$usenofp                            0x08001232   Section        0  usenofp.o(x$fpl$usenofp)
-    STREAM_OFFSET_TAB                        0x08001232   Data           8  motors_and_encoders_1.o(.constdata)
-    OFFSET_TAB_CCMRx                         0x0800123a   Data           7  motors_and_encoders_1.o(.constdata)
-    SHIFT_TAB_OCxx                           0x08001241   Data           7  motors_and_encoders_1.o(.constdata)
-    SHIFT_TAB_ICxx                           0x08001248   Data           7  motors_and_encoders_1.o(.constdata)
-    SHIFT_TAB_CCxP                           0x0800124f   Data           7  motors_and_encoders_1.o(.constdata)
-    SHIFT_TAB_OISx                           0x08001256   Data           7  motors_and_encoders_1.o(.constdata)
-    .data                                    0x20000000   Section        4  system_stm32f4xx_1.o(.data)
+    i.Configure_Encoder_Left                 0x080002f0   Section        0  motors_and_encoders.o(i.Configure_Encoder_Left)
+    i.Configure_Encoder_Right                0x08000418   Section        0  motors_and_encoders.o(i.Configure_Encoder_Right)
+    i.Configure_Motor_Left                   0x08000538   Section        0  motors_and_encoders.o(i.Configure_Motor_Left)
+    i.Configure_Motor_Right                  0x0800064c   Section        0  motors_and_encoders.o(i.Configure_Motor_Right)
+    i.Configure_User_Button                  0x08000730   Section        0  system_functions.o(i.Configure_User_Button)
+    i.Configure_User_LED                     0x080007e0   Section        0  system_functions.o(i.Configure_User_LED)
+    i.EXTI15_10_IRQHandler                   0x08000818   Section        0  main_1.o(i.EXTI15_10_IRQHandler)
+    i.LL_AHB1_GRP1_EnableClock               0x08000828   Section        0  motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock)
+    LL_AHB1_GRP1_EnableClock                 0x08000829   Thumb Code    24  motors_and_encoders.o(i.LL_AHB1_GRP1_EnableClock)
+    i.LL_AHB1_GRP1_EnableClock               0x08000844   Section        0  system_functions.o(i.LL_AHB1_GRP1_EnableClock)
+    LL_AHB1_GRP1_EnableClock                 0x08000845   Thumb Code    24  system_functions.o(i.LL_AHB1_GRP1_EnableClock)
+    i.LL_APB1_GRP1_EnableClock               0x08000860   Section        0  motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock)
+    LL_APB1_GRP1_EnableClock                 0x08000861   Thumb Code    24  motors_and_encoders.o(i.LL_APB1_GRP1_EnableClock)
+    i.LL_GPIO_SetAFPin_0_7                   0x0800087c   Section        0  motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7)
+    LL_GPIO_SetAFPin_0_7                     0x0800087d   Thumb Code    40  motors_and_encoders.o(i.LL_GPIO_SetAFPin_0_7)
+    i.LL_GPIO_SetAFPin_8_15                  0x080008a4   Section        0  motors_and_encoders.o(i.LL_GPIO_SetAFPin_8_15)
+    LL_GPIO_SetAFPin_8_15                    0x080008a5   Thumb Code    44  motors_and_encoders.o(i.LL_GPIO_SetAFPin_8_15)
+    i.LL_GPIO_SetPinMode                     0x080008d0   Section        0  motors_and_encoders.o(i.LL_GPIO_SetPinMode)
+    LL_GPIO_SetPinMode                       0x080008d1   Thumb Code    40  motors_and_encoders.o(i.LL_GPIO_SetPinMode)
+    i.LL_GPIO_SetPinMode                     0x080008f8   Section        0  system_functions.o(i.LL_GPIO_SetPinMode)
+    LL_GPIO_SetPinMode                       0x080008f9   Thumb Code    40  system_functions.o(i.LL_GPIO_SetPinMode)
+    i.LL_GPIO_SetPinPull                     0x08000920   Section        0  motors_and_encoders.o(i.LL_GPIO_SetPinPull)
+    LL_GPIO_SetPinPull                       0x08000921   Thumb Code    40  motors_and_encoders.o(i.LL_GPIO_SetPinPull)
+    i.LL_GPIO_SetPinPull                     0x08000948   Section        0  system_functions.o(i.LL_GPIO_SetPinPull)
+    LL_GPIO_SetPinPull                       0x08000949   Thumb Code    40  system_functions.o(i.LL_GPIO_SetPinPull)
+    i.LL_GPIO_SetPinSpeed                    0x08000970   Section        0  motors_and_encoders.o(i.LL_GPIO_SetPinSpeed)
+    LL_GPIO_SetPinSpeed                      0x08000971   Thumb Code    40  motors_and_encoders.o(i.LL_GPIO_SetPinSpeed)
+    i.LL_GPIO_SetPinSpeed                    0x08000998   Section        0  system_functions.o(i.LL_GPIO_SetPinSpeed)
+    LL_GPIO_SetPinSpeed                      0x08000999   Thumb Code    40  system_functions.o(i.LL_GPIO_SetPinSpeed)
+    i.LL_TIM_CC_EnableChannel                0x080009c0   Section        0  motors_and_encoders.o(i.LL_TIM_CC_EnableChannel)
+    LL_TIM_CC_EnableChannel                  0x080009c1   Thumb Code     8  motors_and_encoders.o(i.LL_TIM_CC_EnableChannel)
+    i.LL_TIM_EnableARRPreload                0x080009c8   Section        0  motors_and_encoders.o(i.LL_TIM_EnableARRPreload)
+    LL_TIM_EnableARRPreload                  0x080009c9   Thumb Code    10  motors_and_encoders.o(i.LL_TIM_EnableARRPreload)
+    i.LL_TIM_EnableCounter                   0x080009d2   Section        0  motors_and_encoders.o(i.LL_TIM_EnableCounter)
+    LL_TIM_EnableCounter                     0x080009d3   Thumb Code    10  motors_and_encoders.o(i.LL_TIM_EnableCounter)
+    i.LL_TIM_EnableIT_CC1                    0x080009dc   Section        0  motors_and_encoders.o(i.LL_TIM_EnableIT_CC1)
+    LL_TIM_EnableIT_CC1                      0x080009dd   Thumb Code    10  motors_and_encoders.o(i.LL_TIM_EnableIT_CC1)
+    i.LL_TIM_GenerateEvent_UPDATE            0x080009e6   Section        0  motors_and_encoders.o(i.LL_TIM_GenerateEvent_UPDATE)
+    LL_TIM_GenerateEvent_UPDATE              0x080009e7   Thumb Code    10  motors_and_encoders.o(i.LL_TIM_GenerateEvent_UPDATE)
+    i.LL_TIM_GetAutoReload                   0x080009f0   Section        0  motors_and_encoders.o(i.LL_TIM_GetAutoReload)
+    LL_TIM_GetAutoReload                     0x080009f1   Thumb Code     6  motors_and_encoders.o(i.LL_TIM_GetAutoReload)
+    i.LL_TIM_GetPrescaler                    0x080009f6   Section        0  motors_and_encoders.o(i.LL_TIM_GetPrescaler)
+    LL_TIM_GetPrescaler                      0x080009f7   Thumb Code     6  motors_and_encoders.o(i.LL_TIM_GetPrescaler)
+    i.LL_TIM_IC_SetActiveInput               0x080009fc   Section        0  motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput)
+    LL_TIM_IC_SetActiveInput                 0x080009fd   Thumb Code    98  motors_and_encoders.o(i.LL_TIM_IC_SetActiveInput)
+    i.LL_TIM_IC_SetFilter                    0x08000a68   Section        0  motors_and_encoders.o(i.LL_TIM_IC_SetFilter)
+    LL_TIM_IC_SetFilter                      0x08000a69   Thumb Code    98  motors_and_encoders.o(i.LL_TIM_IC_SetFilter)
+    i.LL_TIM_IC_SetPolarity                  0x08000ad4   Section        0  motors_and_encoders.o(i.LL_TIM_IC_SetPolarity)
+    LL_TIM_IC_SetPolarity                    0x08000ad5   Thumb Code    84  motors_and_encoders.o(i.LL_TIM_IC_SetPolarity)
+    i.LL_TIM_IC_SetPrescaler                 0x08000b2c   Section        0  motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler)
+    LL_TIM_IC_SetPrescaler                   0x08000b2d   Thumb Code    98  motors_and_encoders.o(i.LL_TIM_IC_SetPrescaler)
+    i.LL_TIM_IsActiveFlag_CC1                0x08000b98   Section        0  main_1.o(i.LL_TIM_IsActiveFlag_CC1)
+    LL_TIM_IsActiveFlag_CC1                  0x08000b99   Thumb Code    10  main_1.o(i.LL_TIM_IsActiveFlag_CC1)
+    i.LL_TIM_OC_EnablePreload                0x08000ba4   Section        0  motors_and_encoders.o(i.LL_TIM_OC_EnablePreload)
+    LL_TIM_OC_EnablePreload                  0x08000ba5   Thumb Code    86  motors_and_encoders.o(i.LL_TIM_OC_EnablePreload)
+    i.LL_TIM_OC_SetCompareCH2                0x08000c04   Section        0  motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH2)
+    LL_TIM_OC_SetCompareCH2                  0x08000c05   Thumb Code     4  motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH2)
+    i.LL_TIM_OC_SetCompareCH4                0x08000c08   Section        0  motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH4)
+    LL_TIM_OC_SetCompareCH4                  0x08000c09   Thumb Code     4  motors_and_encoders.o(i.LL_TIM_OC_SetCompareCH4)
+    i.LL_TIM_OC_SetMode                      0x08000c0c   Section        0  motors_and_encoders.o(i.LL_TIM_OC_SetMode)
+    LL_TIM_OC_SetMode                        0x08000c0d   Thumb Code    98  motors_and_encoders.o(i.LL_TIM_OC_SetMode)
+    i.LL_TIM_SetAutoReload                   0x08000c78   Section        0  motors_and_encoders.o(i.LL_TIM_SetAutoReload)
+    LL_TIM_SetAutoReload                     0x08000c79   Thumb Code     4  motors_and_encoders.o(i.LL_TIM_SetAutoReload)
+    i.LL_TIM_SetEncoderMode                  0x08000c7c   Section        0  motors_and_encoders.o(i.LL_TIM_SetEncoderMode)
+    LL_TIM_SetEncoderMode                    0x08000c7d   Thumb Code    12  motors_and_encoders.o(i.LL_TIM_SetEncoderMode)
+    i.LL_TIM_SetPrescaler                    0x08000c88   Section        0  motors_and_encoders.o(i.LL_TIM_SetPrescaler)
+    LL_TIM_SetPrescaler                      0x08000c89   Thumb Code     4  motors_and_encoders.o(i.LL_TIM_SetPrescaler)
+    i.NVIC_EnableIRQ                         0x08000c8c   Section        0  motors_and_encoders.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x08000c8d   Thumb Code    22  motors_and_encoders.o(i.NVIC_EnableIRQ)
+    i.NVIC_SetPriority                       0x08000ca4   Section        0  motors_and_encoders.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x08000ca5   Thumb Code    32  motors_and_encoders.o(i.NVIC_SetPriority)
+    i.Set_DutyCycle_Motor_Left               0x08000ccc   Section        0  motors_and_encoders.o(i.Set_DutyCycle_Motor_Left)
+    i.Set_DutyCycle_Motor_Right              0x08000d4c   Section        0  motors_and_encoders.o(i.Set_DutyCycle_Motor_Right)
+    i.SystemClock_Config                     0x08000dcc   Section        0  system_functions.o(i.SystemClock_Config)
+    i.SystemInit                             0x08000f2c   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.TIM2_IRQHandler                        0x08000f90   Section        0  main_1.o(i.TIM2_IRQHandler)
+    i.TIM5_IRQHandler                        0x08000fac   Section        0  main_1.o(i.TIM5_IRQHandler)
+    i.__hardfp_fabs                          0x08000fcc   Section        0  fabs.o(i.__hardfp_fabs)
+    i.main                                   0x08000fe0   Section        0  main_1.o(i.main)
+    x$fpl$d2f                                0x08001028   Section       98  d2f.o(x$fpl$d2f)
+    $v0                                      0x08001028   Number         0  d2f.o(x$fpl$d2f)
+    x$fpl$dnaninf                            0x0800108a   Section      156  dnaninf.o(x$fpl$dnaninf)
+    $v0                                      0x0800108a   Number         0  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dretinf                            0x08001126   Section       12  dretinf.o(x$fpl$dretinf)
+    $v0                                      0x08001126   Number         0  dretinf.o(x$fpl$dretinf)
+    x$fpl$f2d                                0x08001134   Section       86  f2d.o(x$fpl$f2d)
+    $v0                                      0x08001134   Number         0  f2d.o(x$fpl$f2d)
+    x$fpl$fnaninf                            0x0800118a   Section      140  fnaninf.o(x$fpl$fnaninf)
+    $v0                                      0x0800118a   Number         0  fnaninf.o(x$fpl$fnaninf)
+    x$fpl$fpinit                             0x08001216   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08001216   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fretinf                            0x08001220   Section       10  fretinf.o(x$fpl$fretinf)
+    $v0                                      0x08001220   Number         0  fretinf.o(x$fpl$fretinf)
+    .constdata                               0x0800122a   Section       43  motors_and_encoders.o(.constdata)
+    x$fpl$usenofp                            0x0800122a   Section        0  usenofp.o(x$fpl$usenofp)
+    STREAM_OFFSET_TAB                        0x0800122a   Data           8  motors_and_encoders.o(.constdata)
+    OFFSET_TAB_CCMRx                         0x08001232   Data           7  motors_and_encoders.o(.constdata)
+    SHIFT_TAB_OCxx                           0x08001239   Data           7  motors_and_encoders.o(.constdata)
+    SHIFT_TAB_ICxx                           0x08001240   Data           7  motors_and_encoders.o(.constdata)
+    SHIFT_TAB_CCxP                           0x08001247   Data           7  motors_and_encoders.o(.constdata)
+    SHIFT_TAB_OISx                           0x0800124e   Data           7  motors_and_encoders.o(.constdata)
+    .data                                    0x20000000   Section        4  system_stm32f4xx.o(.data)
     .bss                                     0x20000004   Section       96  libspace.o(.bss)
     HEAP                                     0x20000068   Section      512  startup_stm32f401xe.o(HEAP)
     Heap_Mem                                 0x20000068   Data         512  startup_stm32f401xe.o(HEAP)
@@ -1035,36 +1035,36 @@ Image Symbol Table
     __I$use$semihosting                      0x080002ed   Thumb Code     0  use_no_semi.o(.text)
     __use_no_semihosting_swi                 0x080002ed   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x080002ef   Thumb Code     0  indicate_semi.o(.text)
-    Configure_Encoder_Left                   0x080002f1   Thumb Code   280  motors_and_encoders_1.o(i.Configure_Encoder_Left)
-    Configure_Encoder_Right                  0x08000419   Thumb Code   270  motors_and_encoders_1.o(i.Configure_Encoder_Right)
-    Configure_Motor_Left                     0x08000539   Thumb Code   256  motors_and_encoders_1.o(i.Configure_Motor_Left)
-    Configure_Motor_Right                    0x0800064d   Thumb Code   212  motors_and_encoders_1.o(i.Configure_Motor_Right)
-    Configure_User_Button                    0x08000731   Thumb Code   160  system_functions_1.o(i.Configure_User_Button)
-    Configure_User_LED                       0x080007e5   Thumb Code    50  system_functions_1.o(i.Configure_User_LED)
-    EXTI15_10_IRQHandler                     0x0800081d   Thumb Code    12  main_1.o(i.EXTI15_10_IRQHandler)
-    Set_DutyCycle_Motor_Left                 0x08000c91   Thumb Code   118  motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Left)
-    Set_DutyCycle_Motor_Right                0x08000d11   Thumb Code   118  motors_and_encoders_1.o(i.Set_DutyCycle_Motor_Right)
-    SystemClock_Config                       0x08000d91   Thumb Code   318  system_functions_1.o(i.SystemClock_Config)
-    SystemInit                               0x08000ef1   Thumb Code    82  system_stm32f4xx_1.o(i.SystemInit)
-    TIM2_IRQHandler                          0x08000f55   Thumb Code    28  main_1.o(i.TIM2_IRQHandler)
-    TIM5_IRQHandler                          0x08000f71   Thumb Code    26  main_1.o(i.TIM5_IRQHandler)
-    __hardfp_fabs                            0x08000fd5   Thumb Code    20  fabs.o(i.__hardfp_fabs)
-    main                                     0x08000fe9   Thumb Code    64  main_1.o(i.main)
-    __aeabi_d2f                              0x08001031   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x08001031   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __fpl_dnaninf                            0x08001093   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x0800112f   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_f2d                              0x0800113d   Thumb Code     0  f2d.o(x$fpl$f2d)
-    _f2d                                     0x0800113d   Thumb Code    86  f2d.o(x$fpl$f2d)
-    __fpl_fnaninf                            0x08001193   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
-    _fp_init                                 0x0800121f   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08001227   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08001227   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fpl_fretinf                            0x08001229   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    __I$use$fp                               0x08001232   Number         0  usenofp.o(x$fpl$usenofp)
-    Region$$Table$$Base                      0x08001260   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001280   Number         0  anon$$obj.o(Region$$Table)
-    SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx_1.o(.data)
+    Configure_Encoder_Left                   0x080002f1   Thumb Code   280  motors_and_encoders.o(i.Configure_Encoder_Left)
+    Configure_Encoder_Right                  0x08000419   Thumb Code   270  motors_and_encoders.o(i.Configure_Encoder_Right)
+    Configure_Motor_Left                     0x08000539   Thumb Code   256  motors_and_encoders.o(i.Configure_Motor_Left)
+    Configure_Motor_Right                    0x0800064d   Thumb Code   212  motors_and_encoders.o(i.Configure_Motor_Right)
+    Configure_User_Button                    0x08000731   Thumb Code   156  system_functions.o(i.Configure_User_Button)
+    Configure_User_LED                       0x080007e1   Thumb Code    50  system_functions.o(i.Configure_User_LED)
+    EXTI15_10_IRQHandler                     0x08000819   Thumb Code    12  main_1.o(i.EXTI15_10_IRQHandler)
+    Set_DutyCycle_Motor_Left                 0x08000ccd   Thumb Code   118  motors_and_encoders.o(i.Set_DutyCycle_Motor_Left)
+    Set_DutyCycle_Motor_Right                0x08000d4d   Thumb Code   118  motors_and_encoders.o(i.Set_DutyCycle_Motor_Right)
+    SystemClock_Config                       0x08000dcd   Thumb Code   318  system_functions.o(i.SystemClock_Config)
+    SystemInit                               0x08000f2d   Thumb Code    82  system_stm32f4xx.o(i.SystemInit)
+    TIM2_IRQHandler                          0x08000f91   Thumb Code    28  main_1.o(i.TIM2_IRQHandler)
+    TIM5_IRQHandler                          0x08000fad   Thumb Code    26  main_1.o(i.TIM5_IRQHandler)
+    __hardfp_fabs                            0x08000fcd   Thumb Code    20  fabs.o(i.__hardfp_fabs)
+    main                                     0x08000fe1   Thumb Code    64  main_1.o(i.main)
+    __aeabi_d2f                              0x08001029   Thumb Code     0  d2f.o(x$fpl$d2f)
+    _d2f                                     0x08001029   Thumb Code    98  d2f.o(x$fpl$d2f)
+    __fpl_dnaninf                            0x0800108b   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x08001127   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_f2d                              0x08001135   Thumb Code     0  f2d.o(x$fpl$f2d)
+    _f2d                                     0x08001135   Thumb Code    86  f2d.o(x$fpl$f2d)
+    __fpl_fnaninf                            0x0800118b   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
+    _fp_init                                 0x08001217   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0800121f   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0800121f   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fpl_fretinf                            0x08001221   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    __I$use$fp                               0x0800122a   Number         0  usenofp.o(x$fpl$usenofp)
+    Region$$Table$$Base                      0x08001258   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001278   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx.o(.data)
     __libspace_start                         0x20000004   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000064   Data           0  libspace.o(.bss)
 
@@ -1076,142 +1076,142 @@ Memory Map of the image
 
   Image Entry point : 0x08000195
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001284, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000127c, Max: 0x00060000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001280, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001278, Max: 0x00060000, ABSOLUTE)
 
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x00000194   Data   RO          573    RESET               startup_stm32f401xe.o
-    0x08000194   0x08000194   0x00000008   Code   RO         1744  * !!!main             c_w.l(__main.o)
-    0x0800019c   0x0800019c   0x00000034   Code   RO         1920    !!!scatter          c_w.l(__scatter.o)
-    0x080001d0   0x080001d0   0x0000001a   Code   RO         1922    !!handler_copy      c_w.l(__scatter_copy.o)
-    0x080001ea   0x080001ea   0x00000002   PAD
-    0x080001ec   0x080001ec   0x0000001c   Code   RO         1924    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000208   0x08000208   0x00000002   Code   RO         1790    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0800020a   0x0800020a   0x00000004   Code   RO         1796    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1799    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1802    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1804    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1806    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1809    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1811    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1813    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1815    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1817    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1819    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1821    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1823    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1825    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1827    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1829    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1833    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1835    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1837    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         1839    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x0800020e   0x0800020e   0x00000002   Code   RO         1840    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000210   0x08000210   0x00000002   Code   RO         1860    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1873    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1875    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1878    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1881    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1883    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         1886    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x08000212   0x08000212   0x00000002   Code   RO         1887    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x08000214   0x08000214   0x00000000   Code   RO         1756    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x08000214   0x08000214   0x00000000   Code   RO         1767    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x08000214   0x08000214   0x00000006   Code   RO         1779    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO         1769    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0800021a   0x0800021a   0x00000004   Code   RO         1770    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x0800021e   0x0800021e   0x00000000   Code   RO         1772    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x0800021e   0x0800021e   0x00000008   Code   RO         1773    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x08000226   0x08000226   0x00000002   Code   RO         1794    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x08000228   0x08000228   0x00000000   Code   RO         1842    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x08000228   0x08000228   0x00000004   Code   RO         1843    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x0800022c   0x0800022c   0x00000006   Code   RO         1844    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
-    0x08000232   0x08000232   0x00000002   PAD
-    0x08000234   0x08000234   0x00000040   Code   RO          574    .text               startup_stm32f401xe.o
-    0x08000274   0x08000274   0x00000006   Code   RO         1742    .text               c_w.l(heapauxi.o)
-    0x0800027a   0x0800027a   0x0000004a   Code   RO         1781    .text               c_w.l(sys_stackheap_outer.o)
-    0x080002c4   0x080002c4   0x00000012   Code   RO         1783    .text               c_w.l(exit.o)
-    0x080002d6   0x080002d6   0x00000002   PAD
-    0x080002d8   0x080002d8   0x00000008   Code   RO         1791    .text               c_w.l(libspace.o)
-    0x080002e0   0x080002e0   0x0000000c   Code   RO         1852    .text               c_w.l(sys_exit.o)
-    0x080002ec   0x080002ec   0x00000002   Code   RO         1863    .text               c_w.l(use_no_semi.o)
-    0x080002ee   0x080002ee   0x00000000   Code   RO         1865    .text               c_w.l(indicate_semi.o)
-    0x080002ee   0x080002ee   0x00000002   PAD
-    0x080002f0   0x080002f0   0x00000128   Code   RO          204    i.Configure_Encoder_Left  motors_and_encoders_1.o
-    0x08000418   0x08000418   0x00000120   Code   RO          205    i.Configure_Encoder_Right  motors_and_encoders_1.o
-    0x08000538   0x08000538   0x00000114   Code   RO          206    i.Configure_Motor_Left  motors_and_encoders_1.o
-    0x0800064c   0x0800064c   0x000000e4   Code   RO          207    i.Configure_Motor_Right  motors_and_encoders_1.o
-    0x08000730   0x08000730   0x000000b4   Code   RO          471    i.Configure_User_Button  system_functions_1.o
-    0x080007e4   0x080007e4   0x00000038   Code   RO          472    i.Configure_User_LED  system_functions_1.o
-    0x0800081c   0x0800081c   0x00000010   Code   RO            4    i.EXTI15_10_IRQHandler  main_1.o
-    0x0800082c   0x0800082c   0x0000001c   Code   RO          210    i.LL_AHB1_GRP1_EnableClock  motors_and_encoders_1.o
-    0x08000848   0x08000848   0x0000001c   Code   RO          473    i.LL_AHB1_GRP1_EnableClock  system_functions_1.o
-    0x08000864   0x08000864   0x0000001c   Code   RO          211    i.LL_APB1_GRP1_EnableClock  motors_and_encoders_1.o
-    0x08000880   0x08000880   0x00000028   Code   RO          212    i.LL_GPIO_SetAFPin_0_7  motors_and_encoders_1.o
-    0x080008a8   0x080008a8   0x0000002c   Code   RO          213    i.LL_GPIO_SetAFPin_8_15  motors_and_encoders_1.o
-    0x080008d4   0x080008d4   0x00000028   Code   RO          214    i.LL_GPIO_SetPinMode  motors_and_encoders_1.o
-    0x080008fc   0x080008fc   0x00000028   Code   RO          475    i.LL_GPIO_SetPinMode  system_functions_1.o
-    0x08000924   0x08000924   0x00000028   Code   RO          215    i.LL_GPIO_SetPinPull  motors_and_encoders_1.o
-    0x0800094c   0x0800094c   0x00000028   Code   RO          477    i.LL_GPIO_SetPinPull  system_functions_1.o
-    0x08000974   0x08000974   0x00000028   Code   RO          216    i.LL_GPIO_SetPinSpeed  motors_and_encoders_1.o
-    0x0800099c   0x0800099c   0x00000028   Code   RO          478    i.LL_GPIO_SetPinSpeed  system_functions_1.o
-    0x080009c4   0x080009c4   0x00000008   Code   RO          217    i.LL_TIM_CC_EnableChannel  motors_and_encoders_1.o
-    0x080009cc   0x080009cc   0x0000000a   Code   RO          218    i.LL_TIM_EnableARRPreload  motors_and_encoders_1.o
-    0x080009d6   0x080009d6   0x0000000a   Code   RO          219    i.LL_TIM_EnableCounter  motors_and_encoders_1.o
-    0x080009e0   0x080009e0   0x0000000a   Code   RO          220    i.LL_TIM_EnableIT_CC1  motors_and_encoders_1.o
-    0x080009ea   0x080009ea   0x0000000a   Code   RO          221    i.LL_TIM_GenerateEvent_UPDATE  motors_and_encoders_1.o
-    0x080009f4   0x080009f4   0x00000006   Code   RO          222    i.LL_TIM_GetAutoReload  motors_and_encoders_1.o
-    0x080009fa   0x080009fa   0x00000006   Code   RO          223    i.LL_TIM_GetPrescaler  motors_and_encoders_1.o
-    0x08000a00   0x08000a00   0x0000006c   Code   RO          224    i.LL_TIM_IC_SetActiveInput  motors_and_encoders_1.o
-    0x08000a6c   0x08000a6c   0x0000006c   Code   RO          225    i.LL_TIM_IC_SetFilter  motors_and_encoders_1.o
-    0x08000ad8   0x08000ad8   0x00000058   Code   RO          226    i.LL_TIM_IC_SetPolarity  motors_and_encoders_1.o
-    0x08000b30   0x08000b30   0x0000006c   Code   RO          227    i.LL_TIM_IC_SetPrescaler  motors_and_encoders_1.o
-    0x08000b9c   0x08000b9c   0x0000000a   Code   RO            5    i.LL_TIM_IsActiveFlag_CC1  main_1.o
-    0x08000ba6   0x08000ba6   0x00000002   PAD
-    0x08000ba8   0x08000ba8   0x00000060   Code   RO          228    i.LL_TIM_OC_EnablePreload  motors_and_encoders_1.o
-    0x08000c08   0x08000c08   0x00000004   Code   RO          229    i.LL_TIM_OC_SetCompareCH2  motors_and_encoders_1.o
-    0x08000c0c   0x08000c0c   0x00000004   Code   RO          230    i.LL_TIM_OC_SetCompareCH4  motors_and_encoders_1.o
-    0x08000c10   0x08000c10   0x0000006c   Code   RO          231    i.LL_TIM_OC_SetMode  motors_and_encoders_1.o
-    0x08000c7c   0x08000c7c   0x00000004   Code   RO          232    i.LL_TIM_SetAutoReload  motors_and_encoders_1.o
-    0x08000c80   0x08000c80   0x0000000c   Code   RO          233    i.LL_TIM_SetEncoderMode  motors_and_encoders_1.o
-    0x08000c8c   0x08000c8c   0x00000004   Code   RO          234    i.LL_TIM_SetPrescaler  motors_and_encoders_1.o
-    0x08000c90   0x08000c90   0x00000080   Code   RO          235    i.Set_DutyCycle_Motor_Left  motors_and_encoders_1.o
-    0x08000d10   0x08000d10   0x00000080   Code   RO          236    i.Set_DutyCycle_Motor_Right  motors_and_encoders_1.o
-    0x08000d90   0x08000d90   0x00000160   Code   RO          480    i.SystemClock_Config  system_functions_1.o
-    0x08000ef0   0x08000ef0   0x00000064   Code   RO          424    i.SystemInit        system_stm32f4xx_1.o
-    0x08000f54   0x08000f54   0x0000001c   Code   RO            9    i.TIM2_IRQHandler   main_1.o
-    0x08000f70   0x08000f70   0x00000020   Code   RO           10    i.TIM5_IRQHandler   main_1.o
-    0x08000f90   0x08000f90   0x0000001a   Code   RO          237    i.__NVIC_EnableIRQ  motors_and_encoders_1.o
-    0x08000faa   0x08000faa   0x00000002   PAD
-    0x08000fac   0x08000fac   0x00000028   Code   RO          238    i.__NVIC_SetPriority  motors_and_encoders_1.o
-    0x08000fd4   0x08000fd4   0x00000014   Code   RO         1750    i.__hardfp_fabs     m_wm.l(fabs.o)
-    0x08000fe8   0x08000fe8   0x00000048   Code   RO           13    i.main              main_1.o
-    0x08001030   0x08001030   0x00000062   Code   RO         1746    x$fpl$d2f           fz_wm.l(d2f.o)
-    0x08001092   0x08001092   0x0000009c   Code   RO         1757    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x0800112e   0x0800112e   0x0000000c   Code   RO         1759    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x0800113a   0x0800113a   0x00000002   PAD
-    0x0800113c   0x0800113c   0x00000056   Code   RO         1748    x$fpl$f2d           fz_wm.l(f2d.o)
-    0x08001192   0x08001192   0x0000008c   Code   RO         1761    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
-    0x0800121e   0x0800121e   0x0000000a   Code   RO         1850    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08001228   0x08001228   0x0000000a   Code   RO         1763    x$fpl$fretinf       fz_wm.l(fretinf.o)
-    0x08001232   0x08001232   0x00000000   Code   RO         1765    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x08001232   0x08001232   0x0000002b   Data   RO          239    .constdata          motors_and_encoders_1.o
-    0x0800125d   0x0800125d   0x00000003   PAD
-    0x08001260   0x08001260   0x00000020   Data   RO         1918    Region$$Table       anon$$obj.o
+    0x08000000   0x00000194   Data   RO          573    RESET               startup_stm32f401xe.o
+    0x08000194   0x00000008   Code   RO         1744  * !!!main             c_w.l(__main.o)
+    0x0800019c   0x00000034   Code   RO         1920    !!!scatter          c_w.l(__scatter.o)
+    0x080001d0   0x0000001a   Code   RO         1922    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x080001ea   0x00000002   PAD
+    0x080001ec   0x0000001c   Code   RO         1924    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000208   0x00000002   Code   RO         1790    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800020a   0x00000004   Code   RO         1796    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1799    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1802    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1804    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1806    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1809    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1811    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1813    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1815    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1817    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1819    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1821    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1823    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1825    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1827    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1829    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1833    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1835    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1837    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0800020e   0x00000000   Code   RO         1839    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0800020e   0x00000002   Code   RO         1840    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000210   0x00000002   Code   RO         1860    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000212   0x00000000   Code   RO         1873    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000212   0x00000000   Code   RO         1875    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000212   0x00000000   Code   RO         1878    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000212   0x00000000   Code   RO         1881    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000212   0x00000000   Code   RO         1883    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000212   0x00000000   Code   RO         1886    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000212   0x00000002   Code   RO         1887    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000214   0x00000000   Code   RO         1756    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000214   0x00000000   Code   RO         1767    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000214   0x00000006   Code   RO         1779    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800021a   0x00000000   Code   RO         1769    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800021a   0x00000004   Code   RO         1770    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0800021e   0x00000000   Code   RO         1772    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0800021e   0x00000008   Code   RO         1773    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x08000226   0x00000002   Code   RO         1794    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000228   0x00000000   Code   RO         1842    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000228   0x00000004   Code   RO         1843    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x0800022c   0x00000006   Code   RO         1844    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000232   0x00000002   PAD
+    0x08000234   0x00000040   Code   RO          574    .text               startup_stm32f401xe.o
+    0x08000274   0x00000006   Code   RO         1742    .text               c_w.l(heapauxi.o)
+    0x0800027a   0x0000004a   Code   RO         1781    .text               c_w.l(sys_stackheap_outer.o)
+    0x080002c4   0x00000012   Code   RO         1783    .text               c_w.l(exit.o)
+    0x080002d6   0x00000002   PAD
+    0x080002d8   0x00000008   Code   RO         1791    .text               c_w.l(libspace.o)
+    0x080002e0   0x0000000c   Code   RO         1852    .text               c_w.l(sys_exit.o)
+    0x080002ec   0x00000002   Code   RO         1863    .text               c_w.l(use_no_semi.o)
+    0x080002ee   0x00000000   Code   RO         1865    .text               c_w.l(indicate_semi.o)
+    0x080002ee   0x00000002   PAD
+    0x080002f0   0x00000128   Code   RO          204    i.Configure_Encoder_Left  motors_and_encoders.o
+    0x08000418   0x00000120   Code   RO          205    i.Configure_Encoder_Right  motors_and_encoders.o
+    0x08000538   0x00000114   Code   RO          206    i.Configure_Motor_Left  motors_and_encoders.o
+    0x0800064c   0x000000e4   Code   RO          207    i.Configure_Motor_Right  motors_and_encoders.o
+    0x08000730   0x000000b0   Code   RO          471    i.Configure_User_Button  system_functions.o
+    0x080007e0   0x00000038   Code   RO          472    i.Configure_User_LED  system_functions.o
+    0x08000818   0x00000010   Code   RO            4    i.EXTI15_10_IRQHandler  main_1.o
+    0x08000828   0x0000001c   Code   RO          210    i.LL_AHB1_GRP1_EnableClock  motors_and_encoders.o
+    0x08000844   0x0000001c   Code   RO          473    i.LL_AHB1_GRP1_EnableClock  system_functions.o
+    0x08000860   0x0000001c   Code   RO          211    i.LL_APB1_GRP1_EnableClock  motors_and_encoders.o
+    0x0800087c   0x00000028   Code   RO          212    i.LL_GPIO_SetAFPin_0_7  motors_and_encoders.o
+    0x080008a4   0x0000002c   Code   RO          213    i.LL_GPIO_SetAFPin_8_15  motors_and_encoders.o
+    0x080008d0   0x00000028   Code   RO          214    i.LL_GPIO_SetPinMode  motors_and_encoders.o
+    0x080008f8   0x00000028   Code   RO          475    i.LL_GPIO_SetPinMode  system_functions.o
+    0x08000920   0x00000028   Code   RO          215    i.LL_GPIO_SetPinPull  motors_and_encoders.o
+    0x08000948   0x00000028   Code   RO          477    i.LL_GPIO_SetPinPull  system_functions.o
+    0x08000970   0x00000028   Code   RO          216    i.LL_GPIO_SetPinSpeed  motors_and_encoders.o
+    0x08000998   0x00000028   Code   RO          478    i.LL_GPIO_SetPinSpeed  system_functions.o
+    0x080009c0   0x00000008   Code   RO          217    i.LL_TIM_CC_EnableChannel  motors_and_encoders.o
+    0x080009c8   0x0000000a   Code   RO          218    i.LL_TIM_EnableARRPreload  motors_and_encoders.o
+    0x080009d2   0x0000000a   Code   RO          219    i.LL_TIM_EnableCounter  motors_and_encoders.o
+    0x080009dc   0x0000000a   Code   RO          220    i.LL_TIM_EnableIT_CC1  motors_and_encoders.o
+    0x080009e6   0x0000000a   Code   RO          221    i.LL_TIM_GenerateEvent_UPDATE  motors_and_encoders.o
+    0x080009f0   0x00000006   Code   RO          222    i.LL_TIM_GetAutoReload  motors_and_encoders.o
+    0x080009f6   0x00000006   Code   RO          223    i.LL_TIM_GetPrescaler  motors_and_encoders.o
+    0x080009fc   0x0000006c   Code   RO          224    i.LL_TIM_IC_SetActiveInput  motors_and_encoders.o
+    0x08000a68   0x0000006c   Code   RO          225    i.LL_TIM_IC_SetFilter  motors_and_encoders.o
+    0x08000ad4   0x00000058   Code   RO          226    i.LL_TIM_IC_SetPolarity  motors_and_encoders.o
+    0x08000b2c   0x0000006c   Code   RO          227    i.LL_TIM_IC_SetPrescaler  motors_and_encoders.o
+    0x08000b98   0x0000000a   Code   RO            5    i.LL_TIM_IsActiveFlag_CC1  main_1.o
+    0x08000ba2   0x00000002   PAD
+    0x08000ba4   0x00000060   Code   RO          228    i.LL_TIM_OC_EnablePreload  motors_and_encoders.o
+    0x08000c04   0x00000004   Code   RO          229    i.LL_TIM_OC_SetCompareCH2  motors_and_encoders.o
+    0x08000c08   0x00000004   Code   RO          230    i.LL_TIM_OC_SetCompareCH4  motors_and_encoders.o
+    0x08000c0c   0x0000006c   Code   RO          231    i.LL_TIM_OC_SetMode  motors_and_encoders.o
+    0x08000c78   0x00000004   Code   RO          232    i.LL_TIM_SetAutoReload  motors_and_encoders.o
+    0x08000c7c   0x0000000c   Code   RO          233    i.LL_TIM_SetEncoderMode  motors_and_encoders.o
+    0x08000c88   0x00000004   Code   RO          234    i.LL_TIM_SetPrescaler  motors_and_encoders.o
+    0x08000c8c   0x00000016   Code   RO          235    i.NVIC_EnableIRQ    motors_and_encoders.o
+    0x08000ca2   0x00000002   PAD
+    0x08000ca4   0x00000028   Code   RO          236    i.NVIC_SetPriority  motors_and_encoders.o
+    0x08000ccc   0x00000080   Code   RO          237    i.Set_DutyCycle_Motor_Left  motors_and_encoders.o
+    0x08000d4c   0x00000080   Code   RO          238    i.Set_DutyCycle_Motor_Right  motors_and_encoders.o
+    0x08000dcc   0x00000160   Code   RO          480    i.SystemClock_Config  system_functions.o
+    0x08000f2c   0x00000064   Code   RO          424    i.SystemInit        system_stm32f4xx.o
+    0x08000f90   0x0000001c   Code   RO           11    i.TIM2_IRQHandler   main_1.o
+    0x08000fac   0x00000020   Code   RO           12    i.TIM5_IRQHandler   main_1.o
+    0x08000fcc   0x00000014   Code   RO         1750    i.__hardfp_fabs     m_wm.l(fabs.o)
+    0x08000fe0   0x00000048   Code   RO           13    i.main              main_1.o
+    0x08001028   0x00000062   Code   RO         1746    x$fpl$d2f           fz_wm.l(d2f.o)
+    0x0800108a   0x0000009c   Code   RO         1757    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x08001126   0x0000000c   Code   RO         1759    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x08001132   0x00000002   PAD
+    0x08001134   0x00000056   Code   RO         1748    x$fpl$f2d           fz_wm.l(f2d.o)
+    0x0800118a   0x0000008c   Code   RO         1761    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
+    0x08001216   0x0000000a   Code   RO         1850    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08001220   0x0000000a   Code   RO         1763    x$fpl$fretinf       fz_wm.l(fretinf.o)
+    0x0800122a   0x00000000   Code   RO         1765    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x0800122a   0x0000002b   Data   RO          239    .constdata          motors_and_encoders.o
+    0x08001255   0x00000003   PAD
+    0x08001258   0x00000020   Data   RO         1918    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001280, Size: 0x00000668, Max: 0x00018000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000668, Max: 0x00018000, ABSOLUTE)
 
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001280   0x00000004   Data   RW          426    .data               system_stm32f4xx_1.o
-    0x20000004        -       0x00000060   Zero   RW         1792    .bss                c_w.l(libspace.o)
-    0x20000064   0x08001284   0x00000004   PAD
-    0x20000068        -       0x00000200   Zero   RW          572    HEAP                startup_stm32f401xe.o
-    0x20000268        -       0x00000400   Zero   RW          571    STACK               startup_stm32f401xe.o
+    0x20000000   0x00000004   Data   RW          426    .data               system_stm32f4xx.o
+    0x20000004   0x00000060   Zero   RW         1792    .bss                c_w.l(libspace.o)
+    0x20000064   0x00000004   PAD
+    0x20000068   0x00000200   Zero   RW          572    HEAP                startup_stm32f401xe.o
+    0x20000268   0x00000400   Zero   RW          571    STACK               startup_stm32f401xe.o
 
 
 ==============================================================================
@@ -1221,14 +1221,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       158         18          0          0          0     353326   main_1.o
-      2374        160         43          0          0      80736   motors_and_encoders_1.o
-        64         26        404          0       1536        808   startup_stm32f401xe.o
-       736         64          0          0          0      69605   system_functions_1.o
-       100         18          0          4          0       1131   system_stm32f4xx_1.o
+       158         18          0          0          0     353238   main_1.o
+      2370        160         43          0          0      76828   motors_and_encoders.o
+        64         26        404          0       1536        800   startup_stm32f401xe.o
+       732         64          0          0          0      65957   system_functions.o
+       100         18          0          4          0       1107   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      3436        286        482          4       1536     505606   Object Totals
+      3428        286        482          4       1536     497930   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          3          0          0          0   (incl. Padding)
 
@@ -1288,15 +1288,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4254        318        482          4       1636     502050   Grand Totals
-      4254        318        482          4       1636     502050   ELF Image Totals
-      4254        318        482          4          0          0   ROM Totals
+      4246        318        482          4       1636     494374   Grand Totals
+      4246        318        482          4       1636     494374   ELF Image Totals
+      4246        318        482          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4736 (   4.63kB)
+    Total RO  Size (Code + RO Data)                 4728 (   4.62kB)
     Total RW  Size (RW Data + ZI Data)              1640 (   1.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       4740 (   4.63kB)
+    Total ROM Size (Code + RO Data + RW Data)       4732 (   4.62kB)
 
 ==============================================================================
 
