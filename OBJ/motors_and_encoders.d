@@ -33,3 +33,4 @@
 .\obj\motors_and_encoders.o: .\LLLIB\inc\stm32f4xx_ll_lptim.h
 .\obj\motors_and_encoders.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\motors_and_encoders.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\motors_and_encoders.o: .\SYS\System_Functions.h

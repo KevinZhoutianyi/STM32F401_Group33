@@ -1,0 +1,13 @@
+#define GLOBAL_LED
+
+#include "Led.h"
+
+void Configure_User_LED(void){
+	//GREEN
+	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+  LL_GPIO_SetPinMode(GPIOA,     LL_GPIO_PIN_5, LL_GPIO_MODE_OUTPUT);
+  LL_GPIO_SetPinPull(GPIOA,     LL_GPIO_PIN_5, LL_GPIO_PULL_NO);
+  LL_GPIO_SetPinSpeed(GPIOA,    LL_GPIO_PIN_5, LL_GPIO_SPEED_FREQ_HIGH);
+	LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5);
+}
+

@@ -32,6 +32,8 @@ void Configure_Encoder_Right(void);
 int Get_Encoder_Right(void);
 void Configure_Motor_Right(void);
 void Set_DutyCycle_Motor_Right(float D);
+void Start(void);
+void Reset_Encoders(void);
 
 
 

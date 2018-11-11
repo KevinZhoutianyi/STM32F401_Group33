@@ -39,6 +39,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
+#include "Usart.h"
 
 /** @addtogroup STM32F4xx_LL_Examples
   * @{
@@ -155,7 +156,7 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-	SysTick_Callback();
+//1ms
 }
 
 /******************************************************************************/
@@ -164,6 +165,30 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f4xx.s).                                               */
 /******************************************************************************/
+void TIM5_IRQHandler(void)
+{
+  /* Check whether CC1 interrupt is pending */
+  if(LL_TIM_IsActiveFlag_CC1(TIM5) == 1)
+  {
+    /* Clear the update interrupt flag*/
+    LL_TIM_ClearFlag_CC1(TIM5);
+  }
+}
+
+void TIM2_IRQHandler(void)
+{
+  /* Check whether CC1 interrupt is pending */
+  if(LL_TIM_IsActiveFlag_CC1(TIM2) == 1)
+  {
+    /* Clear the update interrupt flag*/
+    LL_TIM_ClearFlag_CC1(TIM2);
+  }
+}
+
+void EXTI15_10_IRQHandler(void){
+	
+	LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_13);
+}
 
 /**
   * @}

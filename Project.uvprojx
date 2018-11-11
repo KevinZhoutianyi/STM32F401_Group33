@@ -332,7 +332,7 @@
             <v6WtE>0</v6WtE>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>ARM_MATH_CM4,USE_FULL_LL_DRIVER</Define>
+              <Define>ARM_MATH_CM4,USE_FULL_LL_DRIVER,STM32F401xE</Define>
               <Undefine></Undefine>
               <IncludePath>.\MYLIB\inc;.\LLLIB\inc;.\USER;.\SYS</IncludePath>
             </VariousControls>
@@ -382,6 +382,11 @@
               <FileType>1</FileType>
               <FilePath>.\USER\main.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\stm32f4xx_it.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -391,6 +396,21 @@
               <FileName>Motors_And_Encoders.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\MYLIB\src\Motors_And_Encoders.c</FilePath>
+            </File>
+            <File>
+              <FileName>Led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MYLIB\src\Led.c</FilePath>
+            </File>
+            <File>
+              <FileName>Button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MYLIB\src\Button.c</FilePath>
+            </File>
+            <File>
+              <FileName>Usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MYLIB\src\Usart.c</FilePath>
             </File>
           </Files>
         </Group>

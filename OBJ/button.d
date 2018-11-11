@@ -1,0 +1,15 @@
+.\obj\button.o: MYLIB\src\Button.c
+.\obj\button.o: .\MYLIB\inc\Button.h
+.\obj\button.o: .\LLLIB\inc\stm32f4xx_ll_exti.h
+.\obj\button.o: .\SYS\stm32f4xx.h
+.\obj\button.o: .\SYS\stm32f401xe.h
+.\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\obj\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
+.\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
+.\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
+.\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
+.\obj\button.o: .\SYS\system_stm32f4xx.h
+.\obj\button.o: .\LLLIB\inc\stm32f4xx_ll_system.h
+.\obj\button.o: .\LLLIB\inc\stm32f4xx_ll_gpio.h
+.\obj\button.o: .\LLLIB\inc\stm32f4xx_ll_bus.h

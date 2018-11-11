@@ -22,8 +22,7 @@
 #include "stm32f4xx_ll_lptim.h"
 
 void SystemClock_Config(void);
-void Configure_USB_UART(void);
-void Configure_User_LED(void);
-void Configure_User_Button(void);
+
+
 
 

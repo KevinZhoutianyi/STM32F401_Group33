@@ -31,11 +31,11 @@
 .\obj\main_1.o: .\LLLIB\inc\stm32f4xx_ll_wwdg.h
 .\obj\main_1.o: .\LLLIB\inc\stm32f4xx_ll_rng.h
 .\obj\main_1.o: .\LLLIB\inc\stm32f4xx_ll_lptim.h
+.\obj\main_1.o: .\SYS\System_Functions.h
 .\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\obj\main_1.o: .\SYS\System_Functions.h
-.\obj\main_1.o: .\MYLIB\inc\Motors_And_Encoders.h
-.\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\main_1.o: .\MYLIB\inc\Usart.h
 .\obj\main_1.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h
 .\obj\main_1.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
