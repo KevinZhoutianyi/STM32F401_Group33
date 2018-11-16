@@ -39,3 +39,6 @@
 .\obj\main_1.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h
 .\obj\main_1.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
 .\obj\main_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\main_1.o: .\MYLIB\inc\Adc.h
+.\obj\main_1.o: .\MYLIB\inc\Led.h
+.\obj\main_1.o: .\MYLIB\inc\Button.h

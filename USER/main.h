@@ -86,6 +86,14 @@
 #define LED2_GPIO_CLK_ENABLE()             LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA)
 
 /**
+  * @brief Toggle periods for various blinking modes
+  */
+#define LED_BLINK_FAST  200
+#define LED_BLINK_SLOW  500
+#define LED_BLINK_ERROR 1000
+
+
+/**
   * @brief Key push-button
   */
 #define USER_BUTTON_PIN                         LL_GPIO_PIN_13
@@ -111,6 +119,12 @@
   
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+																								
+																								
+#define INTERNAL_TEMPSENSOR_AVGSLOPE   ((int32_t) 2500)        /* Internal temperature sensor, parameter Avg_Slope (unit: uV/DegCelsius). Refer to device datasheet for min/typ/max values. */
+#define INTERNAL_TEMPSENSOR_V25        ((int32_t)  760)        /* Internal temperature sensor, parameter V25 (unit: mV). Refer to device datasheet for min/typ/max values. */
+#define INTERNAL_TEMPSENSOR_V25_TEMP   ((int32_t)   25)
+#define INTERNAL_TEMPSENSOR_V25_VREF   ((int32_t) 3300)
     
 #endif /* __MAIN_H */
 

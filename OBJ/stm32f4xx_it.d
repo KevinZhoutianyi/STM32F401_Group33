@@ -38,3 +38,6 @@
 .\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
 .\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\stm32f4xx_it.o: .\MYLIB\inc\Adc.h
+.\obj\stm32f4xx_it.o: .\MYLIB\inc\Led.h
+.\obj\stm32f4xx_it.o: .\MYLIB\inc\Button.h

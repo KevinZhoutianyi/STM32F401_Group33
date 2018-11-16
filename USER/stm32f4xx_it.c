@@ -40,6 +40,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "Usart.h"
+#include "Adc.h"
+#include "Button.h"
+#include "Led.h"
+#include "main.h"
 
 /** @addtogroup STM32F4xx_LL_Examples
   * @{
@@ -185,17 +189,87 @@ void TIM2_IRQHandler(void)
   }
 }
 
-void EXTI15_10_IRQHandler(void){
-	
-	LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_13);
+
+/**
+  * @brief  This function handles ADC1 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void ADC_IRQHandler(void)
+{
+  /* Check whether ADC group regular overrun caused the ADC interruption */
+  if(LL_ADC_IsActiveFlag_OVR(ADC1) != 0)
+  {
+    /* Clear flag ADC group regular overrun */
+    LL_ADC_ClearFlag_OVR(ADC1);
+    
+    /* Call interruption treatment function */
+    AdcGrpRegularOverrunError_Callback();
+  }
+  /* Check whether ADC group regular end of sequence conversions caused       */
+  /* the ADC interruption.                                                    */
+  /* Note: On this STM32 serie, ADC group regular end of conversion           */
+  /*       must be selected among end of unitary conversion                   */
+  /*       or end of sequence conversions.                                    */
+  /*       Refer to function "LL_ADC_REG_SetFlagEndOfConversion()".           */
+  else /* if(LL_ADC_IsActiveFlag_EOCS(ADC1) != 0) */
+  {
+    /* Clear flag ADC group regular end of sequence conversions */
+    LL_ADC_ClearFlag_EOCS(ADC1);
+    
+    /* Call interruption treatment function */
+    AdcGrpRegularSequenceConvComplete_Callback();
+  }
 }
 
 /**
-  * @}
+  * @brief  This function handles DMA2 interrupt request.
+  * @param  None
+  * @retval None
   */
+void DMA2_Stream0_IRQHandler(void)
+{
+  /* Check whether DMA transfer complete caused the DMA interruption */
+  if(LL_DMA_IsActiveFlag_TC0(DMA2) == 1)
+  {
+		
+    /*  Clear Stream  transfer complete flag*/
+    LL_DMA_ClearFlag_TC0(DMA2);
+    /* Call interruption treatment function */
+    AdcDmaTransferComplete_Callback();
+  }
+  
+  /* Check whether DMA transfer error caused the DMA interruption */
+  if(LL_DMA_IsActiveFlag_TE0(DMA2) == 1)
+  {
+    /* Clear flag DMA transfer error */
+    LL_DMA_ClearFlag_TE0(DMA2);
+    
+    /* Call interruption treatment function */
+    AdcDmaTransferError_Callback();
+  }
+}
+
 
 /**
-  * @}
+  * @brief  This function handles external line 13 interrupt request.
+  * @param  None
+  * @retval None
   */
+void USER_BUTTON_IRQHANDLER(void)
+{
+  /* Manage Flags */
+  if(LL_EXTI_IsActiveFlag_0_31(USER_BUTTON_EXTI_LINE) != RESET)
+  {
+
+    /* Call interruption treatment function */
+    UserButton_Callback();
+    
+    /* Clear EXTI line flag */
+    /* Note: Clear flag after callback function to minimize user button       */
+    /*       switch debounce parasitics.                                      */
+    LL_EXTI_ClearFlag_0_31(USER_BUTTON_EXTI_LINE);
+  }
+}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
