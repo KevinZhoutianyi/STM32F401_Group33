@@ -11,8 +11,7 @@
 
 int main(void)
 {
-//	int counter = 0;
-	uint16_t *dataPointer;
+
   SystemClock_Config();
 	Configure_USB_UART();
 	Configure_User_LED();
@@ -41,32 +40,8 @@ int main(void)
 
   while (1)
   {
-		while(ubDmaTransferStatus != 1)
-    {
-    }
-//		LL_ADC_REG_StartConversionSWStart(ADC1);
-//		while(counter!=10000)
-//		{
-//			counter++;
-//		}
-    
-		dataPointer = GetData();
-    /* Computation of ADC conversions raw data to physical values             */
-    /* using LL ADC driver helper macro.                                      */
-		
-    uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *dataPointer, LL_ADC_RESOLUTION_12B);
-    uhADCxConvertedData_PA0_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(dataPointer+1), LL_ADC_RESOLUTION_12B);
-    uhADCxConvertedData_PA1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(dataPointer+2), LL_ADC_RESOLUTION_12B);
-    printf("PA4:%u\r\n",uhADCxConvertedData_PA4_mVolt);
-		printf("PA0:%u\r\n",uhADCxConvertedData_PA0_mVolt);
-		printf("PA1:%u\r\n",uhADCxConvertedData_PA1_mVolt);
-		
+		ADCPrintValue();
 
-    /* Wait for a new ADC conversion and DMA transfer */
-    while(ubDmaTransferStatus != 0)
-    {
-    }
-//		counter = 0;
 	}
 	
 }

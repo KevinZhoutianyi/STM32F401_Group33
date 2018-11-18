@@ -33,3 +33,9 @@
 .\obj\adc.o: .\LLLIB\inc\stm32f4xx_ll_wwdg.h
 .\obj\adc.o: .\LLLIB\inc\stm32f4xx_ll_rng.h
 .\obj\adc.o: .\LLLIB\inc\stm32f4xx_ll_lptim.h
+.\obj\adc.o: .\MYLIB\inc\Usart.h
+.\obj\adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h
+.\obj\adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\obj\adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

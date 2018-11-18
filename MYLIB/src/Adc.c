@@ -98,7 +98,7 @@ void Configure_DMA(void)
 void Configure_ADC(void)
 {
 	
-  __IO uint32_t wait_loop_index = 0;
+  volatile uint32_t wait_loop_index = 0;
   
 	ubAdcGrpRegularSequenceConvCount=0;
 	uhADCxConvertedData_PA4_mVolt=0;       
@@ -503,7 +503,35 @@ void AdcGrpRegularOverrunError_Callback(void)
   /* Error from ADC */
   LED_Blinking(2000);
 }
-uint16_t *GetData(void)
+
+uint16_t GetVoltagePA4(void)
 {
-	return aADCxConvertedData;
+	uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *aADCxConvertedData, LL_ADC_RESOLUTION_12B);
+  return uhADCxConvertedData_PA4_mVolt;
 }
+uint16_t GetVoltagePA0(void)
+{
+	uhADCxConvertedData_PA0_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(aADCxConvertedData+1), LL_ADC_RESOLUTION_12B);
+  return uhADCxConvertedData_PA0_mVolt;
+}
+uint16_t GetVoltagePA1(void)
+{
+	uhADCxConvertedData_PA1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(aADCxConvertedData+2), LL_ADC_RESOLUTION_12B);
+	return uhADCxConvertedData_PA1_mVolt;
+}
+
+void ADCPrintValue(void)
+{
+			while(ubDmaTransferStatus != 1)
+    {
+    }
+
+    printf("PA4:%u\r\n",GetVoltagePA4());
+		printf("PA0:%u\r\n",GetVoltagePA0());
+		printf("PA1:%u\r\n",GetVoltagePA1());
+		
+    while(ubDmaTransferStatus != 0)
+    {
+    }
+}
+
