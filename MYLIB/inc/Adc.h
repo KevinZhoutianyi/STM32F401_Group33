@@ -7,6 +7,7 @@
 #include "stm32f4xx_ll_dma.h"
 #include "Led.h"
 #include "main.h"
+#include "Usart.h"
 
 
 
@@ -87,6 +88,9 @@ void AdcDmaTransferComplete_Callback(void);
 void AdcDmaTransferError_Callback(void);
 void AdcGrpRegularOverrunError_Callback(void);
 void AdcGrpRegularSequenceConvComplete_Callback(void);
-uint16_t *GetData(void);
+uint16_t GetVoltagePA4(void);
+uint16_t GetVoltagePA0(void);
+uint16_t GetVoltagePA1(void);
+void ADCPrintValue(void);
 
 #endif 

@@ -1,5 +1,5 @@
 Dependencies for Project 'Project', Target 'NUCLEO_F401RE': (DO NOT MODIFY !)
-F (.\USER\main.c)(0x5BEEA560)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\main_1.o --omf_browse .\obj\main_1.crf --depend .\obj\main_1.d)
+F (.\USER\main.c)(0x5BF152F7)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\main_1.o --omf_browse .\obj\main_1.crf --depend .\obj\main_1.d)
 I (USER\main.h)(0x5BEDC446)
 I (.\LLLIB\inc\stm32f4xx_ll_bus.h)(0x5BE72D2B)
 I (.\SYS\stm32f4xx.h)(0x5BE72F55)
@@ -39,7 +39,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5AF7258C)
 I (.\MYLIB\inc\Usart.h)(0x5BE867B7)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h)(0x5625A350)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-I (.\MYLIB\inc\Adc.h)(0x5BEEA4D9)
+I (.\MYLIB\inc\Adc.h)(0x5BF152F9)
 I (.\MYLIB\inc\Led.h)(0x5BEDB6DD)
 I (.\MYLIB\inc\Button.h)(0x5BEDB6E5)
 F (.\USER\stm32f4xx_it.c)(0x5BEE8CB6)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\stm32f4xx_it.o --omf_browse .\obj\stm32f4xx_it.crf --depend .\obj\stm32f4xx_it.d)
@@ -81,7 +81,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5AF7258C)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h)(0x5625A350)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-I (.\MYLIB\inc\Adc.h)(0x5BEEA4D9)
+I (.\MYLIB\inc\Adc.h)(0x5BF152F9)
 I (.\MYLIB\inc\Led.h)(0x5BEDB6DD)
 I (.\MYLIB\inc\Button.h)(0x5BEDB6E5)
 F (.\MYLIB\src\Motors_And_Encoders.c)(0x5BE880C6)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\motors_and_encoders.o --omf_browse .\obj\motors_and_encoders.crf --depend .\obj\motors_and_encoders.d)
@@ -189,7 +189,12 @@ I (.\LLLIB\inc\stm32f4xx_ll_usart.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_wwdg.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_rng.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_lptim.h)(0x5BE72D2B)
-I (.\MYLIB\inc\Adc.h)(0x5BEEA4D9)
+I (.\MYLIB\inc\Adc.h)(0x5BF152F9)
+I (.\MYLIB\inc\Usart.h)(0x5BE867B7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5AF7258C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h)(0x5625A350)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE42D6)
 F (.\MYLIB\src\Usart.c)(0x5BE86878)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\usart.o --omf_browse .\obj\usart.crf --depend .\obj\usart.d)
 I (.\MYLIB\inc\Usart.h)(0x5BE867B7)
 I (.\LLLIB\inc\stm32f4xx_ll_usart.h)(0x5BE72D2B)
@@ -209,8 +214,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5AF7258C)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h)(0x5625A350)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE42D6)
-F (.\MYLIB\src\Adc.c)(0x5BEEA49F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\adc.o --omf_browse .\obj\adc.crf --depend .\obj\adc.d)
-I (.\MYLIB\inc\Adc.h)(0x5BEEA4D9)
+F (.\MYLIB\src\Adc.c)(0x5BF152F9)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\adc.o --omf_browse .\obj\adc.crf --depend .\obj\adc.d)
+I (.\MYLIB\inc\Adc.h)(0x5BF152F9)
 I (.\LLLIB\inc\stm32f4xx_ll_gpio.h)(0x5BE72D2B)
 I (.\SYS\stm32f4xx.h)(0x5BE72F55)
 I (.\SYS\stm32f401xe.h)(0x5BE880D6)
@@ -244,6 +249,11 @@ I (.\LLLIB\inc\stm32f4xx_ll_usart.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_wwdg.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_rng.h)(0x5BE72D2B)
 I (.\LLLIB\inc\stm32f4xx_ll_lptim.h)(0x5BE72D2B)
+I (.\MYLIB\inc\Usart.h)(0x5BE867B7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5AF7258C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h)(0x5625A350)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE42D6)
 F (.\SYS\system_stm32f4xx.c)(0x5BE72D2B)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\system_stm32f4xx.o --omf_browse .\obj\system_stm32f4xx.crf --depend .\obj\system_stm32f4xx.d)
 I (SYS\stm32f4xx.h)(0x5BE72F55)
 I (SYS\stm32f401xe.h)(0x5BE880D6)
@@ -254,7 +264,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
 I (SYS\system_stm32f4xx.h)(0x5BE72D2B)
-F (.\SYS\System_Functions.c)(0x5BEEA3E1)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\system_functions.o --omf_browse .\obj\system_functions.crf --depend .\obj\system_functions.d)
+F (.\SYS\System_Functions.c)(0x5BF14F84)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\MYLIB\inc -I .\LLLIB\inc -I .\USER -I .\SYS-I G:\STM32F401_LL_Group33\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F401xx -DARM_MATH_CM4 -DUSE_FULL_LL_DRIVER -DSTM32F401xE-o .\obj\system_functions.o --omf_browse .\obj\system_functions.crf --depend .\obj\system_functions.d)
 I (SYS\System_Functions.h)(0x5BE86345)
 I (.\LLLIB\inc\stm32f4xx_ll_bus.h)(0x5BE72D2B)
 I (.\SYS\stm32f4xx.h)(0x5BE72F55)
