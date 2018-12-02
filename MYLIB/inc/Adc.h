@@ -11,7 +11,8 @@
 
 
 
-#define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   3)
+#define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   6)
+#define AVERAGESIZE  ((uint32_t)   20)
 
   /* Timeout values for ADC operations. */
   /* (enable settling time, disable settling time, ...)                       */
@@ -59,14 +60,19 @@ __ADC_EXT volatile uint8_t ubDmaTransferStatus; /* Variable set into DMA interru
 /* Variable to report status of ADC group regular sequence conversions:       */
 /*  0: ADC group regular sequence conversions are not completed               */
 /*  1: ADC group regular sequence conversions are completed                   */
-__ADC_EXT volatile uint8_t ubAdcGrpRegularSequenceConvStatus; /* Variable set into ADC interruption callback */
+//__ADC_EXT volatile uint8_t ubAdcGrpRegularSequenceConvStatus; /* Variable set into ADC interruption callback */
 
 /* Variables for ADC conversion data computation to physical values */
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PA4_mVolt;        /* Value of voltage on GPIO pin (on which is mapped ADC channel) calculated from ADC conversion data (unit: mV) */
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PA0_mVolt; 
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PA1_mVolt; 
-__ADC_EXT volatile uint16_t uhADCxConvertedData_VrefAnalog_mVolt;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
-__ADC_EXT volatile uint32_t ubAdcGrpRegularSequenceConvCount;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
+__ADC_EXT volatile uint16_t uhADCxConvertedData_PB0_mVolt;
+__ADC_EXT volatile uint16_t uhADCxConvertedData_PC0_mVolt;
+__ADC_EXT volatile uint16_t uhADCxConvertedData_PC1_mVolt;
+
+
+//__ADC_EXT volatile uint16_t uhADCxConvertedData_VrefAnalog_mVolt;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
+//__ADC_EXT volatile uint32_t ubAdcGrpRegularSequenceConvCount;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
 
 /* Variables for ADC conversion data */
 

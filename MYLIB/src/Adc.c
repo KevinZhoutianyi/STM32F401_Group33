@@ -4,6 +4,13 @@
 
 uint16_t aADCxConvertedData[ADC_CONVERTED_DATA_BUFFER_SIZE];
 
+//to get the average 
+uint16_t ADCAverage[6][AVERAGESIZE];
+uint16_t averageCounter;
+uint16_t i = 0,j=0;
+uint32_t tempTotal=0;
+
+
 /**
   * @brief  This function configures DMA for transfer of data from ADC
   * @param  None
@@ -100,12 +107,16 @@ void Configure_ADC(void)
 	
   volatile uint32_t wait_loop_index = 0;
   
-	ubAdcGrpRegularSequenceConvCount=0;
+	averageCounter = 0;
+//	ubAdcGrpRegularSequenceConvCount=0;
 	uhADCxConvertedData_PA4_mVolt=0;       
 	uhADCxConvertedData_PA0_mVolt=0;           
 	uhADCxConvertedData_PA1_mVolt=0;
-	uhADCxConvertedData_VrefAnalog_mVolt=0;
-	ubAdcGrpRegularSequenceConvStatus=0;
+	uhADCxConvertedData_PB0_mVolt=0;
+		uhADCxConvertedData_PC0_mVolt=0;
+		uhADCxConvertedData_PC1_mVolt=0;
+	//uhADCxConvertedData_VrefAnalog_mVolt=0;
+//	ubAdcGrpRegularSequenceConvStatus=0;
 	ubDmaTransferStatus=2;
 	
   /*## Configuration of GPIO used by ADC channels ############################*/
@@ -114,12 +125,16 @@ void Configure_ADC(void)
   
   /* Enable GPIO Clock */
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
+	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOC);
   
   /* Configure GPIO in analog mode to be used as ADC input */
   LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_ANALOG);
-	
+	LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
 	LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
 	LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_1, LL_GPIO_MODE_ANALOG);
+	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_1, LL_GPIO_MODE_ANALOG);
+	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
   
   /*## Configuration of NVIC #################################################*/
   /* Configure NVIC to enable ADC1 interruptions */
@@ -248,7 +263,7 @@ void Configure_ADC(void)
     /*       "LL_ADC_REG_SetSequencerLength()".                               */
     
     /* Set ADC group regular sequencer length and scan direction */
-    LL_ADC_REG_SetSequencerLength(ADC1, LL_ADC_REG_SEQ_SCAN_ENABLE_3RANKS);
+    LL_ADC_REG_SetSequencerLength(ADC1, LL_ADC_REG_SEQ_SCAN_ENABLE_6RANKS);
     
     /* Set ADC group regular sequencer discontinuous mode */
     // LL_ADC_REG_SetSequencerDiscont(ADC1, LL_ADC_REG_SEQ_DISCONT_DISABLE);
@@ -257,6 +272,9 @@ void Configure_ADC(void)
     LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_4);
 		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_0);
 		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_1);
+		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_8);
+		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_11);
+		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, LL_ADC_CHANNEL_10);
 		
 //    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_VREFINT);
 //    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_TEMPSENSOR);
@@ -330,6 +348,9 @@ void Configure_ADC(void)
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_56CYCLES);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_0, LL_ADC_SAMPLINGTIME_56CYCLES);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_1, LL_ADC_SAMPLINGTIME_56CYCLES);
+		    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_8, LL_ADC_SAMPLINGTIME_56CYCLES);
+		LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_11, LL_ADC_SAMPLINGTIME_56CYCLES);
+		LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_10, LL_ADC_SAMPLINGTIME_56CYCLES);
 //    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_VREFINT, LL_ADC_SAMPLINGTIME_480CYCLES);
 //    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_TEMPSENSOR, LL_ADC_SAMPLINGTIME_480CYCLES);
     
@@ -440,7 +461,16 @@ void Activate_ADC(void)
 void AdcDmaTransferComplete_Callback()
 {
   /* Update status variable of DMA transfer */
-  ubDmaTransferStatus = 1;
+  //ubDmaTransferStatus = 1;
+	 if (LL_ADC_IsEnabled(ADC1) == 1)
+  {
+    LL_ADC_REG_StartConversionSWStart(ADC1);
+  }
+  else
+  {
+    /* Error: ADC conversion start could not be performed */
+    LED_Blinking(LED_BLINK_ERROR);
+  }
   
   /* Set LED depending on DMA transfer status */
   /* - Turn-on if DMA transfer is completed */
@@ -449,13 +479,13 @@ void AdcDmaTransferComplete_Callback()
   
   /* For this example purpose, check that DMA transfer status is matching     */
   /* ADC group regular sequence status:                                       */
-  if (ubAdcGrpRegularSequenceConvStatus != 1)
-  {
-    AdcDmaTransferError_Callback();
-  }
+//  if (ubAdcGrpRegularSequenceConvStatus != 1)
+ // {
+ //   AdcDmaTransferError_Callback();
+ // }
   
   /* Reset status variable of ADC group regular sequence */
-  ubAdcGrpRegularSequenceConvStatus = 0;
+ // ubAdcGrpRegularSequenceConvStatus = 0;
 }
 
 /**
@@ -469,7 +499,8 @@ void AdcDmaTransferError_Callback()
 {
 
   /* Error detected during DMA transfer */
-  LED_Blinking(100);
+  while(1)
+		printf("!");
 }
 
 /**
@@ -480,9 +511,17 @@ void AdcDmaTransferError_Callback()
   */
 void AdcGrpRegularSequenceConvComplete_Callback()
 {
+	
+	for(i=0; i <= 5; i++)
+	{
+		ADCAverage[i][averageCounter] =* (aADCxConvertedData+i);
+	}
+	averageCounter++;
+	if(averageCounter==AVERAGESIZE)
+		averageCounter=0;
   /* Update status variable of ADC group regular sequence */
-  ubAdcGrpRegularSequenceConvStatus = 1;
-  ubAdcGrpRegularSequenceConvCount++;
+  //ubAdcGrpRegularSequenceConvStatus = 1;
+  //ubAdcGrpRegularSequenceConvCount++;
 }
 
 /**
@@ -501,37 +540,75 @@ void AdcGrpRegularOverrunError_Callback(void)
 	
   
   /* Error from ADC */
-  LED_Blinking(2000);
+	while(1)
+		printf("*");
+}
+
+uint16_t GetAverage(uint16_t x)
+{
+	tempTotal=0;
+	for(j=0;j<AVERAGESIZE;j++)
+	{
+		tempTotal += ADCAverage[x][j];
+	}
+	return tempTotal/AVERAGESIZE;
 }
 
 uint16_t GetVoltagePA4(void)
 {
-	uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *aADCxConvertedData, LL_ADC_RESOLUTION_12B);
+	uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(0), LL_ADC_RESOLUTION_12B);
   return uhADCxConvertedData_PA4_mVolt;
 }
 uint16_t GetVoltagePA0(void)
 {
-	uhADCxConvertedData_PA0_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(aADCxConvertedData+1), LL_ADC_RESOLUTION_12B);
+	uhADCxConvertedData_PA0_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(1), LL_ADC_RESOLUTION_12B);
   return uhADCxConvertedData_PA0_mVolt;
 }
 uint16_t GetVoltagePA1(void)
 {
-	uhADCxConvertedData_PA1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, *(aADCxConvertedData+2), LL_ADC_RESOLUTION_12B);
+	uhADCxConvertedData_PA1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(2), LL_ADC_RESOLUTION_12B);
 	return uhADCxConvertedData_PA1_mVolt;
 }
+uint16_t GetVoltagePB0(void)
+{
+	uhADCxConvertedData_PB0_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(3), LL_ADC_RESOLUTION_12B);
+	return uhADCxConvertedData_PB0_mVolt;
+}
+uint16_t GetVoltagePC1(void)
+{
+	uhADCxConvertedData_PC1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(4), LL_ADC_RESOLUTION_12B);
+	return uhADCxConvertedData_PC1_mVolt;
+}
+
+uint16_t GetVoltagePC0(void)
+{
+	uhADCxConvertedData_PC0_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(5), LL_ADC_RESOLUTION_12B);
+	return uhADCxConvertedData_PC0_mVolt;
+}
+
 
 void ADCPrintValue(void)
 {
-			while(ubDmaTransferStatus != 1)
-    {
-    }
+			
 
-    printf("PA4:%u\r\n",GetVoltagePA4());
-		printf("PA0:%u\r\n",GetVoltagePA0());
-		printf("PA1:%u\r\n",GetVoltagePA1());
+//    printf("PA4:%u\r\n",GetVoltagePA4());
+//		printf("PA0:%u\r\n",GetVoltagePA0());
+//		printf("PA1:%u\r\n",GetVoltagePA1());
+//		printf("PB0:%u\r\n",GetVoltagePB0());
+//		printf("PC1:%u\r\n",GetVoltagePC1());
+		printf("PC0:%u\r\n",GetVoltagePC0());
+	
+	printf("\n\n");
+//	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[0], LL_ADC_RESOLUTION_12B));
+//	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[1], LL_ADC_RESOLUTION_12B));
+//	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[2], LL_ADC_RESOLUTION_12B));
+//	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[3], LL_ADC_RESOLUTION_12B));
+//	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[4], LL_ADC_RESOLUTION_12B));
+	printf("PC0***:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[5], LL_ADC_RESOLUTION_12B));
+	
 		
-    while(ubDmaTransferStatus != 0)
-    {
-    }
+		printf("\n\n");
+		
+    
 }
 

@@ -33,45 +33,47 @@ void Configure_User_Button(void)
   */
 void UserButton_Callback(void)
 {
-	//ADC1->CR2 |= 1<<30;
-  /* Turn LED off before performing a new ADC conversion start */
-  /* (conversion of ranks set in ADC group regular sequencer).                */
-  LED_Off();
-  
-  /* Reset status variable of DMA transfer before performing a new ADC        */
-  /* conversion start of a sequence (in case of previous DMA transfer         */
-  /* completed).                                                              */
-  /* Note: Optionally, for this example purpose, check DMA transfer           */
-  /*       status before starting another ADC conversion.                     */
-  if (ubDmaTransferStatus != 0)
-  {
-    ubDmaTransferStatus = 0;
-  }
-  else
-  {
-    /* Error: Previous action (ADC conversion or DMA transfer) not yet        */
-    /* completed.                                                             */
-    LED_Blinking(LED_BLINK_ERROR);
-  }
-  
-  /* Start ADC group regular conversion */
-  /* Note: Hardware constraint (refer to description of the functions         */
-  /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features are not             */
-  /*       conditioned to ADC state.                                          */
-  /*       However, in order to be compliant with other STM32 series          */
-  /*       and to show the best practice usages, ADC state is checked.        */
-  /*       Software can be optimized by removing some of these checks, if     */
-  /*       they are not relevant considering previous settings and actions    */
-  /*       in user application.                                               */
-  if (LL_ADC_IsEnabled(ADC1) == 1)
-  {
-    LL_ADC_REG_StartConversionSWStart(ADC1);
-  }
-  else
-  {
-    /* Error: ADC conversion start could not be performed */
-    LED_Blinking(LED_BLINK_ERROR);
-  }
+	
+	ADCPrintValue();
+//	//ADC1->CR2 |= 1<<30;
+//  /* Turn LED off before performing a new ADC conversion start */
+//  /* (conversion of ranks set in ADC group regular sequencer).                */
+//  LED_Off();
+//  
+//  /* Reset status variable of DMA transfer before performing a new ADC        */
+//  /* conversion start of a sequence (in case of previous DMA transfer         */
+//  /* completed).                                                              */
+//  /* Note: Optionally, for this example purpose, check DMA transfer           */
+//  /*       status before starting another ADC conversion.                     */
+//  if (ubDmaTransferStatus != 0)
+//  {
+//    ubDmaTransferStatus = 0;
+//  }
+//  else
+//  {
+//    /* Error: Previous action (ADC conversion or DMA transfer) not yet        */
+//    /* completed.                                                             */
+//    LED_Blinking(LED_BLINK_ERROR);
+//  }
+//  
+//  /* Start ADC group regular conversion */
+//  /* Note: Hardware constraint (refer to description of the functions         */
+//  /*       below):                                                            */
+//  /*       On this STM32 serie, setting of these features are not             */
+//  /*       conditioned to ADC state.                                          */
+//  /*       However, in order to be compliant with other STM32 series          */
+//  /*       and to show the best practice usages, ADC state is checked.        */
+//  /*       Software can be optimized by removing some of these checks, if     */
+//  /*       they are not relevant considering previous settings and actions    */
+//  /*       in user application.                                               */
+//  if (LL_ADC_IsEnabled(ADC1) == 1)
+//  {
+//    LL_ADC_REG_StartConversionSWStart(ADC1);
+//  }
+//  else
+//  {
+//    /* Error: ADC conversion start could not be performed */
+//    LED_Blinking(LED_BLINK_ERROR);
+//  }
 }
 
