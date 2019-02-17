@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\BUILD\Group33_buggy.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\BUILD\Group33_buggy.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sun Feb 17 14:37:29 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sun Feb 17 15:22:16 2019
 <BR><P>
 <H3>Maximum Stack Usage =       1000 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2351,7 +2351,7 @@ Global Symbols
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_init
 </UL>
 
-<P><STRONG><a name="[107]"></a>$Super$$main</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, .\build\main.o(i.main))
+<P><STRONG><a name="[107]"></a>$Super$$main</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, .\build\main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 992 + Unknown Stack Size
 <LI>Call Chain = $Super$$main &rArr; MotorController::MotorController(PinName, PinName, PinName, float, float, float, char) &rArr; QEI::QEI(PinName, PinName, PinName, int, QEI::Encoding) &rArr; mbed::Ticker::attach_us(mbed::Callback&lang;void()&rang;, unsigned long long) &rArr; sleep_manager_lock_deep_sleep_internal &rArr; mbed_error &rArr; exit &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; get_fhc(int) &rArr; __cxa_guard_release &rArr; mbed_assert_internal &rArr;  mbed_die (Cycle)
 </UL>

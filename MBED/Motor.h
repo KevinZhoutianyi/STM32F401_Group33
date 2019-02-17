@@ -65,8 +65,8 @@ public:
     void TickerFunct(void)
     {
         dutyCycle +=  MotorPIDFun(targetSpeed,encoder.getRotationSpeed());
-        dutyCycle  =dutyCycle>0.95f?0.95f:dutyCycle;
-        dutyCycle=dutyCycle<0.05f?0.05f:dutyCycle;
+        dutyCycle  =dutyCycle>0.80f?0.8f:dutyCycle;
+        dutyCycle=dutyCycle<0.2f?0.2f:dutyCycle;
         motorPwm.write(dutyCycle);
         
         printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
