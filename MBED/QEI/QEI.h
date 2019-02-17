@@ -139,7 +139,7 @@
 #define CURR_MASK 0x2 //Mask for the current state in determining direction
 //of rotation.
 #define INVALID   0x3 //XORing two states where both bits have changed.
-#define SAMPLETIME 0.5f//sample speed every second
+#define SAMPLETIME 0.05f
 /**
  * Quadrature Encoder Interface.
  */
