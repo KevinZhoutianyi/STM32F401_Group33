@@ -22,8 +22,10 @@ private:
     
     char name_;
 
+		DigitalOut enable;
+
 public:
-    MotorController(PinName pwm,PinName CH1,PinName CH2,float p,float i,float d,char whichMotor):motorPwm(pwm),dutyCycle(0.5f),encoder(CH1,CH2,NC,256),P(p),I(i),D(d),name_(whichMotor)
+    MotorController(PinName pwm,PinName CH1,PinName CH2,float p,float i,float d,char whichMotor,PinName en):motorPwm(pwm),dutyCycle(0.5f),encoder(CH1,CH2,NC,256),P(p),I(i),D(d),name_(whichMotor),enable(en)
     {
         targetSpeed = 0;
 
@@ -37,9 +39,11 @@ public:
         IoutMax=99999999;
         PIDoutMax=10000;
 
-        motorPwm.period_ms(10);
+        motorPwm.period_us(100);
 
-        motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.1f);
+        motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.01f);
+			
+				enable.write(1);
     }
 
 
@@ -59,23 +63,29 @@ public:
 
         PIDout = PIDout > PIDoutMax ? PIDoutMax : PIDout;
         PIDout = PIDout < -PIDoutMax ? -PIDoutMax : PIDout;
-        return -(float)PIDout/(float)PIDoutMax/2.0f;
+        return (float)PIDout/(float)PIDoutMax/2.0f;
     }
 
     void TickerFunct(void)
     {
         dutyCycle +=  MotorPIDFun(targetSpeed,encoder.getRotationSpeed());
-        dutyCycle  =dutyCycle>0.80f?0.8f:dutyCycle;
-        dutyCycle=dutyCycle<0.2f?0.2f:dutyCycle;
+        dutyCycle  =dutyCycle>0.90f?0.9f:dutyCycle;
+        dutyCycle=dutyCycle<0.1f?0.1f:dutyCycle;
         motorPwm.write(dutyCycle);
         
-        printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
+		
     }
     
     void SetTargetSpeed(float x)
     {
         targetSpeed = x;
     }
+		void print(void)
+		{
+			
+				//printf(" %c**speed:%d ",name_,encoder.getPulses());
+        printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
+		}
 
 
 };
