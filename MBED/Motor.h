@@ -9,25 +9,31 @@ class MotorController
 private:
     PwmOut motorPwm;
     float dutyCycle;
+		float test,test2,test3;
 
     QEI encoder;
 
     float targetSpeed;
     
-    int target_,feed_,currentDiff_,Pout,Iout,Dout,PIDout;
-    int IoutMax,PIDoutMax;
+    float target_,feed_,currentDiff_,Pout,Iout,Dout,PIDout;
+    float IoutMax,PIDoutMax;
     float P,I,D;
 
-    Ticker motorPIDTicker;
+    Ticker motorPIDTicker,printTicker;
+	
     
     char name_;
 
 		DigitalOut enable;
 
 public:
-    MotorController(PinName pwm,PinName CH1,PinName CH2,float p,float i,float d,char whichMotor,PinName en):motorPwm(pwm),dutyCycle(0.5f),encoder(CH1,CH2,NC,256),P(p),I(i),D(d),name_(whichMotor),enable(en)
+    MotorController(PinName pwm,PinName CH1,PinName CH2,float p,float i,float d,char whichMotor,PinName en,int pls):motorPwm(pwm),dutyCycle(0.5f),encoder(CH1,CH2,NC,pls),P(p),I(i),D(d),name_(whichMotor),enable(en)
     {
         targetSpeed = 0;
+			test =0;
+			test2 = 0;
+			test3 = 0;
+			
 
         target_=0;
         feed_=0;
@@ -39,15 +45,17 @@ public:
         IoutMax=99999999;
         PIDoutMax=10000;
 
-        motorPwm.period_us(100);
+        motorPwm.period_us(50);
 
         motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.01f);
+				printTicker.attach(callback(this,&MotorController::PrintTickerFunct),0.11f);
+			
 			
 				enable.write(1);
     }
 
 
-    float MotorPIDFun(int target,int feed)
+    float MotorPIDFun(float target,float feed)
     {
         target_ = target;
         feed_ = feed;
@@ -68,10 +76,14 @@ public:
 
     void TickerFunct(void)
     {
-        dutyCycle +=  MotorPIDFun(targetSpeed,encoder.getRotationSpeed());
-        dutyCycle  =dutyCycle>0.90f?0.9f:dutyCycle;
+				test = encoder.getRotationSpeed();
+			test2 =  MotorPIDFun(targetSpeed,test);
+        dutyCycle += test2;
+			test3++;
+        dutyCycle  =dutyCycle>0.9f?0.9f:dutyCycle;
         dutyCycle=dutyCycle<0.1f?0.1f:dutyCycle;
         motorPwm.write(dutyCycle);
+		//	printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
         
 		
     }
@@ -80,11 +92,12 @@ public:
     {
         targetSpeed = x;
     }
-		void print(void)
+		void PrintTickerFunct(void)
 		{
 			
-				//printf(" %c**speed:%d ",name_,encoder.getPulses());
-        printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
+				printf(" %c**speed:%d ",name_,encoder.getPulses());
+			//printf(" %c**speed:%f***PID:%f",name_,test,test2);
+			test3 = 0;
 		}
 
 

@@ -139,7 +139,7 @@
 #define CURR_MASK 0x2 //Mask for the current state in determining direction
 //of rotation.
 #define INVALID   0x3 //XORing two states where both bits have changed.
-#define SAMPLETIME 0.05f
+#define SAMPLETIME 0.01f
 /**
  * Quadrature Encoder Interface.
  */
@@ -244,12 +244,14 @@ private:
     int          prevState_;
     int          currState_;
     
-    int lastPulses;
-    int pulsesDiff;
+    volatile int lastPulses;
+    volatile int pulsesDiff;
+		
+		volatile int temp;
 
     volatile int pulses_;
     volatile int revolutions_;
-    volatile int rotationSpeed;//degree/s
+    volatile float rotationSpeed;//degree/s
 
 };
 

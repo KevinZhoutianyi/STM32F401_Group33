@@ -141,6 +141,8 @@ QEI::QEI(PinName channelA,
     pulsesDiff = 0;
     pulsesPerRev_ = pulsesPerRev;
     encoding_     = encoding;
+		temp = 0;
+			
 
     //Workout what the current state is.
     int chanA = channelA_.read();
@@ -303,7 +305,8 @@ float QEI::getRotationSpeed(void)// return degree/s
 
 void QEI::tickerFun(void)
 {
-    pulsesDiff = pulses_ - lastPulses;
-    lastPulses = pulses_;
-    rotationSpeed = ((float)pulsesDiff/(float)SAMPLETIME)*360.0f/256.0f;
+	temp = pulses_;
+    pulsesDiff = temp - lastPulses;
+    lastPulses = temp;
+    rotationSpeed = (pulsesDiff)/SAMPLETIME;
 }
