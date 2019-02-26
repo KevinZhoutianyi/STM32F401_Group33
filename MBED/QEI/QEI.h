@@ -140,6 +140,7 @@
 //of rotation.
 #define INVALID   0x3 //XORing two states where both bits have changed.
 #define SAMPLETIME 0.01f
+#define SAMPLETIME_TEST 1.0f
 /**
  * Quadrature Encoder Interface.
  */
@@ -209,8 +210,12 @@ public:
     int getRevolutions(void);
     
     float getRotationSpeed(void);
+		    
+    float getRotationSpeed_test(void);
     
     void tickerFun(void);
+		
+		void tickerFun_test(void);
     
     
 
@@ -238,7 +243,7 @@ private:
     InterruptIn channelB_;
     InterruptIn index_;
     
-    Ticker ticker;
+    Ticker ticker,ticker_test;
 
     int          pulsesPerRev_;
     int          prevState_;
@@ -252,6 +257,14 @@ private:
     volatile int pulses_;
     volatile int revolutions_;
     volatile float rotationSpeed;//degree/s
+		
+		
+		
+		
+		    volatile int lastPulses_test;
+    volatile int pulsesDiff_test;
+    volatile float rotationSpeed_test;//degree/s
+
 
 };
 

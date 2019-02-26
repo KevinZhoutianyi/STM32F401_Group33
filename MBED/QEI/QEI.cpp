@@ -139,9 +139,16 @@ QEI::QEI(PinName channelA,
     revolutions_  = 0;
     lastPulses = 0;
     pulsesDiff = 0;
+		rotationSpeed=0;
     pulsesPerRev_ = pulsesPerRev;
     encoding_     = encoding;
+		
 		temp = 0;
+					
+					
+		lastPulses_test = 0;
+    pulsesDiff_test = 0;
+		rotationSpeed_test=0;
 			
 
     //Workout what the current state is.
@@ -168,6 +175,7 @@ QEI::QEI(PinName channelA,
         index_.rise(this, &QEI::index);
     }
     ticker.attach(callback(this,&QEI::tickerFun),SAMPLETIME);
+		ticker_test.attach(callback(this,&QEI::tickerFun_test),SAMPLETIME_TEST);
 
 }
 
@@ -303,10 +311,23 @@ float QEI::getRotationSpeed(void)// return degree/s
     return rotationSpeed;
 }
 
+float QEI::getRotationSpeed_test(void)// return degree/s
+{   
+    return rotationSpeed_test;
+}
+
+
 void QEI::tickerFun(void)
 {
 	temp = pulses_;
     pulsesDiff = temp - lastPulses;
     lastPulses = temp;
     rotationSpeed = (pulsesDiff)/SAMPLETIME;
+}
+void QEI::tickerFun_test(void)
+{
+	
+    pulsesDiff_test = pulses_- lastPulses_test;
+    lastPulses_test = pulses_;
+    rotationSpeed_test = (pulsesDiff_test)/SAMPLETIME_TEST;
 }

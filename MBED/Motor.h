@@ -2,14 +2,13 @@
 #define MOTOR_H
 #include "mbed.h"
 #include "QEI.h"
-
+#define LIMIT 0.7f
 
 class MotorController
 {
 private:
     PwmOut motorPwm;
     float dutyCycle;
-		float test,test2,test3;
 
     QEI encoder;
 
@@ -19,7 +18,7 @@ private:
     float IoutMax,PIDoutMax;
     float P,I,D;
 
-    Ticker motorPIDTicker,printTicker;
+    Ticker motorPIDTicker;
 	
     
     char name_;
@@ -30,9 +29,6 @@ public:
     MotorController(PinName pwm,PinName CH1,PinName CH2,float p,float i,float d,char whichMotor,PinName en,int pls):motorPwm(pwm),dutyCycle(0.5f),encoder(CH1,CH2,NC,pls),P(p),I(i),D(d),name_(whichMotor),enable(en)
     {
         targetSpeed = 0;
-			test =0;
-			test2 = 0;
-			test3 = 0;
 			
 
         target_=0;
@@ -48,7 +44,6 @@ public:
         motorPwm.period_us(50);
 
         motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.01f);
-				printTicker.attach(callback(this,&MotorController::PrintTickerFunct),0.11f);
 			
 			
 				enable.write(1);
@@ -76,14 +71,14 @@ public:
 
     void TickerFunct(void)
     {
-				test = encoder.getRotationSpeed();
-			test2 =  MotorPIDFun(targetSpeed,test);
-        dutyCycle += test2;
-			test3++;
-        dutyCycle  =dutyCycle>0.9f?0.9f:dutyCycle;
-        dutyCycle=dutyCycle<0.1f?0.1f:dutyCycle;
+				
+			dutyCycle +=  MotorPIDFun(targetSpeed,encoder.getRotationSpeed());
+        
+			
+        dutyCycle  =dutyCycle>LIMIT?LIMIT:dutyCycle;
+			dutyCycle=dutyCycle<(1-LIMIT)?(1-LIMIT):dutyCycle;
         motorPwm.write(dutyCycle);
-		//	printf(" %c**speed:%f ",name_,encoder.getRotationSpeed());
+		
         
 		
     }
@@ -92,14 +87,24 @@ public:
     {
         targetSpeed = x;
     }
-		void PrintTickerFunct(void)
+
+		void encoderReset(void)
 		{
-			
-				printf(" %c**speed:%d ",name_,encoder.getPulses());
-			//printf(" %c**speed:%f***PID:%f",name_,test,test2);
-			test3 = 0;
+			encoder.reset();
 		}
 
+		float getRotationSpeed(void)
+		{
+			return encoder.getRotationSpeed();
+		}
+		float getRotationSpeed_test(void)
+		{
+			return encoder.getRotationSpeed_test();
+		}
+		char getName(void)
+		{
+			return name_;
+		}
 
 };
 
