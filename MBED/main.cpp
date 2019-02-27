@@ -1,13 +1,15 @@
 #include "mbed.h"
 #include "Motor.h"
-#define TESTSPEED 700
+#define TESTSPEED 1800
+#define test 0.5f
+#define testTime 0.8f
 
 
 
 int main()
 {
 
-  MotorController* motorControllerLeft = new MotorController(PB_9,PB_5,PB_4,0.77f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME
+  MotorController* motorControllerLeft = new MotorController(PB_9,PB_5,PB_4,0.75f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME
   MotorController* motorControllerRight = new MotorController(PB_8,PB_3,PB_10,0.82f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
 	DigitalOut en(PB_6);
@@ -29,15 +31,29 @@ int main()
 //		wait(2);
 //		
 //	}
-	for(int j = 0;j<=2;j++){
+	for(int j = 0;j<=1;j++){
 			motorControllerLeft->SetTargetSpeed(TESTSPEED);//max 1600
+			motorControllerRight->SetTargetSpeed(TESTSPEED*test);
+			wait(testTime);
+			motorControllerLeft->SetTargetSpeed(TESTSPEED*test);//max 1600
 			motorControllerRight->SetTargetSpeed(TESTSPEED);
-			wait(3);
-			motorControllerLeft->SetTargetSpeed(-TESTSPEED);//max 1600
-			motorControllerRight->SetTargetSpeed(-TESTSPEED);
-			wait(3);
+			wait(testTime*0.8f);
+		
+		
+
 	}
-	
+		motorControllerLeft->SetTargetSpeed(0);//max 1600
+	motorControllerRight->SetTargetSpeed(0);
+wait(1);
+	for(int j = 0;j<=1;j++){
+		
+			motorControllerLeft->SetTargetSpeed(-TESTSPEED*test);//max 1600
+			motorControllerRight->SetTargetSpeed(-TESTSPEED);
+			wait(testTime);
+				motorControllerLeft->SetTargetSpeed(-TESTSPEED);//max 1600
+			motorControllerRight->SetTargetSpeed(-TESTSPEED*test);
+			wait(testTime*0.8f);
+	}
 	motorControllerLeft->SetTargetSpeed(0);//max 1600
 	motorControllerRight->SetTargetSpeed(0);
 	

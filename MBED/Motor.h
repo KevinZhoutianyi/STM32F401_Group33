@@ -2,7 +2,7 @@
 #define MOTOR_H
 #include "mbed.h"
 #include "QEI.h"
-#define LIMIT 0.7f
+#define LIMIT 0.8f
 
 class MotorController
 {
