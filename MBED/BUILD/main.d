@@ -173,3 +173,5 @@
 .\build\main.o: .\mbed\platform/ScopedLock.h
 .\build\main.o: Motor.h
 .\build\main.o: .\QEI\QEI.h
+.\build\main.o: .\SoftSerial\SoftSerial.h
+.\build\main.o: .\SoftSerial\SoftSerial_Ticker.h
