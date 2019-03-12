@@ -10,12 +10,13 @@
 int main()
 {
 
-  MotorController* motorControllerLeft = new MotorController(PB_9,PB_5,PB_4,0.75f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME
-  MotorController* motorControllerRight = new MotorController(PB_8,PB_3,PB_10,0.82f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
+  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.6f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME
+  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.65f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
-	SoftSerial hm10(PA_11,PA_12); 
+	Serial hm10(PA_11,PA_12); 
 	
 	DigitalOut en(PB_6);
+	char c;
 	
 	en.write(1);
 	hm10.baud(9600);
@@ -55,37 +56,40 @@ int main()
 //	motorControllerRight->SetTargetSpeed(0);
 //	
 
-	
+	motorControllerLeft->SetTargetSpeed(0);
+					motorControllerRight->SetTargetSpeed(0);
   while(1) {
 		
 		if (hm10.readable()) {
-        if(hm10.getc()=='0')
+				c=hm10.getc();
+					
+    }
+        if(c=='0')
 				{
 					motorControllerLeft->SetTargetSpeed(0);
 					motorControllerRight->SetTargetSpeed(0);
 				}
-				else if(hm10.getc()=='1')
+				else if(c=='1')
 				{
 					motorControllerLeft->SetTargetSpeed(500);
 					motorControllerRight->SetTargetSpeed(500);
 				}
-				else if(hm10.getc()=='2')
+				else if(c=='2')
 				{
 					motorControllerLeft->SetTargetSpeed(1000);
 					motorControllerRight->SetTargetSpeed(1000);
 				}
-				else if(hm10.getc()=='3')
+				else if(c=='3')
 				{
 					motorControllerLeft->SetTargetSpeed(-500);
 					motorControllerRight->SetTargetSpeed(-500);
 				}
-				else if(hm10.getc()=='4')
+				else if(c=='4')
 				{
 					motorControllerLeft->SetTargetSpeed(-1000);
 					motorControllerRight->SetTargetSpeed(-1000);
 				}
-				
-    }
+		
 		
 		
 		//	wait(0.2f);
