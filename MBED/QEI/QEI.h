@@ -140,7 +140,6 @@
 //of rotation.
 #define INVALID   0x3 //XORing two states where both bits have changed.
 #define SAMPLETIME 0.01f
-#define SAMPLETIME_TEST 1.0f
 /**
  * Quadrature Encoder Interface.
  */

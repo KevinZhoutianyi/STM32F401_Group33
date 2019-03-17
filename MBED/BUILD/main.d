@@ -1,5 +1,5 @@
-.\build\main.o: main.cpp
-.\build\main.o: mbed_config.h
+.\build\main.o: USER\cpp\main.cpp
+.\build\main.o: .\USER\h\mbed_config.h
 .\build\main.o: .\mbed\mbed.h
 .\build\main.o: .\mbed\platform/mbed_version.h
 .\build\main.o: .\mbed\platform/mbed_toolchain.h
@@ -171,7 +171,5 @@
 .\build\main.o: .\mbed\platform/DeepSleepLock.h
 .\build\main.o: .\mbed\platform/mbed_stats.h
 .\build\main.o: .\mbed\platform/ScopedLock.h
-.\build\main.o: Motor.h
+.\build\main.o: .\USER\h\Motor.h
 .\build\main.o: .\QEI\QEI.h
-.\build\main.o: .\SoftSerial\SoftSerial.h
-.\build\main.o: .\SoftSerial\SoftSerial_Ticker.h

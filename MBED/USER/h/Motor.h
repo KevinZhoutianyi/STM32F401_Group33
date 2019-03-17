@@ -10,7 +10,7 @@ private:
     float dutyCycle;
     QEI encoder;
     float targetSpeed;
-    float target_,feed_,currentDiff_,Pout,Iout,Dout,PIDout;
+    float target_,feed_,currentDiff_,lastDiff_,Pout,Iout,Dout,PIDout;
     float IoutMax,PIDoutMax;
     float P,I,D;
     Ticker motorPIDTicker;

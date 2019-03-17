@@ -1,5 +1,5 @@
 .\build\qei.o: QEI/QEI.cpp
-.\build\qei.o: mbed_config.h
+.\build\qei.o: .\USER\h\mbed_config.h
 .\build\qei.o: QEI/QEI.h
 .\build\qei.o: .\mbed\mbed.h
 .\build\qei.o: .\mbed\platform/mbed_version.h

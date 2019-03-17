@@ -35,4 +35,5 @@ protected:
     FunctionPointer _function;
 };
 
+
 #endif

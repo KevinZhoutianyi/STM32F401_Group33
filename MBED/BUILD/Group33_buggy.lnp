@@ -1,5 +1,7 @@
 --cpu Cortex-M4.fp
 ".\build\main.o"
+".\build\motor.o"
+".\build\navi.o"
 "mbed/TARGET_NUCLEO_F401RE/TOOLCHAIN_ARM_STD/analogin_api.o"
 "mbed/TARGET_NUCLEO_F401RE/TOOLCHAIN_ARM_STD/analogin_device.o"
 "mbed/TARGET_NUCLEO_F401RE/TOOLCHAIN_ARM_STD/analogout_api.o"
@@ -124,9 +126,6 @@
 "mbed/TARGET_NUCLEO_F401RE/TOOLCHAIN_ARM_STD/trng_api.o"
 "mbed/TARGET_NUCLEO_F401RE/TOOLCHAIN_ARM_STD/us_ticker.o"
 ".\build\qei.o"
-".\build\softserial.o"
-".\build\softserial_rx.o"
-".\build\softserial_tx.o"
 --scatter ".\mbed\TARGET_NUCLEO_F401RE\TOOLCHAIN_ARM_STD\stm32f401xe.sct"
 --show_full_path --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

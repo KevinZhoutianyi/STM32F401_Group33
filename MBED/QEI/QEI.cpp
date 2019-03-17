@@ -175,7 +175,6 @@ QEI::QEI(PinName channelA,
         index_.rise(this, &QEI::index);
     }
     ticker.attach(callback(this,&QEI::tickerFun),SAMPLETIME);
-		ticker_test.attach(callback(this,&QEI::tickerFun_test),SAMPLETIME_TEST);
 
 }
 
@@ -311,10 +310,7 @@ float QEI::getRotationSpeed(void)// return degree/s
     return rotationSpeed;
 }
 
-float QEI::getRotationSpeed_test(void)// return degree/s
-{   
-    return rotationSpeed_test;
-}
+
 
 
 void QEI::tickerFun(void)
@@ -323,11 +319,4 @@ void QEI::tickerFun(void)
     pulsesDiff = temp - lastPulses;
     lastPulses = temp;
     rotationSpeed = (pulsesDiff)/SAMPLETIME;
-}
-void QEI::tickerFun_test(void)
-{
-	
-    pulsesDiff_test = pulses_- lastPulses_test;
-    lastPulses_test = pulses_;
-    rotationSpeed_test = (pulsesDiff_test)/SAMPLETIME_TEST;
 }
