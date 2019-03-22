@@ -28,10 +28,14 @@ int main()
 	
 	Serial hm10(PA_11,PA_12); 
 	
-	DigitalOut en(PB_6);//motor board enable
-	
-	
+	DigitalOut en(PB_6),c1(PB_13),c2(PB_14),c3(PB_15);//motor board enable
+	                    
+	                    
 	en.write(1);
+	c1.write(1);
+	c2.write(1);
+	c3.write(1);
+	
 	hm10.baud(9600);//bluetooth baudrate 9600
 	
 	motorControllerLeft->encoderReset();
@@ -41,7 +45,7 @@ int main()
 	motorControllerRight->SetTargetSpeed(0);
 	
   while(1) {
-		
+		wait(0.1f);
 		if (hm10.readable()) {
 				if(hm10.getc()=='t')
 				{
@@ -49,6 +53,9 @@ int main()
 				}
 					
     }
+		
+//		printf("\r\n***%f",navi->getPos());
+		//navi->PrintSensors();
         
 
   }

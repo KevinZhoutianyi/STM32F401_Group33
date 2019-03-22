@@ -1,7 +1,7 @@
 #include "Navi.h"
-#define COEF1 10
-#define COEF2 20
-#define COEF3 30
+#define COEF1 1000
+#define COEF2 1500
+#define COEF3 2000
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -49,8 +49,17 @@ void Navigation::setSpeed(void)
 	position = COEF1*(s4.read()-s3.read())+COEF2*(s5.read()-s2.read())+COEF3*(s6.read()-s1.read());
 	speedDiff = speedDiffPID(position);
 	
-	motorLeft->SetTargetSpeed(motorLeft->getRotationSpeed()-speedDiff);
-	motorRight->SetTargetSpeed(motorRight->getRotationSpeed()+speedDiff);
+	//motorLeft->SetTargetSpeed(motorLeft->getRotationSpeed()-speedDiff);
+	//motorRight->SetTargetSpeed(motorRight->getRotationSpeed()+speedDiff);
 	
 	
+}
+float Navigation::getPos(void)
+{
+	return position;
+}
+
+void Navigation::PrintSensors(void)
+{
+			printf("\r\n***%f***%f***%f***%f***%f***%f",s4.read(),s3.read(),s5.read(),s2.read(),s6.read(),s1.read());
 }

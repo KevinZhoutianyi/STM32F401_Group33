@@ -28,6 +28,8 @@ public:
 
 		float speedDiffPID(float feed);
 		void setSpeed(void);
+		float getPos(void);
+		void PrintSensors(void);
 		
     
 };

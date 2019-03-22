@@ -173,3 +173,4 @@
 .\build\main.o: .\mbed\platform/ScopedLock.h
 .\build\main.o: .\USER\h\Motor.h
 .\build\main.o: .\QEI\QEI.h
+.\build\main.o: .\USER\h\Navi.h
