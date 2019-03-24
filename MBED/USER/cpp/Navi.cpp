@@ -8,6 +8,9 @@ Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s
 PinName mid,PinName in,MotorController* left,MotorController* right,float p,float i,float d):s1(s1_),s2(s2_),s3(s3_),s4(s4_),s5(s5_),s6(s6_),
 out_en(out),mid_en(mid),in_en(in),motorLeft(left),motorRight(right),P(p),I(i),D(d)
 {
+	out_en.write(1);
+	mid_en.write(1);
+	in_en.write(1);
 	speedDiff = 0;
 	target_=0;//in middle
 	feed_=0;
@@ -49,8 +52,8 @@ void Navigation::setSpeed(void)
 	position = COEF1*(s4.read()-s3.read())+COEF2*(s5.read()-s2.read())+COEF3*(s6.read()-s1.read());
 	speedDiff = speedDiffPID(position);
 	
-	//motorLeft->SetTargetSpeed(motorLeft->getRotationSpeed()-speedDiff);
-	//motorRight->SetTargetSpeed(motorRight->getRotationSpeed()+speedDiff);
+	motorLeft->SetTargetSpeed(500-speedDiff);
+	motorRight->SetTargetSpeed(500+speedDiff);
 	
 	
 }

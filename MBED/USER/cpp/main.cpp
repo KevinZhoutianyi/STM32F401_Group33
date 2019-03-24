@@ -24,17 +24,15 @@ int main()
   MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.6f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
   MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.65f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
-	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PA_5,PA_6,PA_7,motorControllerLeft,motorControllerRight,1,0,0);
+	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,1.5f,0,0);
 	
 	Serial hm10(PA_11,PA_12); 
 	
-	DigitalOut en(PB_6),c1(PB_13),c2(PB_14),c3(PB_15);//motor board enable
+	DigitalOut en(PB_6);//motor board enable
 	                    
 	                    
 	en.write(1);
-	c1.write(1);
-	c2.write(1);
-	c3.write(1);
+	
 	
 	hm10.baud(9600);//bluetooth baudrate 9600
 	
