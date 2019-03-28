@@ -20,6 +20,8 @@ private:
     float IoutMax,PIDoutMax;
     float P,I,D;
 		float speedDiff;
+		float average;
+		float deviation;
 		
 public:
     Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -30,6 +32,9 @@ public:
 		void setSpeed(void);
 		float getPos(void);
 		void PrintSensors(void);
+		void detachh(void);
+		void retachh(void);
+		float Abs(float x);
 		
     
 };

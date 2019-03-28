@@ -1,7 +1,14 @@
 #include "Navi.h"
-#define COEF1 1000
-#define COEF2 1500
-#define COEF3 2000
+#define COEF1 1500
+#define COEF2 8000
+#define COEF3 28000
+#define S1 s1.read()*1.35f
+#define S2 s2.read()*1.8f
+#define S3 s3.read()
+#define S4 s4.read()*1.2f
+#define S5 s5.read()*1.3f
+#define S6 s6.read()
+#define ABS(x) x>0?x=x:x=-x;
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -21,7 +28,9 @@ out_en(out),mid_en(mid),in_en(in),motorLeft(left),motorRight(right),P(p),I(i),D(
 	Dout=0;
 	PIDout=0;
 	IoutMax=999999;
-	PIDoutMax=2000;//maximum of the wheel speed
+	PIDoutMax=20000000;
+	average = 0;
+	deviation = 0;
 	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.01f);
 }
 
@@ -49,11 +58,21 @@ float Navigation::speedDiffPID(float feed)
 }
 void Navigation::setSpeed(void)
 {
-	position = COEF1*(s4.read()-s3.read())+COEF2*(s5.read()-s2.read())+COEF3*(s6.read()-s1.read());
-	speedDiff = speedDiffPID(position);
-	
-	motorLeft->SetTargetSpeed(500-speedDiff);
-	motorRight->SetTargetSpeed(500+speedDiff);
+	average = (S1+ S2 + S3+ S4+ S5+ S6)/6.0f;
+	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average))*1000 ;
+	if(deviation>100)
+	{
+		position = COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
+		speedDiff = speedDiffPID(position);
+		
+		motorLeft->SetTargetSpeed(800-speedDiff);
+		motorRight->SetTargetSpeed(800+speedDiff);
+	}
+	else
+	{
+		motorLeft->SetTargetSpeed(0);
+		motorRight->SetTargetSpeed(0);
+	}
 	
 	
 }
@@ -64,5 +83,26 @@ float Navigation::getPos(void)
 
 void Navigation::PrintSensors(void)
 {
-			printf("\r\n***%f***%f***%f***%f***%f***%f",s4.read(),s3.read(),s5.read(),s2.read(),s6.read(),s1.read());
+//		printf("\r\n***%f***%f***%f***%f***%f***%f",S1,S2,S3,S4,S5,S6);
+	printf("\r\n%f",position);
+	//printf("\r\n%f",deviation);
+}
+void Navigation::detachh(void){
+	getSpeedPIDTicker.detach();
+}
+
+void Navigation::retachh(void){
+	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.01f);
+}
+
+float Navigation::Abs(float x)
+{
+	if(x>0)
+	{
+		return x;
+	}
+	else
+	{
+		return -x;
+	}
 }

@@ -1,7 +1,7 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 #include "QEI.h"
-#define LIMIT 0.8f
+#define LIMIT 0.95f
 
 class MotorController
 {
