@@ -21,10 +21,10 @@
 int main()
 {
 
-  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.6f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
-  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.65f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
+  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.065f,0.0001,0.18,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
+  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.065f,0.0001,0.18,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
-	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.11f,0,0);
+	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.11f,0,5.0f);
 	
 	Serial hm10(PA_11,PA_12); 
 	
@@ -43,8 +43,9 @@ int main()
 	motorControllerRight->SetTargetSpeed(0);
 	
   while(1) {
+		wait(0.05f);
+		navi->PrintSensors();
 		
-	//`````	navi->PrintSensors();
 		if (hm10.readable()) {
 				if(hm10.getc()=='t')
 				{

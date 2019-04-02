@@ -1,13 +1,13 @@
 #include "Navi.h"
-#define COEF1 1500
-#define COEF2 8000
-#define COEF3 28000
-#define S1 s1.read()*1.35f
-#define S2 s2.read()*1.8f
-#define S3 s3.read()
-#define S4 s4.read()*1.2f
-#define S5 s5.read()*1.3f
-#define S6 s6.read()
+#define COEF1 0
+#define COEF2 0
+#define COEF3 400000
+#define S1 s1.read()*1.96f
+#define S2 s2.read()*1.896f
+#define S3 s3.read()*1.2626f
+#define S4 s4.read()*1.071f
+#define S5 s5.read()*1.38f
+#define S6 s6.read()*1.3216f
 #define ABS(x) x>0?x=x:x=-x;
 
 
@@ -31,7 +31,7 @@ out_en(out),mid_en(mid),in_en(in),motorLeft(left),motorRight(right),P(p),I(i),D(
 	PIDoutMax=20000000;
 	average = 0;
 	deviation = 0;
-	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.01f);
+	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.001f);
 }
 
 float Navigation::speedDiffPID(float feed)
@@ -56,20 +56,25 @@ float Navigation::speedDiffPID(float feed)
 	
 		return PIDout;
 }
+
+
 void Navigation::setSpeed(void)
 {
 	average = (S1+ S2 + S3+ S4+ S5+ S6)/6.0f;
 	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average))*1000 ;
 	if(deviation>100)
+//	if(1)
 	{
 		position = COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 		speedDiff = speedDiffPID(position);
 		
-		motorLeft->SetTargetSpeed(800-speedDiff);
-		motorRight->SetTargetSpeed(800+speedDiff);
+		motorLeft->SetTargetSpeed(3000-speedDiff);
+		motorRight->SetTargetSpeed(3000+speedDiff);
 	}
 	else
 	{
+		motorLeft->resIout();
+		motorRight->resIout();
 		motorLeft->SetTargetSpeed(0);
 		motorRight->SetTargetSpeed(0);
 	}
@@ -83,16 +88,17 @@ float Navigation::getPos(void)
 
 void Navigation::PrintSensors(void)
 {
-//		printf("\r\n***%f***%f***%f***%f***%f***%f",S1,S2,S3,S4,S5,S6);
-	printf("\r\n%f",position);
+		printf("\r\n***%f***%f***%f***%f***%f***%f",S1,S2,S3,S4,S5,S6);
+	//printf("\r\n%f",position);
 	//printf("\r\n%f",deviation);
+	//printf("\r\n%lf",speedDiff);
 }
 void Navigation::detachh(void){
 	getSpeedPIDTicker.detach();
 }
 
 void Navigation::retachh(void){
-	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.01f);
+	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.001f);
 }
 
 float Navigation::Abs(float x)

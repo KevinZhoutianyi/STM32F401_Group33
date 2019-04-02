@@ -16,7 +16,8 @@ private:
 		Ticker getSpeedPIDTicker;
 
     float targetSpeed;
-    float target_,feed_,currentDiff_,lastDiff_,Pout,Iout,Dout,PIDout;
+    float target_,feed_,currentDiff_,lastDiff_,Pout,Dout,PIDout;
+		double Iout;
     float IoutMax,PIDoutMax;
     float P,I,D;
 		float speedDiff;

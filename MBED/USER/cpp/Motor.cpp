@@ -17,10 +17,15 @@ MotorController::MotorController(PinName pwm,PinName CH1,PinName CH2,float p,flo
 
 		motorPwm.period_us(50);
 
-		motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.01f);
+		motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.001f);
 	
 	
 		enable.write(1);
+}
+
+void MotorController::resIout(void)
+{
+	Iout = 0;
 }
 float MotorController::MotorPIDFun(float target,float feed)
 {
@@ -75,4 +80,8 @@ float MotorController::getRotationSpeed(void)
 char MotorController::getName(void)
 {
 	return name_;
+}
+float MotorController::getDuty(void)
+{
+	return dutyCycle;
 }

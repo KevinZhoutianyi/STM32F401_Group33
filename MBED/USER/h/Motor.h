@@ -1,7 +1,7 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 #include "QEI.h"
-#define LIMIT 0.95f
+#define LIMIT 1.0f
 
 class MotorController
 {
@@ -25,6 +25,8 @@ public:
 		void encoderReset(void);
 		float getRotationSpeed(void);
 		char getName(void);
+		void resIout(void);
+		float getDuty(void);
 
 
 };
