@@ -21,14 +21,15 @@
 int main()
 {
 
-  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.08f,0,0,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
-  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.08f,0,0,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
+  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.06f,0,0.01,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
+  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.06f,0,0.01,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
-	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.11f,0,2.0f);
+	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.4f,0,40.0f);
 	
 	Serial hm10(PA_11,PA_12); 
 	
 	DigitalOut en(PB_6);//motor board enable
+	char c;
 	                    
 	                    
 	en.write(1);
@@ -43,11 +44,11 @@ int main()
 	motorControllerRight->SetTargetSpeed(0);
 	
   while(1) {
-		wait(0.1f);
+
 		navi->PrintSensors();
 		
-		if (hm10.readable()) {
-				if(hm10.getc()=='t')
+		c = hm10.getc();
+				if(c=='t')
 				{
 					navi->detachh();
 					motorControllerLeft->SetTargetSpeed(0);
@@ -57,15 +58,16 @@ int main()
 					motorControllerRight->SetTargetSpeed(-500);
 					wait(1.4f);
 					navi->retachh();
+					c='1';
 					
 				}
 					
-    }
+   
 		
-//		printf("\r\n***%f",navi->getPos());
+	//	printf("\r\n***%f",navi->getPos());
 		//navi->PrintSensors();
-		printf("\r\n***L::%f",motorControllerLeft->getRotationSpeed());
-		printf("\r\n***R::%f",motorControllerRight->getRotationSpeed());
+	//	printf("\r\n***L::%f",motorControllerLeft->getRotationSpeed());
+	//	printf("\r\n***R::%f",motorControllerRight->getRotationSpeed());
         
 
   }

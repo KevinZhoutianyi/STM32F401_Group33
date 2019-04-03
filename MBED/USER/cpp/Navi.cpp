@@ -1,15 +1,15 @@
 #include "Navi.h"
-#define COEF1 0
-#define COEF2 40000
-#define COEF3 0
-//#define COEF3 1500000
+#define COEF1 1000
+#define COEF2 5000
+#define COEF3 30000
+//#define COEF3 500000
 
 #define S1 s1.read()*1.96f
 #define S2 s2.read()*1.896f
 #define S3 s3.read()*1.2626f
-#define S4 s4.read()*1.071f
-#define S5 s5.read()*1.38f
-#define S6 s6.read()*1.3216f
+#define S4 s4.read()*1.071f*1.06f
+#define S5 s5.read()*1.38f*1.2f
+#define S6 s6.read()*1.3216f*1.35f
 #define ABS(x) x>0?x=x:x=-x;
 
 
@@ -64,18 +64,18 @@ void Navigation::setSpeed(void)
 {
 	average = (S1+ S2 + S3+ S4+ S5+ S6)/6.0f;
 	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average))*1000 ;
-	if(deviation>130)
+	if(deviation>120)
 //	if(1)
 	{
-		position = COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
+		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 		speedDiff = speedDiffPID(position);
 		
-		motorLeft->SetTargetSpeed(3000-speedDiff);
-		motorRight->SetTargetSpeed(3000+speedDiff);
+		motorLeft->SetTargetSpeed(2000-speedDiff);
+		motorRight->SetTargetSpeed(2000+speedDiff);
 	}
 	else
 	{
-			position = COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
+		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 		motorLeft->resIout();
 		motorRight->resIout();
 		motorLeft->SetTargetSpeed(0);
