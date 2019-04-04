@@ -1,7 +1,7 @@
 #include "Navi.h"
 #define COEF1 1000
 #define COEF2 5000
-#define COEF3 30000
+#define COEF3 10000
 //#define COEF3 500000
 //make it to 0.5 V
 #define S1 s1.read()*4.065f
@@ -11,6 +11,7 @@
 #define S5 s5.read()*2.841f
 #define S6 s6.read()*2.2727f
 #define ABS(x) x>0?x:-x
+#define MAXSPEED 1900
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -69,10 +70,11 @@ void Navigation::setSpeed(void)
 	{
 		
 		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
+		tempSpeed = MAXSPEED - 0.1*Abs(position);
 		speedDiff = speedDiffPID(position);
 		
-		motorLeft->SetTargetSpeed(2300-speedDiff);
-		motorRight->SetTargetSpeed(2300+speedDiff);
+		motorLeft->SetTargetSpeed(tempSpeed-speedDiff);
+		motorRight->SetTargetSpeed(tempSpeed+speedDiff);
 	}
 	else
 	{
@@ -93,8 +95,8 @@ float Navigation::getPos(void)
 void Navigation::PrintSensors(void)
 {
 	//printf("\r\n***%f***%f***%f***%f***%f***%f",S1,S2,S3,S4,S5,S6);
-	//printf("\r\n%f",position);
-	printf("\r\n%f",deviation);
+	printf("\r\n%f",position);
+	//printf("\r\n%f",deviation);
 	//printf("\r\n%lf",speedDiff);
 }
 void Navigation::detachh(void){
