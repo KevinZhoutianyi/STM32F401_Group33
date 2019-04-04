@@ -3,14 +3,14 @@
 #define COEF2 5000
 #define COEF3 30000
 //#define COEF3 500000
-
-#define S1 s1.read()*1.96f
-#define S2 s2.read()*1.896f
-#define S3 s3.read()*1.2626f
-#define S4 s4.read()*1.071f*1.06f
-#define S5 s5.read()*1.38f*1.2f
-#define S6 s6.read()*1.3216f*1.35f
-#define ABS(x) x>0?x=x:x=-x;
+//make it to 0.5 V
+#define S1 s1.read()*4.065f
+#define S2 s2.read()*3.906f
+#define S3 s3.read()*2.7027f
+#define S4 s4.read()*2.463f
+#define S5 s5.read()*2.841f
+#define S6 s6.read()*2.2727f
+#define ABS(x) x>0?x:-x
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -64,14 +64,15 @@ void Navigation::setSpeed(void)
 {
 	average = (S1+ S2 + S3+ S4+ S5+ S6)/6.0f;
 	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average))*1000 ;
-	if(deviation>120)
+	if(deviation>180)
 //	if(1)
 	{
+		
 		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 		speedDiff = speedDiffPID(position);
 		
-		motorLeft->SetTargetSpeed(2000-speedDiff);
-		motorRight->SetTargetSpeed(2000+speedDiff);
+		motorLeft->SetTargetSpeed(2300-speedDiff);
+		motorRight->SetTargetSpeed(2300+speedDiff);
 	}
 	else
 	{
@@ -92,8 +93,8 @@ float Navigation::getPos(void)
 void Navigation::PrintSensors(void)
 {
 	//printf("\r\n***%f***%f***%f***%f***%f***%f",S1,S2,S3,S4,S5,S6);
-	printf("\r\n%f",position);
-	//printf("\r\n%f",deviation);
+	//printf("\r\n%f",position);
+	printf("\r\n%f",deviation);
 	//printf("\r\n%lf",speedDiff);
 }
 void Navigation::detachh(void){
