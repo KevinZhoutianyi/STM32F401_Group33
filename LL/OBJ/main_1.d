@@ -42,3 +42,5 @@
 .\obj\main_1.o: .\MYLIB\inc\Adc.h
 .\obj\main_1.o: .\MYLIB\inc\Led.h
 .\obj\main_1.o: .\MYLIB\inc\Button.h
+.\obj\main_1.o: .\MYLIB\inc\Enable.h
+.\obj\main_1.o: .\MYLIB\inc\Motors_And_Encoders.h

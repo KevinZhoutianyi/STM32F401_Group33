@@ -12,7 +12,7 @@
 
 
 #define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   6)
-#define AVERAGESIZE  ((uint32_t)   20)
+#define AVERAGESIZE  ((uint32_t)   3)
 
   /* Timeout values for ADC operations. */
   /* (enable settling time, disable settling time, ...)                       */
@@ -64,8 +64,8 @@ __ADC_EXT volatile uint8_t ubDmaTransferStatus; /* Variable set into DMA interru
 
 /* Variables for ADC conversion data computation to physical values */
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PA4_mVolt;        /* Value of voltage on GPIO pin (on which is mapped ADC channel) calculated from ADC conversion data (unit: mV) */
-__ADC_EXT volatile uint16_t uhADCxConvertedData_PA0_mVolt; 
-__ADC_EXT volatile uint16_t uhADCxConvertedData_PA1_mVolt; 
+__ADC_EXT volatile uint16_t uhADCxConvertedData_PC2_mVolt; 
+__ADC_EXT volatile uint16_t uhADCxConvertedData_PC3_mVolt; 
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PB0_mVolt;
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PC0_mVolt;
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PC1_mVolt;
@@ -94,9 +94,14 @@ void AdcDmaTransferComplete_Callback(void);
 void AdcDmaTransferError_Callback(void);
 void AdcGrpRegularOverrunError_Callback(void);
 void AdcGrpRegularSequenceConvComplete_Callback(void);
+
 uint16_t GetVoltagePA4(void);
-uint16_t GetVoltagePA0(void);
-uint16_t GetVoltagePA1(void);
+uint16_t GetVoltagePC2(void);
+uint16_t GetVoltagePC3(void);
+uint16_t GetVoltagePB0(void);
+uint16_t GetVoltagePC1(void);
+uint16_t GetVoltagePC0(void);
+
 void ADCPrintValue(void);
 
 #endif 

@@ -417,6 +417,11 @@
               <FileType>1</FileType>
               <FilePath>.\MYLIB\src\Adc.c</FilePath>
             </File>
+            <File>
+              <FileName>Enable.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MYLIB\src\Enable.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

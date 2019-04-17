@@ -34,7 +34,7 @@ void Configure_Motor_Right(void);
 void Set_DutyCycle_Motor_Right(float D);
 void Start(void);
 void Reset_Encoders(void);
-
-
+uint32_t getPulsesLeft(void);
+uint32_t getPulsesRight(void);
 
 

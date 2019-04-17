@@ -6,6 +6,8 @@
 #include "Usart.h"
 #include "Adc.h"
 #include "Button.h"
+#include "Enable.h"
+#include "Motors_And_Encoders.h"
 
 
 
@@ -13,10 +15,25 @@ int main(void)
 {
 
   SystemClock_Config();
+	
 	Configure_USB_UART();
 	Configure_User_LED();
 	Configure_User_Button();
 	
+	Configure_Motorboard_Enable();
+	
+	Configure_OutLED_Enable();
+	Configure_MidLED_Enable();
+	Configure_InLED_Enable();
+	
+	Configure_Bipolar1_Enable();
+	Configure_Bipolar2_Enable();
+	
+	Configure_Motor_Right();
+	Configure_Motor_Left();
+	
+		Configure_Encoder_Left(); 
+		Configure_Encoder_Right(); 
 	
 	/* Configure DMA for data transfer from ADC */
   Configure_DMA();
@@ -37,10 +54,25 @@ int main(void)
   /* Activate ADC */
   /* Perform ADC activation procedure to make it ready to convert. */
   Activate_ADC();
+	MotorBoard_On();
+	
+	OutLED_On();
+	MidLED_On();
+	InLED_On();
+	
+	Bipolar1_On();
+	Bipolar2_On();
+	
+	
+	Set_DutyCycle_Motor_Right(40);
+	Set_DutyCycle_Motor_Left(40);
 
   while (1)
   {
-//		ADCPrintValue();
+		LL_mDelay(500);
+		ADCPrintValue();
+		printf("\r\n Lpulses:%d",getPulsesLeft());
+		printf("\r\n Rpulses:%d",getPulsesRight());
 
 	}
 	

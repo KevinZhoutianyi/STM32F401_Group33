@@ -110,8 +110,8 @@ void Configure_ADC(void)
 	averageCounter = 0;
 //	ubAdcGrpRegularSequenceConvCount=0;
 	uhADCxConvertedData_PA4_mVolt=0;       
-	uhADCxConvertedData_PA0_mVolt=0;           
-	uhADCxConvertedData_PA1_mVolt=0;
+	uhADCxConvertedData_PC2_mVolt=0;           
+	uhADCxConvertedData_PC3_mVolt=0;
 	uhADCxConvertedData_PB0_mVolt=0;
 		uhADCxConvertedData_PC0_mVolt=0;
 		uhADCxConvertedData_PC1_mVolt=0;
@@ -131,8 +131,8 @@ void Configure_ADC(void)
   /* Configure GPIO in analog mode to be used as ADC input */
   LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_ANALOG);
 	LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
-	LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
-	LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_1, LL_GPIO_MODE_ANALOG);
+	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_2, LL_GPIO_MODE_ANALOG);
+	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_3, LL_GPIO_MODE_ANALOG);
 	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_1, LL_GPIO_MODE_ANALOG);
 	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_0, LL_GPIO_MODE_ANALOG);
   
@@ -270,8 +270,8 @@ void Configure_ADC(void)
     
     /* Set ADC group regular sequence: channel on the selected sequence rank. */
     LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_4);
-		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_0);
-		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_1);
+		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_12);
+		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_13);
 		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_8);
 		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_11);
 		LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, LL_ADC_CHANNEL_10);
@@ -346,8 +346,8 @@ void Configure_ADC(void)
     /*       Refer to description of function                                 */
     /*       "LL_ADC_SetChannelSamplingTime()".                               */
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_56CYCLES);
-    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_0, LL_ADC_SAMPLINGTIME_56CYCLES);
-    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_1, LL_ADC_SAMPLINGTIME_56CYCLES);
+    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_12, LL_ADC_SAMPLINGTIME_56CYCLES);
+    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_13, LL_ADC_SAMPLINGTIME_56CYCLES);
 		    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_8, LL_ADC_SAMPLINGTIME_56CYCLES);
 		LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_11, LL_ADC_SAMPLINGTIME_56CYCLES);
 		LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_10, LL_ADC_SAMPLINGTIME_56CYCLES);
@@ -559,15 +559,15 @@ uint16_t GetVoltagePA4(void)
 	uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(0), LL_ADC_RESOLUTION_12B);
   return uhADCxConvertedData_PA4_mVolt;
 }
-uint16_t GetVoltagePA0(void)
+uint16_t GetVoltagePC2(void)
 {
-	uhADCxConvertedData_PA0_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(1), LL_ADC_RESOLUTION_12B);
-  return uhADCxConvertedData_PA0_mVolt;
+	uhADCxConvertedData_PC2_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(1), LL_ADC_RESOLUTION_12B);
+  return uhADCxConvertedData_PC2_mVolt;
 }
-uint16_t GetVoltagePA1(void)
+uint16_t GetVoltagePC3(void)
 {
-	uhADCxConvertedData_PA1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(2), LL_ADC_RESOLUTION_12B);
-	return uhADCxConvertedData_PA1_mVolt;
+	uhADCxConvertedData_PC3_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(2), LL_ADC_RESOLUTION_12B);
+	return uhADCxConvertedData_PC3_mVolt;
 }
 uint16_t GetVoltagePB0(void)
 {
@@ -591,11 +591,11 @@ void ADCPrintValue(void)
 {
 			
 
-//    printf("PA4:%u\r\n",GetVoltagePA4());
-//		printf("PA0:%u\r\n",GetVoltagePA0());
-//		printf("PA1:%u\r\n",GetVoltagePA1());
-//		printf("PB0:%u\r\n",GetVoltagePB0());
-//		printf("PC1:%u\r\n",GetVoltagePC1());
+    printf("PA4:%u\r\n",GetVoltagePA4());
+		printf("PC2:%u\r\n",GetVoltagePC2());
+		printf("PC3:%u\r\n",GetVoltagePC3());
+		printf("PB0:%u\r\n",GetVoltagePB0());
+		printf("PC1:%u\r\n",GetVoltagePC1());
 		printf("PC0:%u\r\n",GetVoltagePC0());
 	
 	printf("\n\n");
@@ -604,7 +604,7 @@ void ADCPrintValue(void)
 //	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[2], LL_ADC_RESOLUTION_12B));
 //	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[3], LL_ADC_RESOLUTION_12B));
 //	printf("PC0:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[4], LL_ADC_RESOLUTION_12B));
-	printf("PC0***:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[5], LL_ADC_RESOLUTION_12B));
+//	printf("PC0***:%u\r\n",__LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, aADCxConvertedData[5], LL_ADC_RESOLUTION_12B));
 	
 		
 		printf("\n\n");

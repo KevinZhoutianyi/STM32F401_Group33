@@ -6,6 +6,7 @@
 ".\obj\button.o"
 ".\obj\usart.o"
 ".\obj\adc.o"
+".\obj\enable.o"
 ".\obj\system_stm32f4xx.o"
 ".\obj\system_functions.o"
 ".\obj\startup_stm32f401xe.o"

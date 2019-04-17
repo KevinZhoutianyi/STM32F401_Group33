@@ -17,7 +17,7 @@ MotorController::MotorController(PinName pwm,PinName CH1,PinName CH2,float p,flo
 
 		motorPwm.period_us(50);
 
-		motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.001f);
+		motorPIDTicker.attach(callback(this,&MotorController::TickerFunct),0.0008f);
 	
 	
 		enable.write(1);

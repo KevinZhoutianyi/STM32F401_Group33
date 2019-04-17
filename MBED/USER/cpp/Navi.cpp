@@ -1,17 +1,17 @@
 #include "Navi.h"
 #define COEF1 1000
 #define COEF2 5000
-#define COEF3 10000
+#define COEF3 13000
 //#define COEF3 500000
 //make it to 0.5 V
 #define S1 s1.read()*4.065f
 #define S2 s2.read()*3.906f
 #define S3 s3.read()*2.7027f
-#define S4 s4.read()*2.463f
+#define S4 s4.read()*3.0f
 #define S5 s5.read()*2.841f
 #define S6 s6.read()*2.2727f
 #define ABS(x) x>0?x:-x
-#define MAXSPEED 1900
+#define MAXSPEED 2500
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
@@ -35,6 +35,7 @@ out_en(out),mid_en(mid),in_en(in),motorLeft(left),motorRight(right),P(p),I(i),D(
 	average = 0;
 	deviation = 0;
 	getSpeedPIDTicker.attach(callback(this,&Navigation::setSpeed),0.001f);
+	
 }
 
 float Navigation::speedDiffPID(float feed)
@@ -70,7 +71,7 @@ void Navigation::setSpeed(void)
 	{
 		
 		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
-		tempSpeed = MAXSPEED - 0.1*Abs(position);
+		tempSpeed = MAXSPEED - 0*Abs(position);
 		speedDiff = speedDiffPID(position);
 		
 		motorLeft->SetTargetSpeed(tempSpeed-speedDiff);
