@@ -44,6 +44,9 @@
 #include "Button.h"
 #include "Led.h"
 #include "main.h"
+#include "Ticker.h"
+
+volatile uint32_t x;
 
 /** @addtogroup STM32F4xx_LL_Examples
   * @{
@@ -160,7 +163,8 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-//1ms
+
+    LL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN); 
 }
 
 /******************************************************************************/
@@ -169,6 +173,19 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f4xx.s).                                               */
 /******************************************************************************/
+
+
+void TIM4_IRQHandler(void)//ticker
+{
+  if(LL_TIM_IsActiveFlag_UPDATE(TIM4) == 1)
+  {
+		
+    //LL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);  
+		  LL_TIM_ClearFlag_UPDATE(TIM4);
+			MotorPIDCallback();
+    
+  }
+}
 void TIM5_IRQHandler(void)
 {
   /* Check whether CC1 interrupt is pending */
@@ -178,7 +195,7 @@ void TIM5_IRQHandler(void)
     LL_TIM_ClearFlag_CC1(TIM5);
   }
 }
-
+ 
 void TIM2_IRQHandler(void)
 {
   /* Check whether CC1 interrupt is pending */
@@ -188,7 +205,6 @@ void TIM2_IRQHandler(void)
     LL_TIM_ClearFlag_CC1(TIM2);
   }
 }
-
 
 /**
   * @brief  This function handles ADC1 interrupt request.

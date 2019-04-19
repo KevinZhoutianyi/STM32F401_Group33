@@ -482,7 +482,7 @@ ErrorStatus LL_TIM_IC_Init(TIM_TypeDef *TIMx, uint32_t Channel, LL_TIM_IC_InitTy
 void LL_TIM_ENCODER_StructInit(LL_TIM_ENCODER_InitTypeDef *TIM_EncoderInitStruct)
 {
   /* Set the default configuration */
-  TIM_EncoderInitStruct->EncoderMode    = LL_TIM_ENCODERMODE_X2_TI1;
+  TIM_EncoderInitStruct->EncoderMode    = LL_TIM_ENCODERMODE_X4_TI12;
   TIM_EncoderInitStruct->IC1Polarity    = LL_TIM_IC_POLARITY_RISING;
   TIM_EncoderInitStruct->IC1ActiveInput = LL_TIM_ACTIVEINPUT_DIRECTTI;
   TIM_EncoderInitStruct->IC1Prescaler   = LL_TIM_ICPSC_DIV1;

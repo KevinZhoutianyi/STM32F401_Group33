@@ -38,10 +38,10 @@ void Configure_InLED_Enable(void){
 void Configure_Bipolar1_Enable(void){
 	//GREEN
 	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
-  LL_GPIO_SetPinMode(GPIOA,     LL_GPIO_PIN_5, LL_GPIO_MODE_OUTPUT);
-  LL_GPIO_SetPinPull(GPIOA,     LL_GPIO_PIN_5, LL_GPIO_PULL_NO);
-  LL_GPIO_SetPinSpeed(GPIOA,    LL_GPIO_PIN_5, LL_GPIO_SPEED_FREQ_HIGH);
-	LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5);
+  LL_GPIO_SetPinMode(GPIOA,     LL_GPIO_PIN_7, LL_GPIO_MODE_OUTPUT);
+  LL_GPIO_SetPinPull(GPIOA,     LL_GPIO_PIN_7, LL_GPIO_PULL_NO);
+  LL_GPIO_SetPinSpeed(GPIOA,    LL_GPIO_PIN_7, LL_GPIO_SPEED_FREQ_HIGH);
+	LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_7);
 }
 void Configure_Bipolar2_Enable(void){
 	//GREEN
@@ -80,7 +80,7 @@ void InLED_On(void)
 void Bipolar1_On(void)
 {
   /* Turn LED2 on */
-  LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_5);
+  LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_7);
 }
 void Bipolar2_On(void)
 {

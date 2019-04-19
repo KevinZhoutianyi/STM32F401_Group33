@@ -41,3 +41,6 @@
 .\obj\stm32f4xx_it.o: .\MYLIB\inc\Adc.h
 .\obj\stm32f4xx_it.o: .\MYLIB\inc\Led.h
 .\obj\stm32f4xx_it.o: .\MYLIB\inc\Button.h
+.\obj\stm32f4xx_it.o: .\MYLIB\inc\Ticker.h
+.\obj\stm32f4xx_it.o: .\MYLIB\inc\Motors_And_Encoders.h
+.\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

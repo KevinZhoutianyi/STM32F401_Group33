@@ -44,3 +44,5 @@
 .\obj\main_1.o: .\MYLIB\inc\Button.h
 .\obj\main_1.o: .\MYLIB\inc\Enable.h
 .\obj\main_1.o: .\MYLIB\inc\Motors_And_Encoders.h
+.\obj\main_1.o: .\MYLIB\inc\Ticker.h
+.\obj\main_1.o: .\MYLIB\inc\Motors_And_Encoders.h

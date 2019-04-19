@@ -48,8 +48,8 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_2);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  /* Set systick to 1ms */
-  SysTick_Config(84000000 / 1000);
+  /* Set systick to 0.1ms */
+  SysTick_Config(84000000 / 100);
 
   /* Update CMSIS variable (which can be updated also through SystemCoreClockUpdate function) */
   SystemCoreClock = 84000000;

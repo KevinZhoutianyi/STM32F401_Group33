@@ -8,6 +8,7 @@
 #include "Button.h"
 #include "Enable.h"
 #include "Motors_And_Encoders.h"
+#include "Ticker.h"
 
 
 
@@ -26,14 +27,11 @@ int main(void)
 	Configure_MidLED_Enable();
 	Configure_InLED_Enable();
 	
-	Configure_Bipolar1_Enable();
-	Configure_Bipolar2_Enable();
-	
+		 
 	Configure_Motor_Right();
-	Configure_Motor_Left();
-	
-		Configure_Encoder_Left(); 
 		Configure_Encoder_Right(); 
+				Configure_Motor_Left();
+	Configure_Encoder_Left();
 	
 	/* Configure DMA for data transfer from ADC */
   Configure_DMA();
@@ -56,23 +54,44 @@ int main(void)
   Activate_ADC();
 	MotorBoard_On();
 	
+		Configure_Bipolar1_Enable();
+	Configure_Bipolar2_Enable();
+	
 	OutLED_On();
 	MidLED_On();
 	InLED_On();
 	
 	Bipolar1_On();
 	Bipolar2_On();
+	Reset_Encoders();
 	
+	LeftPIDInit(0.01f,0,0);
+	RightPIDInit(0.01f,0,0);
 	
-	Set_DutyCycle_Motor_Right(40);
-	Set_DutyCycle_Motor_Left(40);
+
+
+	
+	Configure_TIMTimeBase();
+	
+
+
 
   while (1)
   {
-		LL_mDelay(500);
-		ADCPrintValue();
-		printf("\r\n Lpulses:%d",getPulsesLeft());
-		printf("\r\n Rpulses:%d",getPulsesRight());
+		SetTargetLeft(0);
+SetTargetRight(0);
+		
+//		SetTargetLeft(-1000);
+////SetTargetRight(-1000);
+//	LL_mDelay(200);
+////		SetTargetLeft(1000);
+////SetTargetRight(1000);
+////LL_mDelay(200);
+////	
+//	ADCPrintValue();
+//		printf("\r\n Lpulses:%d",getPulsesLeft());
+//		printf("\r\n Rpulses:%d",getPulsesRight());
+//		
 
 	}
 	
