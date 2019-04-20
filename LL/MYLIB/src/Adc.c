@@ -106,7 +106,13 @@ void Configure_ADC(void)
 {
 	
   volatile uint32_t wait_loop_index = 0;
-  
+  cS1 =1;
+	cS2 =1;
+	cS3 =1;
+	cS4 =1;
+	cS5 =1;
+	cS6 =1;
+	state=0;
 	averageCounter = 0;
 //	ubAdcGrpRegularSequenceConvCount=0;
 	uhADCxConvertedData_PA4_mVolt=0;       
@@ -557,43 +563,42 @@ uint16_t GetAverage(uint16_t x)
 uint16_t GetVoltagePA4(void)
 {
 	uhADCxConvertedData_PA4_mVolt        = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(0), LL_ADC_RESOLUTION_12B);
-  return uhADCxConvertedData_PA4_mVolt;
+  return uhADCxConvertedData_PA4_mVolt*cS3;
 }
 uint16_t GetVoltagePC2(void)
 {
 	uhADCxConvertedData_PC2_mVolt            = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(1), LL_ADC_RESOLUTION_12B);
-  return uhADCxConvertedData_PC2_mVolt;
+  return uhADCxConvertedData_PC2_mVolt*cS1;
 }
 uint16_t GetVoltagePC3(void)
 {
 	uhADCxConvertedData_PC3_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(2), LL_ADC_RESOLUTION_12B);
-	return uhADCxConvertedData_PC3_mVolt;
+	return uhADCxConvertedData_PC3_mVolt*cS2;
 }
 uint16_t GetVoltagePB0(void)
 {
 	uhADCxConvertedData_PB0_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(3), LL_ADC_RESOLUTION_12B);
-	return uhADCxConvertedData_PB0_mVolt;
+	return uhADCxConvertedData_PB0_mVolt*cS4;
 }
 uint16_t GetVoltagePC1(void)
 {
 	uhADCxConvertedData_PC1_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(4), LL_ADC_RESOLUTION_12B);
-	return uhADCxConvertedData_PC1_mVolt;
+	return uhADCxConvertedData_PC1_mVolt*cS5;
 }
 
 uint16_t GetVoltagePC0(void)
 {
 	uhADCxConvertedData_PC0_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, GetAverage(5), LL_ADC_RESOLUTION_12B);
-	return uhADCxConvertedData_PC0_mVolt;
+	return uhADCxConvertedData_PC0_mVolt*cS6;
 }
 
 
 void ADCPrintValue(void)
 {
 			
-
-    printf("PA4:%u\r\n",GetVoltagePA4());
-		printf("PC2:%u\r\n",GetVoltagePC2());
+		printf("PC2:%u\r\n",GetVoltagePC2());//s1
 		printf("PC3:%u\r\n",GetVoltagePC3());
+    printf("PA4:%u\r\n",GetVoltagePA4());
 		printf("PB0:%u\r\n",GetVoltagePB0());
 		printf("PC1:%u\r\n",GetVoltagePC1());
 		printf("PC0:%u\r\n",GetVoltagePC0());
@@ -610,5 +615,17 @@ void ADCPrintValue(void)
 		printf("\n\n");
 		
     
+}
+
+
+void CalCoef(void)
+{
+	cS1 = 1000.0f/GetVoltagePC2();
+	cS2 = 1000.0f/GetVoltagePC3();
+	cS3 = 1000.0f/GetVoltagePA4();
+	cS4 = 1000.0f/GetVoltagePB0();
+	cS5 = 1000.0f/GetVoltagePC1();
+	cS6 = 1000.0f/GetVoltagePC0();
+	state = 1;
 }
 

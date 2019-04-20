@@ -35,18 +35,24 @@ typedef struct
 #define __Ticker_EXT extern
 #endif
 
-__Ticker_EXT PID_Type LeftPID,RightPID;
+__Ticker_EXT PID_Type LeftPID,RightPID,NaviPID;
 __Ticker_EXT int32_t currentPulseLeft,lastPulseLeft,currentPulseRight,lastPulseRight,targetRight,targetLeft,leftSpeed,rightSpeed;
 __Ticker_EXT float dutyCycleLeft,dutyCycleRight;
+__Ticker_EXT int32_t average,deviation,S1,S2,S3,S4,S5,S6,position,speedDiff;
+
+
 
 void Configure_TIMTimeBase(void);
 void MotorPIDCallback(void);
+void NaviPIDInit(float P, float I, float D);
 
 void LeftPIDInit(float P, float I, float D);
 void RightPIDInit(float P, float I, float D);
 
 void SetTargetLeft(uint32_t x);
 void SetTargetRight(uint32_t x);
+
+float Abs(float x);
 
 int32_t getRightSpeed(void);
 int32_t getLeftSpeed(void);

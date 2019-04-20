@@ -23,7 +23,7 @@ private:
 		float speedDiff;
 		float average;
 		float deviation;
-float tempSpeed;
+		float tempSpeed;
 		
 public:
     Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,

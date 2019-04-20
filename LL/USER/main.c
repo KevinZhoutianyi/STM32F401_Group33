@@ -21,6 +21,8 @@ int main(void)
 	Configure_User_LED();
 	Configure_User_Button();
 	
+	while(state_==0){}
+	
 	Configure_Motorboard_Enable();
 	
 	Configure_OutLED_Enable();
@@ -29,8 +31,8 @@ int main(void)
 	
 		 
 	Configure_Motor_Right();
-		Configure_Encoder_Right(); 
-				Configure_Motor_Left();
+	Configure_Encoder_Right(); 
+	Configure_Motor_Left();
 	Configure_Encoder_Left();
 	
 	/* Configure DMA for data transfer from ADC */
@@ -52,47 +54,52 @@ int main(void)
   /* Activate ADC */
   /* Perform ADC activation procedure to make it ready to convert. */
   Activate_ADC();
-	MotorBoard_On();
 	
 		Configure_Bipolar1_Enable();
 	Configure_Bipolar2_Enable();
+	MotorBoard_On();
+	Bipolar1_On();
+	Bipolar2_On();
+	
+	Set_DutyCycle_Motor_Left(0.5);
+	Set_DutyCycle_Motor_Right(0.5);
+	
 	
 	OutLED_On();
 	MidLED_On();
 	InLED_On();
-	
-	Bipolar1_On();
-	Bipolar2_On();
+	LL_mDelay(500);
+	ADCPrintValue();
+	CalCoef();
 	Reset_Encoders();
 	
-	LeftPIDInit(0.01f,0,0);
-	RightPIDInit(0.01f,0,0);
+	LeftPIDInit(0.007f,0,0);
+	RightPIDInit(0.007f,0,0);
 	
-
-
 	
+	NaviPIDInit(0.05,0,0);
+		
 	Configure_TIMTimeBase();
 	
-
-
-
   while (1)
   {
-		SetTargetLeft(0);
-SetTargetRight(0);
 		
-//		SetTargetLeft(-1000);
+//		targetLeft= 1000;
+//		targetRight = 1000;	
+//		SetTargetLeft(-1000);	
 ////SetTargetRight(-1000);
-//	LL_mDelay(200);
+	LL_mDelay(200);
 ////		SetTargetLeft(1000);
 ////SetTargetRight(1000);
 ////LL_mDelay(200);
 ////	
-//	ADCPrintValue();
+	ADCPrintValue();
 //		printf("\r\n Lpulses:%d",getPulsesLeft());
 //		printf("\r\n Rpulses:%d",getPulsesRight());
 //		
-
+	printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
+		
+//printf("\r\n F:%d",position);//;printf("\r\n F:%d",rightSpeed);
 	}
 	
 }

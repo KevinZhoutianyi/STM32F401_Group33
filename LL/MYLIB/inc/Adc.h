@@ -70,6 +70,8 @@ __ADC_EXT volatile uint16_t uhADCxConvertedData_PB0_mVolt;
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PC0_mVolt;
 __ADC_EXT volatile uint16_t uhADCxConvertedData_PC1_mVolt;
 
+__ADC_EXT float cS1,cS2,cS3,cS4,cS5,cS6;
+__ADC_EXT int state;
 
 //__ADC_EXT volatile uint16_t uhADCxConvertedData_VrefAnalog_mVolt;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
 //__ADC_EXT volatile uint32_t ubAdcGrpRegularSequenceConvCount;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
@@ -103,5 +105,7 @@ uint16_t GetVoltagePC1(void);
 uint16_t GetVoltagePC0(void);
 
 void ADCPrintValue(void);
+
+void CalCoef(void);
 
 #endif 

@@ -4,6 +4,7 @@
 
 void Configure_User_Button(void)
 {
+	state_ = 0;
    /* Enable the BUTTON Clock */
   USER_BUTTON_GPIO_CLK_ENABLE();
   
@@ -33,7 +34,7 @@ void Configure_User_Button(void)
   */
 void UserButton_Callback(void)
 {
-	
+	state_ = 1;
 	ADCPrintValue();
 //	//ADC1->CR2 |= 1<<30;
 //  /* Turn LED off before performing a new ADC conversion start */

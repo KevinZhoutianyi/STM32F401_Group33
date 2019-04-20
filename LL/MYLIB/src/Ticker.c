@@ -1,7 +1,9 @@
 #define __Ticker_Global
 #include "Ticker.h"
-
-
+#include "Adc.h"
+#define COEF1 1
+#define COEF2 5
+#define COEF3 10
 
 
 /**
@@ -73,6 +75,7 @@ void LeftPIDInit(float P, float I, float D)
 
 	
 }
+
 void RightPIDInit(float P, float I, float D)
 {
 	dutyCycleRight = 0.5;
@@ -91,23 +94,74 @@ void RightPIDInit(float P, float I, float D)
 	RightPID.PIDMax = 10000;
 
 }
+void NaviPIDInit(float P, float I, float D)
+{
+	NaviPID.P = P;
+	NaviPID.I = I;
+	NaviPID.D = D;
+   
+	NaviPID.CurrentError = 0;
+	NaviPID.LastError = 0;
+	NaviPID.Pout = 0;
+	NaviPID.Iout = 0;
+	NaviPID.Dout = 0;
+	NaviPID.PIDout = 0;
+	   
+	NaviPID.IMax = 99999999;
+	NaviPID.PIDMax = 200000000;
+
+	
+}
 void MotorPIDCallback(void)
 {
+	
+
+	/*navi*/
+	S1 = GetVoltagePC2();
+	S2 = GetVoltagePC3();
+	S3 = GetVoltagePA4();
+	S4 = GetVoltagePB0();
+	S5 = GetVoltagePC1();
+	S6 = GetVoltagePC0();
+	average = (S1+ S2+ S3+ S4+ S5+ S6)/6.0f;
+	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average)) ;
+	
+		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
+		
+		NaviPID.CurrentError = 0 - position;
+		NaviPID.Pout = 			NaviPID.P *			NaviPID.CurrentError;
+		NaviPID.Iout += 		NaviPID.I * 		NaviPID.CurrentError;
+		NaviPID.Dout	 = 				NaviPID.D * (NaviPID.CurrentError -	NaviPID.LastError);
+		NaviPID.LastError = NaviPID.CurrentError;
+		NaviPID.PIDout = (NaviPID.Pout + NaviPID.Iout + NaviPID.Dout);
+		if(deviation>600)
+	{
+		targetLeft = 600 - NaviPID.PIDout;
+		targetRight= 600 + NaviPID.PIDout;
+		
+	}
+	else
+	{
+		
+		
+		targetLeft=0;
+		targetRight=0;
+	}
+	/*navi*/
+	
+	
 	lastPulseLeft=currentPulseLeft;
-	lastPulseRight=currentPulseRight;
+	lastPulseRight=currentPulseRight;	
 	currentPulseLeft = getPulsesLeft();
 	currentPulseRight = getPulsesRight();
 	rightSpeed =(int32_t) (currentPulseRight-lastPulseRight)/0.0001f;
 	leftSpeed = (int32_t)(currentPulseLeft-lastPulseLeft)/0.0001f;
 	
-
-	
-	
-	
 	LeftPID.CurrentError = targetLeft - leftSpeed;
 	LeftPID.Pout = LeftPID.P *LeftPID.CurrentError;
+
 	LeftPID.Iout += LeftPID.I * LeftPID.CurrentError;
-	LeftPID.D = 	LeftPID.Dout * (LeftPID.CurrentError -LeftPID.LastError);
+	LeftPID.Dout = 	LeftPID.D * (LeftPID.CurrentError -LeftPID.LastError);
 	LeftPID.LastError = LeftPID.CurrentError;
 	LeftPID.PIDout = (LeftPID.Pout + LeftPID.Iout + LeftPID.Dout);
 
@@ -119,7 +173,7 @@ void MotorPIDCallback(void)
 		RightPID.CurrentError = targetRight - rightSpeed;
 	RightPID.Pout = RightPID.P *RightPID.CurrentError;
 	RightPID.Iout += RightPID.I * RightPID.CurrentError;
-	RightPID.D = 	RightPID.Dout * (RightPID.CurrentError -RightPID.LastError);
+	RightPID.Dout = 	RightPID.D * (RightPID.CurrentError -RightPID.LastError);
 	RightPID.LastError = RightPID.CurrentError;
 	RightPID.PIDout = (RightPID.Pout + RightPID.Iout + RightPID.Dout);
 
@@ -127,11 +181,6 @@ void MotorPIDCallback(void)
 	//	dutyCycleRight = dutyCycleRight>0.8?0.8:dutyCycleRight;
 //	dutyCycleRight = dutyCycleRight<0.2?0.2:dutyCycleRight;
 	Set_DutyCycle_Motor_Right(dutyCycleRight);
-	
-
-	
-	
-	
 	
 }
 
@@ -149,4 +198,15 @@ int32_t getRightSpeed(void)
 }int32_t getLeftSpeed(void)
 {
 	return leftSpeed;
+}
+float Abs(float x)
+{
+	if(x>0)
+	{
+		return x;
+	}
+	else
+	{
+		return -x;
+	}
 }

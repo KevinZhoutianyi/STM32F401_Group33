@@ -35,3 +35,10 @@
 .\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\ticker.o: .\MYLIB\inc\Led.h
 .\obj\ticker.o: .\USER\main.h
+.\obj\ticker.o: .\MYLIB\inc\Adc.h
+.\obj\ticker.o: .\MYLIB\inc\Usart.h
+.\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\ticker.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\arm_math.h
+.\obj\ticker.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

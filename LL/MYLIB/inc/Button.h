@@ -10,6 +10,14 @@
 #include "main.h"
 
 
+#ifdef  GLOBAL_BUTTON
+#define __BUTTON_EXT
+#else
+#define __BUTTON_EXT extern
+#endif
+
+__BUTTON_EXT int state_;
+
 void Configure_User_Button(void);
 void UserButton_Callback(void);
 
