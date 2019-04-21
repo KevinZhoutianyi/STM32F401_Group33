@@ -164,7 +164,7 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
 
-    LL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN); 
+  
 }
 
 /******************************************************************************/
@@ -287,5 +287,30 @@ void USER_BUTTON_IRQHANDLER(void)
     LL_EXTI_ClearFlag_0_31(USER_BUTTON_EXTI_LINE);
   }
 }
+
+/**
+  * Brief   This function handles USARTx Instance interrupt request.
+  * Param   None
+  * Retval  None
+  */
+void USART6_IRQHandler(void)
+{
+  /* Check RXNE flag value in SR register */
+  if(LL_USART_IsActiveFlag_RXNE(USART6) && LL_USART_IsEnabledIT_RXNE(USART6))
+  {
+		
+    /* RXNE flag will be cleared by reading of DR register (done in call) */
+    /* Call function in charge of handling Character reception */
+    USART_CharReception_Callback();
+  }
+  else
+  {
+    /* Call Error function */
+    Error_Callback();
+  }
+	
+}
+
+
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

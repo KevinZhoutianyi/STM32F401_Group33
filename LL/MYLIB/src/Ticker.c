@@ -16,6 +16,7 @@
   */
 void Configure_TIMTimeBase(void)
 {
+	_state=0;
   /* Enable the timer peripheral clock */
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_TIM4); 
   
@@ -114,7 +115,7 @@ void NaviPIDInit(float P, float I, float D)
 }
 void MotorPIDCallback(void)
 {
-	
+	if(_state != 1){
 
 	/*navi*/
 	S1 = GetVoltagePC2();
@@ -148,7 +149,7 @@ void MotorPIDCallback(void)
 		targetRight=0;
 	}
 	/*navi*/
-	
+}
 	
 	lastPulseLeft=currentPulseLeft;
 	lastPulseRight=currentPulseRight;	

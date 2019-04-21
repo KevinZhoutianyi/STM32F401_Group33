@@ -10,6 +10,9 @@
 
 
 void Configure_USB_UART(void);
+void Configure_USART(void);
+void USART_CharReception_Callback(void);
+void Error_Callback(void);
 
 
 #endif 

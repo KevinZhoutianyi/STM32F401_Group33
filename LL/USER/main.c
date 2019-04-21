@@ -20,7 +20,7 @@ int main(void)
 	Configure_USB_UART();
 	Configure_User_LED();
 	Configure_User_Button();
-	
+	Configure_USART();
 	while(state_==0){}
 	
 	Configure_Motorboard_Enable();
@@ -83,7 +83,13 @@ int main(void)
 	
   while (1)
   {
-		
+		if(_state == 1)
+		{
+			targetLeft = 1000;
+			targetRight = -1000;
+			LL_mDelay(100);
+			_state = 0;
+		}
 //		targetLeft= 1000;
 //		targetRight = 1000;	
 //		SetTargetLeft(-1000);	
