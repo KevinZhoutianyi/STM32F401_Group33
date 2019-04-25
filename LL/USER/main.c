@@ -24,10 +24,14 @@ int main(void)
 	while(state_==0){}
 	
 	Configure_Motorboard_Enable();
+
 	
 	Configure_OutLED_Enable();
 	Configure_MidLED_Enable();
 	Configure_InLED_Enable();
+		
+	Configure_Bipolar1_Enable();
+	Configure_Bipolar2_Enable();
 	
 		 
 	Configure_Motor_Right();
@@ -55,8 +59,7 @@ int main(void)
   /* Perform ADC activation procedure to make it ready to convert. */
   Activate_ADC();
 	
-		Configure_Bipolar1_Enable();
-	Configure_Bipolar2_Enable();
+
 	MotorBoard_On();
 	Bipolar1_On();
 	Bipolar2_On();
@@ -68,33 +71,36 @@ int main(void)
 	OutLED_On();
 	MidLED_On();
 	InLED_On();
-	LL_mDelay(500);
+	LL_mDelay(200);
 	ADCPrintValue();
 	CalCoef();
 	Reset_Encoders();
 	
-	LeftPIDInit(0.007f,0,0);
-	RightPIDInit(0.007f,0,0);
+
+	LeftPIDInit(0.025f,0,0);
+	RightPIDInit(0.025f,0,0);
 	
 	
-	NaviPIDInit(0.05,0,0);
+	NaviPIDInit(1,0,0);
 		
 	Configure_TIMTimeBase();
 	
   while (1)
   {
+		
+
 		if(_state == 1)
 		{
 			targetLeft = 1000;
 			targetRight = -1000;
-			LL_mDelay(100);
+			LL_mDelay(71);
 			_state = 0;
 		}
 //		targetLeft= 1000;
 //		targetRight = 1000;	
 //		SetTargetLeft(-1000);	
 ////SetTargetRight(-1000);
-	LL_mDelay(200);
+	LL_mDelay(100);
 ////		SetTargetLeft(1000);
 ////SetTargetRight(1000);
 ////LL_mDelay(200);
@@ -103,7 +109,7 @@ int main(void)
 //		printf("\r\n Lpulses:%d",getPulsesLeft());
 //		printf("\r\n Rpulses:%d",getPulsesRight());
 //		
-	printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
+	//printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
 		
 //printf("\r\n F:%d",position);//;printf("\r\n F:%d",rightSpeed);
 	}

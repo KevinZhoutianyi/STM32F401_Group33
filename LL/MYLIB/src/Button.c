@@ -1,6 +1,7 @@
 #define GLOBAL_BUTTON
 
 #include "Button.h"
+#include "Ticker.h"
 
 void Configure_User_Button(void)
 {
@@ -34,7 +35,16 @@ void Configure_User_Button(void)
   */
 void UserButton_Callback(void)
 {
+	if(state_ == 0)
+	{
 	state_ = 1;
+	targetLeft = 1000;
+	targetRight = 1000;
+	LL_mDelay(50);
+	}else if(state_ == 1)
+	{
+	state_ = 2;
+	}
 	ADCPrintValue();
 //	//ADC1->CR2 |= 1<<30;
 //  /* Turn LED off before performing a new ADC conversion start */

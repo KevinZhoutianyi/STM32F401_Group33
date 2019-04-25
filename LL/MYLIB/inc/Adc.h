@@ -12,7 +12,7 @@
 
 
 #define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   6)
-#define AVERAGESIZE  ((uint32_t)   3)
+#define AVERAGESIZE  ((uint32_t)   1)
 
   /* Timeout values for ADC operations. */
   /* (enable settling time, disable settling time, ...)                       */

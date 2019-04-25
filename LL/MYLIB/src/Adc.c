@@ -185,7 +185,7 @@ void Configure_ADC(void)
     /*       It can be optimized if merged with other delays                  */
     /*       during ADC activation or if other actions are performed          */
     /*       in the meantime.                                                 */
-    wait_loop_index = ((LL_ADC_DELAY_TEMPSENSOR_STAB_US * (SystemCoreClock / (100000 * 2))) / 10);
+    wait_loop_index = (( 0.5* (SystemCoreClock / (100000 * 2))) / 10);
     while(wait_loop_index != 0)
     {
       wait_loop_index--;
@@ -620,12 +620,12 @@ void ADCPrintValue(void)
 
 void CalCoef(void)
 {
-	cS1 = 1000.0f/GetVoltagePC2();
-	cS2 = 1000.0f/GetVoltagePC3();
-	cS3 = 1000.0f/GetVoltagePA4();
-	cS4 = 1000.0f/GetVoltagePB0();
-	cS5 = 1000.0f/GetVoltagePC1();
-	cS6 = 1000.0f/GetVoltagePC0();
+	cS1 = 150.0f/GetVoltagePC2();
+	cS2 = 150.0f/GetVoltagePC3();
+	cS3 = 150.0f/GetVoltagePA4();
+	cS4 = 150.0f/GetVoltagePB0();
+	cS5 = 150.0f/GetVoltagePC1();
+	cS6 = 150.0f/GetVoltagePC0();
 	state = 1;
 }
 

@@ -42,3 +42,4 @@
 .\obj\ticker.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
 .\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\ticker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\ticker.o: .\MYLIB\inc\Button.h

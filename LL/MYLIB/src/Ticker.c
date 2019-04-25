@@ -1,9 +1,12 @@
 #define __Ticker_Global
 #include "Ticker.h"
 #include "Adc.h"
-#define COEF1 1
-#define COEF2 5
-#define COEF3 10
+#include "Button.h"
+#define COEF1 0.5
+#define COEF2 0
+#define COEF3 0
+#define SPEED 2000
+#define MAXSPEED 3800
 
 
 /**
@@ -115,39 +118,57 @@ void NaviPIDInit(float P, float I, float D)
 }
 void MotorPIDCallback(void)
 {
-	if(_state != 1){
+	if(_state != 1 && state_ == 2){
 
-	/*navi*/
-	S1 = GetVoltagePC2();
-	S2 = GetVoltagePC3();
-	S3 = GetVoltagePA4();
-	S4 = GetVoltagePB0();
-	S5 = GetVoltagePC1();
-	S6 = GetVoltagePC0();
-	average = (S1+ S2+ S3+ S4+ S5+ S6)/6.0f;
-	deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average)) ;
+		/*navi*/
+		S1 = GetVoltagePC2();
+		S2 = GetVoltagePC3();
+		S3 = GetVoltagePA4();
+		S4 = GetVoltagePB0();
+		S5 = GetVoltagePC1();
+		S6 = GetVoltagePC0();
+			
+		S1 = S1<250?150:S1;
+		S2 = S2<250?150:S2;
+		S3 = S3<250?150:S3;
+		S4 = S4<250?150:S4;
+		S5 = S5<250?150:S5;
+		S6 = S6<250?150:S6;
+		average = (S1+ S2+ S3+ S4+ S5+ S6)/6.0f;
+		deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average)) ;
 	
 		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 		
-		NaviPID.CurrentError = 0 - position;
-		NaviPID.Pout = 			NaviPID.P *			NaviPID.CurrentError;
-		NaviPID.Iout += 		NaviPID.I * 		NaviPID.CurrentError;
-		NaviPID.Dout	 = 				NaviPID.D * (NaviPID.CurrentError -	NaviPID.LastError);
-		NaviPID.LastError = NaviPID.CurrentError;
-		NaviPID.PIDout = (NaviPID.Pout + NaviPID.Iout + NaviPID.Dout);
+		NaviPID.CurrentError 	= 		0 - position;
+		NaviPID.Pout 					= 		NaviPID.P *			NaviPID.CurrentError;
+		NaviPID.Iout 					+= 		NaviPID.I * 		NaviPID.CurrentError;
+		NaviPID.Dout	 				= 		NaviPID.D * (NaviPID.CurrentError -	NaviPID.LastError);
+		NaviPID.LastError 		= 		NaviPID.CurrentError;
+		NaviPID.PIDout 				= 		(NaviPID.Pout + NaviPID.Iout + NaviPID.Dout);
+		
 		if(deviation>600)
-	{
-		targetLeft = 600 - NaviPID.PIDout;
-		targetRight= 600 + NaviPID.PIDout;
-		
-	}
-	else
-	{
-		
-		
-		targetLeft=0;
-		targetRight=0;
-	}
+		{
+			if((SPEED - NaviPID.PIDout)>MAXSPEED)
+			{
+				targetLeft=MAXSPEED;
+				targetRight=SPEED + NaviPID.PIDout-((SPEED - NaviPID.PIDout)-MAXSPEED);
+			}
+			else if((SPEED + NaviPID.PIDout)>MAXSPEED)
+			{
+				targetRight = MAXSPEED;
+				targetLeft = SPEED - NaviPID.PIDout - ((SPEED + NaviPID.PIDout)-MAXSPEED);
+			}
+			else
+			{
+			targetLeft = SPEED - NaviPID.PIDout;
+			targetRight= SPEED + NaviPID.PIDout;
+			}
+		}
+		else
+		{
+			targetLeft=0;
+			targetRight=0;
+		}
 	/*navi*/
 }
 	
@@ -167,8 +188,8 @@ void MotorPIDCallback(void)
 	LeftPID.PIDout = (LeftPID.Pout + LeftPID.Iout + LeftPID.Dout);
 
 	dutyCycleLeft += (float)LeftPID.PIDout/(float)LeftPID.PIDMax/2.0f;
-//		dutyCycleLeft = dutyCycleLeft>0.8?0.8:dutyCycleLeft;
-//	dutyCycleLeft = dutyCycleLeft<0.2?0.2:dutyCycleLeft;
+	dutyCycleLeft = dutyCycleLeft>1?1:dutyCycleLeft;
+	dutyCycleLeft = dutyCycleLeft<0?0:dutyCycleLeft;
 	Set_DutyCycle_Motor_Left(dutyCycleLeft);
 	
 		RightPID.CurrentError = targetRight - rightSpeed;
@@ -179,8 +200,8 @@ void MotorPIDCallback(void)
 	RightPID.PIDout = (RightPID.Pout + RightPID.Iout + RightPID.Dout);
 
 	dutyCycleRight += (float)RightPID.PIDout/(float)RightPID.PIDMax/2.0f;
-	//	dutyCycleRight = dutyCycleRight>0.8?0.8:dutyCycleRight;
-//	dutyCycleRight = dutyCycleRight<0.2?0.2:dutyCycleRight;
+		dutyCycleRight = dutyCycleRight>1?1:dutyCycleRight;
+	dutyCycleRight = dutyCycleRight<0?0:dutyCycleRight;
 	Set_DutyCycle_Motor_Right(dutyCycleRight);
 	
 }

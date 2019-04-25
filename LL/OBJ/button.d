@@ -40,3 +40,6 @@
 .\obj\button.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
 .\obj\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\button.o: .\MYLIB\inc\Ticker.h
+.\obj\button.o: .\MYLIB\inc\Motors_And_Encoders.h
+.\obj\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
