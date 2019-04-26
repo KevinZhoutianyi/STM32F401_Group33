@@ -11,7 +11,7 @@
 #define S5 s5.read()*2.841f
 #define S6 s6.read()*2.2727f
 #define ABS(x) x>0?x:-x
-#define MAXSPEED 2500
+#define MAXSPEED 1250
 
 
 Navigation::Navigation(PinName s1_,PinName s2_,PinName s3_,PinName s4_,PinName s5_,PinName s6_,PinName out,
