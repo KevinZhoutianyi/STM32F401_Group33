@@ -21,10 +21,10 @@
 int main()
 {
 
-  MotorController* motorControllerLeft = new MotorController(PC_8,PB_5,PB_4,0.06f,0,0.03,'L',PA_5,256);//pwm,CH1,CH2,P,I,D,NAME,enable
-  MotorController* motorControllerRight = new MotorController(PC_6,PB_3,PB_10,0.06f,0,0.03,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
+  MotorController* motorControllerLeft = new MotorController(PC_8,PB_3,PA_15,0.06f,0,0.03,'L',PA_7,256);//pwm,CH1,CH2,P,I,D,NAME,enable
+  MotorController* motorControllerRight = new MotorController(PC_6,PA_1,PA_0,0.06f,0,0.03,'\n',PA_6,256);//PB8leftpwm PB9rightpwm PB6leftBipolarEnable PC7rightBipolarEnable are used to give signal to motor board
 	
-	Navigation *navi = new Navigation(A0,A1,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.28f,0,58.0f);
+	Navigation *navi = new Navigation(PC_2,PC_3,A2,A3,A4,A5,PB_13,PB_14,PB_15,motorControllerLeft,motorControllerRight,0.28f,0,58.0f);
 	
 	Serial hm10(PA_11,PA_12); 
 	
