@@ -87,15 +87,7 @@ int main(void)
 	
   while (1)
   {
-		
-
-		if(_state == 1)
-		{
-			targetLeft = 1000;
-			targetRight = -1000;
-			LL_mDelay(71);
-			_state = 0;
-		}
+	
 //		targetLeft= 1000;
 //		targetRight = 1000;	
 //		SetTargetLeft(-1000);	
@@ -109,7 +101,7 @@ int main(void)
 //		printf("\r\n Lpulses:%d",getPulsesLeft());
 //		printf("\r\n Rpulses:%d",getPulsesRight());
 //		
-	//printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
+	printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
 		
 //printf("\r\n F:%d",position);//;printf("\r\n F:%d",rightSpeed);
 	}

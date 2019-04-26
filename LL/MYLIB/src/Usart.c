@@ -147,7 +147,8 @@ __IO uint32_t received_char;
 
   /* Check if received value is corresponding to specific one : S or s */
   if ((received_char == 'S') || (received_char == 's'))
-  { LL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN); _state=1;
+  { LL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN); 
+		_state=1;
     /* Turn LED2 On : Expected character has been received */
  
   }
