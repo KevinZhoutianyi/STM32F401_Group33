@@ -185,7 +185,7 @@ void Configure_ADC(void)
     /*       It can be optimized if merged with other delays                  */
     /*       during ADC activation or if other actions are performed          */
     /*       in the meantime.                                                 */
-    wait_loop_index = (( 0.5* (SystemCoreClock / (100000 * 2))) / 10);
+    wait_loop_index = 4;//(( 0.5* (SystemCoreClock / (100000 * 2))) / 10);
     while(wait_loop_index != 0)
     {
       wait_loop_index--;

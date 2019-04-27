@@ -81,7 +81,7 @@ int main(void)
 	RightPIDInit(0.025f,0,0);
 	
 	
-	NaviPIDInit(1,0,7.5f);
+	NaviPIDInit(1,0,0);
 		
 	Configure_TIMTimeBase();
 			targetLeft= 1000;

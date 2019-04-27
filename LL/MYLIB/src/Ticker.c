@@ -3,9 +3,9 @@
 #include "Adc.h"
 #include "Button.h"
 #define COEF1 0.1
-#define COEF2 0.9
+#define COEF2 0.85
 #define COEF3 0//2.6
-#define SPEED 2400
+#define SPEED 2700
 #define MAXSPEED 3800
 
 
@@ -20,6 +20,7 @@
 void Configure_TIMTimeBase(void)
 {
 	_state=0;
+	delayCounter=0;
 	reachOutRight = 0;
 	reachOutLeft = 0;
   /* Enable the timer peripheral clock */
@@ -139,9 +140,10 @@ void MotorPIDCallback(void)
 	/* BLE  ---start*/
 	if(_state==1)
 	{
+		delayCounter++;
 		targetLeft= 1000;
 		targetRight = -1000;	
-		if(S5>500||S3>500)
+		if(S5>500&&delayCounter>=1000)
 		{
 			_state = 0;
 		}
@@ -165,7 +167,7 @@ void MotorPIDCallback(void)
 			}
 			
 			targetLeft= 3800;
-			targetRight = 500;	
+			targetRight = 800;	
 			 
 		}
 		else //what to do when out 
@@ -177,7 +179,7 @@ void MotorPIDCallback(void)
 			}
 			
 			targetRight= 3800;
-			targetLeft = 500;	
+			targetLeft = 800;	
 			
 			
 		}
