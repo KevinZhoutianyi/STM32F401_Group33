@@ -84,8 +84,7 @@ int main(void)
 	NaviPIDInit(1,0,0);
 		
 	Configure_TIMTimeBase();
-			targetLeft= 1000;
-		targetRight = 1000;	
+
   while (1)
   {
 	
@@ -101,7 +100,7 @@ int main(void)
 //		printf("\r\n Lpulses:%d",getPulsesLeft());
 //		printf("\r\n Rpulses:%d",getPulsesRight());
 //		
-	printf("\r\n t:%d",targetLeft);printf("\r\n t:%d",targetRight);
+	printf("\r\n t:%d",deviation);//printf("\r\n t:%d",targetRight);
 		
 //printf("\r\n F:%d",position);//;printf("\r\n F:%d",rightSpeed);
 	}

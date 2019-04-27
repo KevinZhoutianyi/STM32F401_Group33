@@ -5,7 +5,7 @@
 #define COEF1 0.1
 #define COEF2 0.85
 #define COEF3 0//2.6
-#define SPEED 2700
+#define SPEED 2700//2700
 #define MAXSPEED 3800
 
 
@@ -21,6 +21,8 @@ void Configure_TIMTimeBase(void)
 {
 	_state=0;
 	delayCounter=0;
+	finish=0;
+	finishCounter=0;
 	reachOutRight = 0;
 	reachOutLeft = 0;
   /* Enable the timer peripheral clock */
@@ -135,6 +137,11 @@ void MotorPIDCallback(void)
 		S5 = S5<500?150:S5;
 		S6 = S6<500?150:S6;
 	
+		average = (S1+ S2+ S3+ S4+ S5+ S6)/6.0f;
+		deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average)) ;
+		
+		position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);	
+	
 	if(state_==2)
 	{
 	/* BLE  ---start*/
@@ -145,13 +152,14 @@ void MotorPIDCallback(void)
 		targetRight = -1000;	
 		if(S5>500&&delayCounter>=1000)
 		{
+			finish = 0;
 			_state = 0;
 		}
 	}
 	/* BLE * ---end*/
 
 	/* OutLine  ---start*/
-	else if(S1>500||S6>500||reachOutRight == 1||reachOutLeft == 1)
+	else if((S1>500||S6>500||reachOutRight == 1||reachOutLeft == 1)&&finish==0)
 		{
 		if(S6>500)   //whether it's out bound!
 			reachOutRight = 1;
@@ -188,12 +196,8 @@ void MotorPIDCallback(void)
 	/* OutLine  ---end*/
 	
 	/* Navi  ---start*/
-		else if( reachOutRight == 0 && reachOutLeft == 0){
+		else if( (reachOutRight == 0 && reachOutLeft == 0)&&finish==0){
 			
-			average = (S1+ S2+ S3+ S4+ S5+ S6)/6.0f;
-			deviation = (Abs(S1 - average) + Abs(S2 - average) + Abs(S3 - average) + Abs(S4 - average) + Abs(S5 - average) + Abs(S6 - average)) ;
-		
-			position =COEF1*(S4-S3)+COEF2*(S5-S2)+COEF3*(S6-S1);
 			
 			NaviPID.CurrentError 	= 		0 - position;
 			NaviPID.Pout 					= 		NaviPID.P *			NaviPID.CurrentError;
@@ -222,6 +226,13 @@ void MotorPIDCallback(void)
 			}
 			else
 			{
+				finishCounter++;
+				if(finishCounter >= 500)
+				{
+					finish = 1;
+					finishCounter = 0;
+				}
+				
 				targetLeft=0;
 				targetRight=0;
 			}

@@ -44,7 +44,14 @@ void UserButton_Callback(void)
 	}else if(state_ == 1)
 	{
 	state_ = 2;
+		LL_mDelay(50);
+	}else if(state_==2)
+	{
+		finishCounter = 0;
+		finish = 0;
+		LL_mDelay(50);
 	}
+	
 	ADCPrintValue();
 //	//ADC1->CR2 |= 1<<30;
 //  /* Turn LED off before performing a new ADC conversion start */

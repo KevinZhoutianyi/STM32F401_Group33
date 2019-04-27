@@ -38,7 +38,7 @@ typedef struct
 __Ticker_EXT PID_Type LeftPID,RightPID,NaviPID;
 __Ticker_EXT int32_t currentPulseLeft,lastPulseLeft,currentPulseRight,lastPulseRight,targetRight,targetLeft,leftSpeed,rightSpeed;
 __Ticker_EXT float dutyCycleLeft,dutyCycleRight;
-__Ticker_EXT int32_t average,deviation,S1,S2,S3,S4,S5,S6,position,speedDiff,_state,reachOutRight,reachOutLeft,delayCounter;
+__Ticker_EXT int32_t average,deviation,S1,S2,S3,S4,S5,S6,position,speedDiff,_state,reachOutRight,reachOutLeft,delayCounter,finish,finishCounter;
 
 
 
