@@ -5,7 +5,7 @@
 #define COEF1 0.1
 #define COEF2 0.9
 #define COEF3 0//2.6
-#define SPEED 2000
+#define SPEED 2400
 #define MAXSPEED 3800
 
 
@@ -165,7 +165,7 @@ void MotorPIDCallback(void)
 			}
 			
 			targetLeft= 3800;
-			targetRight = -1000;	
+			targetRight = 500;	
 			 
 		}
 		else //what to do when out 
@@ -177,7 +177,7 @@ void MotorPIDCallback(void)
 			}
 			
 			targetRight= 3800;
-			targetLeft = -1000;	
+			targetLeft = 500;	
 			
 			
 		}

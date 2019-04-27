@@ -81,15 +81,15 @@ int main(void)
 	RightPIDInit(0.025f,0,0);
 	
 	
-	NaviPIDInit(1,0,0);
+	NaviPIDInit(1,0,7.5f);
 		
 	Configure_TIMTimeBase();
-	
+			targetLeft= 1000;
+		targetRight = 1000;	
   while (1)
   {
 	
-//		targetLeft= 1000;
-//		targetRight = 1000;	
+
 //		SetTargetLeft(-1000);	
 ////SetTargetRight(-1000);
 	LL_mDelay(100);
