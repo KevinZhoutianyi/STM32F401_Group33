@@ -150,7 +150,7 @@ void MotorPIDCallback(void)
 		delayCounter++;
 		targetLeft= 1000;
 		targetRight = -1000;	
-		if(S5>500&&delayCounter>=1000)
+		if(S5>500&&delayCounter>=3000)
 		{
 			finish = 0;
 			_state = 0;
@@ -168,7 +168,7 @@ void MotorPIDCallback(void)
 		
 		if(reachOutRight==1)  //what to do when out 
 		{
-			if(S5>500)
+			if(S5>500&&S6<900)
 			{
 				reachOutRight = 0;
 				reachOutLeft = 0;
@@ -180,7 +180,7 @@ void MotorPIDCallback(void)
 		}
 		else//what to do when out 
 		{
-			if(S2>500)
+			if(S2>500&&S1<900)
 			{
 				reachOutRight = 0;
 				reachOutLeft = 0;

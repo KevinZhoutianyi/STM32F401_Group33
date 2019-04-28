@@ -103,7 +103,7 @@ int main(void)
 	printf("\r\n t:%d",deviation);//printf("\r\n t:%d",targetRight);
 		
 //printf("\r\n F:%d",position);//;printf("\r\n F:%d",rightSpeed);
-	}
+	}	
 	
 }
 
