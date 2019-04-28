@@ -71,7 +71,7 @@ int main(void)
 	OutLED_On();
 	MidLED_On();
 	InLED_On();
-	LL_mDelay(200);
+	LL_mDelay(500);
 	ADCPrintValue();
 	CalCoef();
 	Reset_Encoders();

@@ -620,12 +620,12 @@ void ADCPrintValue(void)
 
 void CalCoef(void)
 {
-	cS1 = 150.0f/GetVoltagePC2();
-	cS2 = 150.0f/GetVoltagePC3();
-	cS3 = 150.0f/GetVoltagePA4();
-	cS4 = 150.0f/GetVoltagePB0();
-	cS5 = 150.0f/GetVoltagePC1();
-	cS6 = 150.0f/GetVoltagePC0();
+	cS1 = 450.0f/(GetVoltagePC2()*3);
+	cS2 = 450.0f/(GetVoltagePC3()*3);
+	cS3 = 450.0f/(GetVoltagePA4()*3);
+	cS4 = 450.0f/(GetVoltagePB0()*3);
+	cS5 = 450.0f/(GetVoltagePC1()*3);
+	cS6 = 450.0f/(GetVoltagePC0()*3);
 	state = 1;
 }
 
