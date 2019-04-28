@@ -3,9 +3,9 @@
 #include "Adc.h"
 #include "Button.h"
 #define COEF1 0.1
-#define COEF2 0.85
+#define COEF2 0.8
 #define COEF3 0//2.6
-#define SPEED 2700//2700
+#define SPEED 2500//2700
 #define MAXSPEED 3800
 
 
@@ -178,7 +178,7 @@ void MotorPIDCallback(void)
 			targetRight = 800;	
 			 
 		}
-		else //what to do when out 
+		else//what to do when out 
 		{
 			if(S2>500)
 			{
@@ -227,7 +227,7 @@ void MotorPIDCallback(void)
 			else
 			{
 				finishCounter++;
-				if(finishCounter >= 500)
+				if(finishCounter >= 1500)
 				{
 					finish = 1;
 					finishCounter = 0;
