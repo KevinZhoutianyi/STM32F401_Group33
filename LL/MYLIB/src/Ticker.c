@@ -227,7 +227,7 @@ void MotorPIDCallback(void)
 			else
 			{
 				finishCounter++;
-				if(finishCounter >= 1500)
+				if(finishCounter >= 2000)
 				{
 					finish = 1;
 					finishCounter = 0;
